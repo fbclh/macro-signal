@@ -101,6 +101,17 @@ export const INDICATORS: Indicator[] = [
   },
 ];
 
+/** Headline indicators for the G7 at-a-glance comparison table. */
+export const G7_GLANCE_INDICATORS: {
+  code: string;
+  columnLabel: string;
+}[] = [
+  { code: "ny.gdp.mktp.kd.zg", columnLabel: "GDP Growth" },
+  { code: "fp.cpi.totl.zg", columnLabel: "Inflation" },
+  { code: "sl.uem.totl.zs", columnLabel: "Unemployment" },
+  { code: "fr.inr.lndp", columnLabel: "Interest Rate" },
+];
+
 export const CREDIT_RATING_CODE = "credit.rating";
 
 export function isCreditRating(code: string): boolean {

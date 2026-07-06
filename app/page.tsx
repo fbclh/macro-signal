@@ -2,11 +2,11 @@ import { Suspense } from "react";
 
 import { ComparisonPanel, countryOptions, indicatorOptions } from "@/components/comparison-panel";
 import { CountryCards } from "@/components/country-cards";
-import { CountryTable } from "@/components/country-table";
+import { G7AtAGlance } from "@/components/g7-at-a-glance";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { QuerySelect } from "@/components/query-select";
-import { CardsSkeleton, ChartSkeleton, TableSkeleton } from "@/components/skeletons";
+import { CardsSkeleton, ChartSkeleton, G7GlanceSkeleton } from "@/components/skeletons";
 import { COUNTRIES } from "@/lib/catalog";
 import { resolveSearchParams, type PageSearchParams } from "@/lib/search-params";
 
@@ -86,16 +86,14 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       <section className="mt-16">
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-lg font-medium">Recent values</h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              All indicators for {COUNTRIES.find((c) => c.iso3 === params.country)?.name}
-            </p>
-          </div>
+        <div className="mb-6">
+          <h2 className="text-lg font-medium">G7 at a glance</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Latest readings across all economies
+          </p>
         </div>
-        <Suspense fallback={<TableSkeleton />} key={`table-${params.country}`}>
-          <CountryTable country={params.country} />
+        <Suspense fallback={<G7GlanceSkeleton />}>
+          <G7AtAGlance selectedCountry={params.country} />
         </Suspense>
       </section>
 

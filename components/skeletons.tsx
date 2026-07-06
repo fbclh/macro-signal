@@ -21,6 +21,28 @@ export function ChartSkeleton() {
   return <Skeleton className="h-72 w-full rounded-sm sm:h-96" />;
 }
 
-export function TableSkeleton() {
-  return <Skeleton className="h-64 w-full rounded-sm" />;
+export function G7GlanceSkeleton() {
+  return (
+    <div className="overflow-hidden rounded-sm border">
+      <div className="flex gap-4 border-b bg-muted/50 px-4 py-3">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Skeleton
+            key={index}
+            className={`h-4 ${index === 0 ? "w-20" : "ml-auto w-24"}`}
+          />
+        ))}
+      </div>
+      {Array.from({ length: 7 }).map((_, rowIndex) => (
+        <div
+          key={rowIndex}
+          className="flex gap-4 border-b px-4 py-3 last:border-b-0"
+        >
+          <Skeleton className="h-4 w-28" />
+          {Array.from({ length: 4 }).map((__, cellIndex) => (
+            <Skeleton key={cellIndex} className="ml-auto h-4 w-24" />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 }
