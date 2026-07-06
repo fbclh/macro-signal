@@ -24,6 +24,21 @@ export const INDICATOR_GROUPS: { id: IndicatorGroupId; label: string }[] = [
   { id: "sovereign", label: "Sovereign" },
 ];
 
+/** Two display rows of four cards, preserving group order left-to-right. */
+export const INDICATOR_CARD_ROWS: {
+  label: string;
+  groupIds: IndicatorGroupId[];
+}[] = [
+  {
+    label: "Growth & prices · Labour & rates",
+    groupIds: ["growth-prices", "labour-rates"],
+  },
+  {
+    label: "External & fiscal · Sovereign",
+    groupIds: ["external-fiscal", "sovereign"],
+  },
+];
+
 export const COUNTRIES: Country[] = [
   { iso3: "can", name: "Canada" },
   { iso3: "fra", name: "France" },
