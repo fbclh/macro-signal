@@ -40,49 +40,6 @@ function consecutiveDirectionInsight(
   return `${country} ${indicatorName.toLowerCase()} has ${verb} for ${streak} consecutive readings`;
 }
 
-export function findCrossoverYear(
-  seriesA: SeriesInput,
-  seriesB: SeriesInput,
-): number | null {
-  const mapA = new Map(
-    sortedPoints(seriesA.points).map((p) => [
-      new Date(p.date).getFullYear(),
-      p.value,
-    ]),
-  );
-  const mapB = new Map(
-    sortedPoints(seriesB.points).map((p) => [
-      new Date(p.date).getFullYear(),
-      p.value,
-    ]),
-  );
-
-  const years = [...mapA.keys()].filter((y) => mapB.has(y)).sort((a, b) => a - b);
-  if (years.length < 2) return null;
-
-  let crossoverYear: number | null = null;
-
-  for (let i = 1; i < years.length; i++) {
-    const year = years[i];
-    const prevYear = years[i - 1];
-    const aNow = mapA.get(year)!;
-    const bNow = mapB.get(year)!;
-    const aPrev = mapA.get(prevYear)!;
-    const bPrev = mapB.get(prevYear)!;
-
-    const wasBelow = aPrev < bPrev;
-    const nowAbove = aNow > bNow;
-    const wasAbove = aPrev > bPrev;
-    const nowBelow = aNow < bNow;
-
-    if ((wasBelow && nowAbove) || (wasAbove && nowBelow)) {
-      crossoverYear = year;
-    }
-  }
-
-  return crossoverYear;
-}
-
 function crossoverInsight(
   seriesA: SeriesInput,
   seriesB: SeriesInput,

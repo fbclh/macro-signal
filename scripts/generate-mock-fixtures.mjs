@@ -20,70 +20,43 @@ const COUNTRIES = [
 const INDICATORS = [
   {
     code: "ny.gdp.mktp.kd.zg",
-    name: "GDP Growth Rate",
-    unit: "%",
+    name: "GDP Growth",
+    unit: "% annual",
     category: "GDP",
     base: 2.4,
     spread: 2.5,
   },
   {
-    code: "fr.inr.lndp",
-    name: "Interest Rate",
-    unit: "%",
-    category: "Financial",
-    base: 4.5,
-    spread: 3,
-  },
-  {
     code: "fp.cpi.totl.zg",
-    name: "Inflation Rate",
-    unit: "%",
+    name: "Inflation (CPI)",
+    unit: "% annual",
     category: "Prices",
     base: 3.1,
     spread: 4,
   },
   {
     code: "sl.uem.totl.zs",
-    name: "Unemployment Rate",
-    unit: "%",
+    name: "Unemployment",
+    unit: "% of labor force",
     category: "Labour",
     base: 5.5,
     spread: 6,
   },
   {
-    code: "gc.dod.totl.gd.zs",
-    name: "Government Debt to GDP",
-    unit: "% of GDP",
-    category: "Government",
-    base: 95,
-    spread: 35,
-  },
-  {
-    code: "ne.rsb.gnfs.zs",
-    name: "Balance of Trade",
-    unit: "% of GDP",
-    category: "Trade",
-    base: 0,
-    spread: 4,
-    signed: true,
-  },
-  {
-    code: "bn.cab.xoka.gd.zs",
-    name: "Current Account to GDP",
-    unit: "% of GDP",
-    category: "Trade",
-    base: 0,
+    code: "fr.inr.rinr",
+    name: "Real Interest Rate",
+    unit: "%",
+    category: "Financial",
+    base: 1.8,
     spread: 3,
-    signed: true,
   },
   {
-    code: "credit.rating",
-    name: "Credit Rating",
-    unit: "TE index",
-    category: "Ratings",
-    base: 75,
-    spread: 15,
-    integer: true,
+    code: "ny.gdp.pcap.cd",
+    name: "GDP per Capita",
+    unit: "current US$",
+    category: "GDP",
+    base: 45000,
+    spread: 35000,
   },
 ];
 
@@ -106,15 +79,8 @@ for (const country of COUNTRIES) {
     const symbol = `${country.iso3}.${indicator.code}`;
     const seed = hash(symbol);
     const countryOffset = hash(country.iso3) % 100 / 50;
-    const decimals = indicator.integer ? 0 : 2;
-    const rawLast = indicator.base + countryOffset + (seed % 100) / 80;
-    const signedFactor =
-      indicator.signed && seed % 3 === 0 ? -1 : indicator.signed ? 0.6 : 1;
-    const last = round(rawLast * signedFactor, decimals);
-    const previous = round(
-      last + ((seed % 7) - 3) * (indicator.integer ? 1 : 0.15),
-      decimals,
-    );
+    const last = round(indicator.base + countryOffset + (seed % 100) / 80, 2);
+    const previous = round(last + ((seed % 7) - 3) * 0.15, 2);
 
     snapshots.push({
       symbol,
@@ -125,7 +91,7 @@ for (const country of COUNTRIES) {
       country: country.name,
       category: indicator.category,
       description: indicator.name,
-      frequency: indicator.code === "credit.rating" ? "Monthly" : "Yearly",
+      frequency: "Yearly",
       unit: indicator.unit,
       title: `${country.name} ${indicator.name}`,
       lastUpdate: "2025-01-15T00:00:00",
@@ -134,10 +100,9 @@ for (const country of COUNTRIES) {
     const points = [];
     for (let year = 2000; year <= 2024; year++) {
       const t = year - 2000;
-      const wave = Math.sin((t + (seed % 12)) / 4) * indicator.spread * 0.35;
-      const trend = (t - 12) * 0.04 * (indicator.code.includes("gc.dod") ? 0.8 : 0.02);
-      const raw = indicator.base + countryOffset + wave + trend;
-      const value = round(raw * signedFactor, decimals);
+      const wave = Math.sin((t + seed % 12) / 4) * indicator.spread * 0.35;
+      const trend = (t - 12) * 0.04 * (indicator.code.includes("pcap") ? 800 : 0.02);
+      const value = round(indicator.base + countryOffset + wave + trend, 2);
       points.push({
         symbol,
         date: `${year}-12-31T00:00:00`,

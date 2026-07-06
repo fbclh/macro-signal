@@ -1,7 +1,7 @@
 import { ComparisonChart } from "@/components/comparison-chart";
 import { countryLabel } from "@/components/country-cards";
-import { COUNTRIES, INDICATORS, indicatorSignedAxis, symbolFor } from "@/lib/catalog";
-import { computeInsight, findCrossoverYear, mergeChartSeries } from "@/lib/insights";
+import { COUNTRIES, INDICATORS, symbolFor } from "@/lib/catalog";
+import { computeInsight, mergeChartSeries } from "@/lib/insights";
 import { getHistorical } from "@/lib/te";
 
 type ComparisonPanelProps = {
@@ -27,28 +27,27 @@ export async function ComparisonPanel({
   const labelB = countryLabel(chartB);
   const unit = indicator?.unit ?? "";
 
-  const seriesA = { country: labelA, points: pointsA };
-  const seriesB = { country: labelB, points: pointsB };
+  const chartData = mergeChartSeries(
+    { country: labelA, points: pointsA },
+    { country: labelB, points: pointsB },
+  );
 
-  const chartData = mergeChartSeries(seriesA, seriesB);
-  const insight = computeInsight(seriesA, seriesB, indicator?.name ?? "indicator");
-  const crossoverYear = findCrossoverYear(seriesA, seriesB);
+  const insight = computeInsight(
+    { country: labelA, points: pointsA },
+    { country: labelB, points: pointsB },
+    indicator?.name ?? "indicator",
+  );
 
   return (
     <div className="space-y-4">
-      <div className="rounded-sm border border-neutral-200/80 bg-neutral-50 px-4 py-3 shadow-sm">
-        <p className="text-xs font-medium uppercase tracking-[0.16em] text-neutral-400">
-          Insight
-        </p>
-        <p className="mt-1 text-sm leading-relaxed text-neutral-700">{insight}</p>
-      </div>
+      <p className="border-l-2 border-neutral-900 pl-4 text-sm leading-relaxed text-neutral-700">
+        {insight}
+      </p>
       <ComparisonChart
         data={chartData}
         labelA={labelA}
         labelB={labelB}
         unit={unit}
-        showZeroLine={indicatorSignedAxis(chartIndicator)}
-        crossoverYear={crossoverYear}
       />
     </div>
   );

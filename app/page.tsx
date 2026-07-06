@@ -25,14 +25,12 @@ export default async function Home({ searchParams }: HomeProps) {
     <div className="mx-auto max-w-6xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
       <Header />
 
-      <section className="mt-12 rounded-sm">
+      <section className="mt-12">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-800">
-              Main indicators
-            </h2>
+            <h2 className="text-lg font-medium text-neutral-950">Latest indicators</h2>
             <p className="mt-1 text-sm text-neutral-500">
-              Latest snapshot for the selected economy
+              Snapshot values for the selected economy
             </p>
           </div>
           <QuerySelect
@@ -49,9 +47,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="mt-16">
         <div className="mb-6">
-          <h2 className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-800">
-            Comparison
-          </h2>
+          <h2 className="text-lg font-medium text-neutral-950">Comparison</h2>
           <p className="mt-1 text-sm text-neutral-500">
             Overlay two economies on one indicator (~25 years)
           </p>
@@ -88,12 +84,10 @@ export default async function Home({ searchParams }: HomeProps) {
         </Suspense>
       </section>
 
-      <section className="mt-16 pb-8">
+      <section className="mt-16">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-800">
-              Recent values
-            </h2>
+            <h2 className="text-lg font-medium text-neutral-950">Recent values</h2>
             <p className="mt-1 text-sm text-neutral-500">
               All indicators for {COUNTRIES.find((c) => c.iso3 === params.country)?.name}
             </p>

@@ -26,12 +26,12 @@ export function QuerySelect({ name, label, value, options }: QuerySelectProps) {
   }
 
   return (
-    <label className="flex flex-col gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-neutral-400">
+    <label className="flex flex-col gap-1.5 text-xs uppercase tracking-wide text-neutral-500">
       {label}
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="min-w-[10rem] rounded-sm border border-neutral-300 bg-white px-3 py-2 text-sm normal-case tracking-normal text-neutral-900 shadow-sm outline-none transition-colors hover:border-neutral-400 focus:border-neutral-700"
+        className="min-w-[10rem] border border-neutral-300 bg-white px-3 py-2 text-sm normal-case tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
