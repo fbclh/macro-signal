@@ -24,6 +24,8 @@ export type SnapshotRow = {
   unit: string;
   title: string;
   lastUpdate: string;
+  consensus?: number | null;
+  forecast?: number | null;
 };
 
 export class TeApiError extends Error {

@@ -2,6 +2,15 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 type Option = {
   value: string;
   label: string;
@@ -18,27 +27,33 @@ export function QuerySelect({ name, label, value, options }: QuerySelectProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const selectedLabel =
+    options.find((option) => option.value === value)?.label ?? value;
 
-  function onChange(nextValue: string) {
+  function onChange(nextValue: string | null) {
+    if (!nextValue) return;
     const params = new URLSearchParams(searchParams.toString());
     params.set(name, nextValue);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
   return (
-    <label className="flex flex-col gap-1.5 text-xs uppercase tracking-wide text-neutral-500">
-      {label}
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="min-w-[10rem] border border-neutral-300 bg-white px-3 py-2 text-sm normal-case tracking-normal text-neutral-900 outline-none focus:border-neutral-900"
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div className="flex flex-col gap-1.5">
+      <Label className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        {label}
+      </Label>
+      <Select value={value} onValueChange={onChange}>
+        <SelectTrigger className="w-full min-w-40 normal-case">
+          <SelectValue>{selectedLabel}</SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 }

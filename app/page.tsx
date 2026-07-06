@@ -28,8 +28,8 @@ export default async function Home({ searchParams }: HomeProps) {
       <section className="mt-12">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-lg font-medium text-stone-950">Main indicators</h2>
-            <p className="mt-1 text-sm text-neutral-500">
+            <h2 className="text-lg font-medium">Main indicators</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               Snapshot values for the selected economy
             </p>
           </div>
@@ -47,8 +47,8 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="mt-16">
         <div className="mb-6">
-          <h2 className="text-lg font-medium text-neutral-950">Comparison</h2>
-          <p className="mt-1 text-sm text-neutral-500">
+          <h2 className="text-lg font-medium">Comparison</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
             Overlay two economies on one indicator (~25 years)
           </p>
         </div>
@@ -87,8 +87,8 @@ export default async function Home({ searchParams }: HomeProps) {
       <section className="mt-16">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-lg font-medium text-neutral-950">Recent values</h2>
-            <p className="mt-1 text-sm text-neutral-500">
+            <h2 className="text-lg font-medium">Recent values</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               All indicators for {COUNTRIES.find((c) => c.iso3 === params.country)?.name}
             </p>
           </div>

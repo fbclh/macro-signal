@@ -11,6 +11,16 @@ import {
   YAxis,
 } from "recharts";
 
+import { useIsDark } from "@/lib/use-is-dark";
+import { Card, CardContent } from "@/components/ui/card";
+
+const flatCard = "rounded-sm border shadow-none ring-0";
+
+const LINE_A_COLOR_LIGHT = "#2563eb";
+const LINE_A_COLOR_DARK = "#5dade2";
+const LINE_B_COLOR_LIGHT = "#fb923c";
+const LINE_B_COLOR_DARK = "#fb923c";
+
 type ComparisonChartProps = {
   data: { year: number; a: number | null; b: number | null }[];
   labelA: string;
@@ -18,71 +28,144 @@ type ComparisonChartProps = {
   unit: string;
 };
 
+type LegendEntry = {
+  value: string;
+  color?: string;
+  dataKey?: string;
+};
+
+function ChartLegend({
+  payload,
+  mutedColor,
+  lineAColor,
+  lineBColor,
+}: {
+  payload?: LegendEntry[];
+  mutedColor: string;
+  lineAColor: string;
+  lineBColor: string;
+}) {
+  if (!payload?.length) return null;
+
+  return (
+    <ul
+      className="mt-2 flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs"
+      style={{ color: mutedColor }}
+    >
+      {payload.map((entry) => {
+        const stroke =
+          entry.color ??
+          (entry.dataKey === "b" ? lineBColor : lineAColor);
+
+        return (
+          <li key={String(entry.value)} className="flex items-center gap-2">
+            <svg width="28" height="10" className="shrink-0" aria-hidden="true">
+              <line
+                x1="0"
+                y1="5"
+                x2="28"
+                y2="5"
+                stroke={stroke}
+                strokeWidth="2"
+              />
+            </svg>
+            <span>{entry.value}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function ComparisonChart({
   data,
   labelA,
   labelB,
   unit,
 }: ComparisonChartProps) {
+  const isDark = useIsDark();
+  const lineAColor = isDark ? LINE_A_COLOR_DARK : LINE_A_COLOR_LIGHT;
+  const lineBColor = isDark ? LINE_B_COLOR_DARK : LINE_B_COLOR_LIGHT;
+
+  const grid = isDark ? "#2a2a2a" : "#e5e5e5";
+  const tick = isDark ? "#b0b0b0" : "#737373";
+  const axis = isDark ? "#3a3a3a" : "#d4d4d4";
+  const tooltipBg = isDark ? "#222222" : "#ffffff";
+  const tooltipBorder = isDark ? "#3a3a3a" : "#d4d4d4";
+  const tooltipText = isDark ? "#ffffff" : "#1c1917";
+
   if (data.length === 0 || data.every((row) => row.a == null && row.b == null)) {
     return (
-      <div className="flex h-72 items-center justify-center border border-dashed border-neutral-300 bg-neutral-50 text-sm text-neutral-500">
-        No data available for this combination
-      </div>
+      <Card className={flatCard}>
+        <CardContent className="flex h-72 items-center justify-center text-sm text-muted-foreground sm:h-96">
+          No data available for this combination
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <div className="h-72 w-full border border-neutral-200 bg-white p-4 sm:h-96">
+    <Card className={`${flatCard} py-0`}>
+      <CardContent className="h-72 p-4 sm:h-96">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-          <CartesianGrid stroke="#e5e5e5" strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid stroke={grid} strokeDasharray="3 3" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fill: "#737373", fontSize: 12 }}
-            axisLine={{ stroke: "#d4d4d4" }}
-            tickLine={{ stroke: "#d4d4d4" }}
+            tick={{ fill: tick, fontSize: 12 }}
+            axisLine={{ stroke: axis }}
+            tickLine={{ stroke: axis }}
           />
           <YAxis
-            tick={{ fill: "#737373", fontSize: 12 }}
-            axisLine={{ stroke: "#d4d4d4" }}
-            tickLine={{ stroke: "#d4d4d4" }}
+            tick={{ fill: tick, fontSize: 12 }}
+            axisLine={{ stroke: axis }}
+            tickLine={{ stroke: axis }}
             width={48}
           />
           <Tooltip
             contentStyle={{
-              border: "1px solid #d4d4d4",
+              backgroundColor: tooltipBg,
+              border: `1px solid ${tooltipBorder}`,
               borderRadius: 0,
               boxShadow: "none",
               fontSize: 12,
+              color: tooltipText,
             }}
             formatter={(value) =>
               typeof value === "number" ? [`${value.toFixed(2)} ${unit}`, ""] : ["—", ""]
             }
             labelFormatter={(label) => `Year ${label}`}
           />
-          <Legend wrapperStyle={{ fontSize: 12, color: "#525252" }} />
+          <Legend
+            content={
+              <ChartLegend
+                mutedColor={tick}
+                lineAColor={lineAColor}
+                lineBColor={lineBColor}
+              />
+            }
+          />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="a"
             name={labelA}
-            stroke="#000000"
+            stroke={lineAColor}
             strokeWidth={2}
             dot={false}
             connectNulls
           />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="b"
             name={labelB}
-            stroke="#737373"
+            stroke={lineBColor}
             strokeWidth={2}
-            strokeDasharray="6 4"
             dot={false}
             connectNulls
           />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

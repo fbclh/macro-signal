@@ -40,7 +40,7 @@ export async function ComparisonPanel({
 
   return (
     <div className="space-y-4">
-      <p className="border-l-2 border-neutral-900 pl-4 text-sm leading-relaxed text-neutral-700">
+      <p className="border-l-2 border-foreground pl-4 text-sm leading-relaxed text-muted-foreground">
         {insight}
       </p>
       <ComparisonChart

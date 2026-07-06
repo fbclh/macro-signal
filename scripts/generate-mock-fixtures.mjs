@@ -115,6 +115,14 @@ for (const country of COUNTRIES) {
       last + ((seed % 7) - 3) * (indicator.integer ? 1 : 0.15),
       decimals,
     );
+    const consensus = round(
+      last + ((seed % 5) - 2) * (indicator.integer ? 0.8 : 0.08),
+      decimals,
+    );
+    const forecast = round(
+      last + ((seed % 9) - 4) * (indicator.integer ? 1.2 : 0.12),
+      decimals,
+    );
 
     snapshots.push({
       symbol,
@@ -129,6 +137,8 @@ for (const country of COUNTRIES) {
       unit: indicator.unit,
       title: `${country.name} ${indicator.name}`,
       lastUpdate: "2025-01-15T00:00:00",
+      consensus,
+      forecast,
     });
 
     const points = [];

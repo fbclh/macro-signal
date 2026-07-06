@@ -8,6 +8,12 @@ import {
 } from "@/lib/format";
 import { INDICATOR_CARD_ROWS, INDICATORS } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
+import { Card, CardContent } from "@/components/ui/card";
+
+import { DeltaSparkline } from "./sparkline";
+
+const flatCard =
+  "flex h-full flex-col gap-0 rounded-sm border shadow-none ring-0 py-4";
 
 function DeltaArrow({
   current,
@@ -19,7 +25,7 @@ function DeltaArrow({
   const direction = deltaDirection(current, previous);
 
   if (direction === "flat") {
-    return <span className="text-stone-400">—</span>;
+    return <span className="text-subtle">—</span>;
   }
 
   return (
@@ -44,39 +50,55 @@ function IndicatorCard({
   const credit = isCredit ? formatCreditRatingDisplay(snapshot.last) : null;
 
   return (
-    <article className="border border-stone-200 bg-white p-4">
-      <h4 className="text-sm font-medium text-stone-900">{snapshot.description}</h4>
-      {isCredit && credit ? (
-        <>
-          <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight text-stone-950">
-            {credit.score}
+    <Card className={flatCard}>
+      <CardContent className="flex flex-1 flex-col px-4 pt-0">
+        <h4 className="text-sm font-medium">{snapshot.description}</h4>
+        {isCredit && credit ? (
+          <>
+            <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
+              {credit.score}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              TE index · {credit.label}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
+              {formatValue(snapshot.last, snapshot.unit)}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">{snapshot.unit}</p>
+          </>
+        )}
+        <div className="mt-3">
+          <DeltaSparkline
+            actual={snapshot.last}
+            previous={snapshot.previous}
+            unit={snapshot.unit}
+            variant="curve"
+          />
+        </div>
+        <div className="mt-auto border-t border-border-subtle pt-3">
+          <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <span>
+              Prev{" "}
+              <span className="tabular-nums text-foreground">
+                {formatValue(snapshot.previous, snapshot.unit)}
+              </span>
+            </span>
+            <span
+              className={`flex items-center gap-1 tabular-nums ${deltaSemanticClass(snapshot.last, snapshot.previous)}`}
+            >
+              <DeltaArrow current={snapshot.last} previous={snapshot.previous} />
+              {formatDelta(snapshot.last, snapshot.previous)}
+            </span>
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground">
+            {formatDate(snapshot.date)}
           </p>
-          <p className="mt-1 text-xs text-stone-500">TE index · {credit.label}</p>
-        </>
-      ) : (
-        <>
-          <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight text-stone-950">
-            {formatValue(snapshot.last, snapshot.unit)}
-          </p>
-          <p className="mt-1 text-xs text-stone-500">{snapshot.unit}</p>
-        </>
-      )}
-      <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-3 text-xs text-stone-600">
-        <span>
-          Prev{" "}
-          <span className="tabular-nums">
-            {formatValue(snapshot.previous, snapshot.unit)}
-          </span>
-        </span>
-        <span
-          className={`flex items-center gap-1 tabular-nums ${deltaSemanticClass(snapshot.last, snapshot.previous)}`}
-        >
-          <DeltaArrow current={snapshot.last} previous={snapshot.previous} />
-          {formatDelta(snapshot.last, snapshot.previous)}
-        </span>
-      </div>
-      <p className="mt-2 text-xs text-stone-400">{formatDate(snapshot.date)}</p>
-    </article>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -92,7 +114,7 @@ type IndicatorCardsProps = {
 export function IndicatorCards({ cards }: IndicatorCardsProps) {
   if (cards.length === 0) {
     return (
-      <p className="text-sm text-stone-500">No data available for this country.</p>
+      <p className="text-sm text-muted-foreground">No data available for this country.</p>
     );
   }
 
@@ -108,10 +130,10 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
     <div className="space-y-8">
       {rows.map((row) => (
         <div key={row.label}>
-          <h3 className="mb-3 border-b border-stone-200 pb-2 text-xs font-medium uppercase tracking-wide text-stone-500">
+          <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             {row.label}
           </h3>
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-2 items-stretch gap-3 lg:grid-cols-4 lg:gap-4">
             {row.items.map((item) => (
               <IndicatorCard key={item.snapshot.symbol} {...item} />
             ))}

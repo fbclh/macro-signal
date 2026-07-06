@@ -12,5 +12,12 @@ export async function CountryTable({ country }: CountryTableProps) {
   );
   const snapshots = await getSnapshot(symbols);
 
-  return <RecentValuesTable snapshots={snapshots} />;
+  const rows = INDICATORS.map((indicator) => {
+    const symbol = symbolFor(country, indicator.code);
+    const snapshot = snapshots.find((row) => row.symbol === symbol);
+    if (!snapshot) return null;
+    return { indicator, snapshot };
+  }).filter((row): row is NonNullable<typeof row> => row != null);
+
+  return <RecentValuesTable rows={rows} />;
 }
