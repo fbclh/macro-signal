@@ -1,5 +1,8 @@
 import "server-only";
 
+import { useMockData } from "@/lib/env";
+import { mockGetHistorical, mockGetSnapshot } from "@/lib/mock";
+
 const BASE_URL = "https://api.tradingeconomics.com/worldbank";
 
 export type HistoricalPoint = {
@@ -85,6 +88,10 @@ export async function getHistorical(
     return [];
   }
 
+  if (useMockData()) {
+    return mockGetHistorical(symbols);
+  }
+
   const url = buildUrl("/historical", symbols);
   return teFetch<HistoricalPoint[]>(url);
 }
@@ -92,6 +99,10 @@ export async function getHistorical(
 export async function getSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
   if (symbols.length === 0) {
     return [];
+  }
+
+  if (useMockData()) {
+    return mockGetSnapshot(symbols);
   }
 
   const url = buildUrl("/indicator", symbols);
