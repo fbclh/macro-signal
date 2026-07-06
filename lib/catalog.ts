@@ -21,7 +21,7 @@ export const INDICATOR_GROUPS: { id: IndicatorGroupId; label: string }[] = [
   { id: "growth-prices", label: "Growth & prices" },
   { id: "labour-rates", label: "Labour & rates" },
   { id: "external-fiscal", label: "External & fiscal" },
-  { id: "sovereign", label: "Sovereign" },
+  { id: "sovereign", label: "Sovereign & credit" },
 ];
 
 /** Two display rows of four cards, preserving group order left-to-right. */
@@ -34,7 +34,7 @@ export const INDICATOR_CARD_ROWS: {
     groupIds: ["growth-prices", "labour-rates"],
   },
   {
-    label: "External & fiscal · Sovereign",
+    label: "External & fiscal · Sovereign & credit",
     groupIds: ["external-fiscal", "sovereign"],
   },
 ];
@@ -90,16 +90,22 @@ export const INDICATORS: Indicator[] = [
     code: "gc.dod.totl.gd.zs",
     name: "Government Debt to GDP",
     unit: "% of GDP",
-    group: "external-fiscal",
+    group: "sovereign",
   },
   {
     code: "credit.rating",
     name: "Credit Rating",
-    unit: "TE index",
+    unit: "",
     group: "sovereign",
     worldBank: false,
   },
 ];
+
+export const CREDIT_RATING_CODE = "credit.rating";
+
+export function isCreditRating(code: string): boolean {
+  return code === CREDIT_RATING_CODE;
+}
 
 export function symbolFor(iso3: string, code: string): string {
   return `${iso3}.${code}`;

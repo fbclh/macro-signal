@@ -1,10 +1,9 @@
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Separator } from "@/components/ui/separator";
 
 export function Header() {
   return (
-    <header className="pb-8">
-      <div className="flex items-start justify-between gap-4">
+    <header className="relative pb-8 before:pointer-events-none before:absolute before:-top-10 before:bottom-0 before:left-[calc(50%-50vw)] before:right-[calc(50%-50vw)] before:-z-10 before:bg-card">
+      <div className="relative flex items-start justify-between gap-4">
         <div className="min-w-0">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Macro Signal
@@ -18,7 +17,6 @@ export function Header() {
         </div>
         <ThemeToggle />
       </div>
-      <Separator className="mt-8" />
     </header>
   );
 }

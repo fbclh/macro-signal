@@ -79,7 +79,7 @@ const INDICATORS = [
   {
     code: "credit.rating",
     name: "Credit Rating",
-    unit: "TE index",
+    unit: "",
     category: "Ratings",
     base: 75,
     spread: 15,

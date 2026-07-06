@@ -1,3 +1,5 @@
+import { isCreditRating } from "@/lib/catalog";
+
 const CREDIT_RATING_TIERS: { min: number; label: string }[] = [
   { min: 100, label: "Prime" },
   { min: 95, label: "High grade" },
@@ -12,8 +14,12 @@ const CREDIT_RATING_TIERS: { min: number; label: string }[] = [
   { min: 0, label: "Distressed" },
 ];
 
-export function formatValue(value: number, unit: string): string {
-  if (unit === "TE index") {
+export function formatValue(
+  value: number,
+  unit: string,
+  code?: string,
+): string {
+  if ((code && isCreditRating(code)) || unit === "TE index") {
     return String(Math.round(value));
   }
 

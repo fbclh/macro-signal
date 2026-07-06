@@ -126,7 +126,7 @@ export function DeltaSparkline({
     <svg
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio="none"
-      className={`${compact ? "h-[30px] w-20" : "h-11 w-full max-w-[140px]"} ${className}`}
+      className={`${compact ? "h-[30px] w-20" : "h-11 w-full"} ${className}`}
       aria-hidden="true"
     >
       <path

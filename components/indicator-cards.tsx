@@ -6,7 +6,12 @@ import {
   formatDelta,
   formatValue,
 } from "@/lib/format";
-import { INDICATOR_CARD_ROWS, INDICATORS } from "@/lib/catalog";
+import {
+  INDICATOR_CARD_ROWS,
+  INDICATOR_GROUPS,
+  INDICATORS,
+  isCreditRating,
+} from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -14,6 +19,9 @@ import { DeltaSparkline } from "./sparkline";
 
 const flatCard =
   "flex h-full flex-col gap-0 rounded-sm border shadow-none ring-0 py-4";
+
+const groupLayoutClass =
+  "col-span-2 grid grid-cols-2 gap-3 lg:col-span-2 lg:grid-cols-2 lg:gap-4";
 
 function DeltaArrow({
   current,
@@ -46,7 +54,7 @@ function IndicatorCard({
   code: string;
 }) {
   const indicator = INDICATORS.find((item) => item.code === code);
-  const isCredit = indicator?.unit === "TE index";
+  const isCredit = indicator != null && isCreditRating(indicator.code);
   const credit = isCredit ? formatCreditRatingDisplay(snapshot.last) : null;
 
   return (
@@ -58,14 +66,12 @@ function IndicatorCard({
             <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
               {credit.score}
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              TE index · {credit.label}
-            </p>
+            <p className="mt-1 text-xs text-muted-foreground">{credit.label}</p>
           </>
         ) : (
           <>
             <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
-              {formatValue(snapshot.last, snapshot.unit)}
+              {formatValue(snapshot.last, snapshot.unit, code)}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">{snapshot.unit}</p>
           </>
@@ -83,7 +89,7 @@ function IndicatorCard({
             <span>
               Prev{" "}
               <span className="tabular-nums text-foreground">
-                {formatValue(snapshot.previous, snapshot.unit)}
+                {formatValue(snapshot.previous, snapshot.unit, code)}
               </span>
             </span>
             <span
@@ -120,24 +126,33 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
 
   const rows = INDICATOR_CARD_ROWS.map((row) => ({
     ...row,
-    items: cards.filter((card) => {
-      const indicator = INDICATORS.find((item) => item.code === card.code);
-      return indicator != null && row.groupIds.includes(indicator.group);
-    }),
-  })).filter((row) => row.items.length > 0);
+    groups: row.groupIds.map((groupId) => ({
+      id: groupId,
+      label: INDICATOR_GROUPS.find((group) => group.id === groupId)?.label ?? groupId,
+      items: cards.filter((card) => {
+        const indicator = INDICATORS.find((item) => item.code === card.code);
+        return indicator?.group === groupId;
+      }),
+    })).filter((group) => group.items.length > 0),
+  })).filter((row) => row.groups.length > 0);
 
   return (
     <div className="space-y-8">
       {rows.map((row) => (
-        <div key={row.label}>
-          <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            {row.label}
-          </h3>
-          <div className="grid grid-cols-2 items-stretch gap-3 lg:grid-cols-4 lg:gap-4">
-            {row.items.map((item) => (
-              <IndicatorCard key={item.snapshot.symbol} {...item} />
-            ))}
-          </div>
+        <div
+          key={row.groupIds.join("-")}
+          className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4"
+        >
+          {row.groups.map((group) => (
+            <div key={group.id} className={groupLayoutClass}>
+              <h3 className="col-span-full mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                {group.label}
+              </h3>
+              {group.items.map((item) => (
+                <IndicatorCard key={item.snapshot.symbol} {...item} />
+              ))}
+            </div>
+          ))}
         </div>
       ))}
     </div>

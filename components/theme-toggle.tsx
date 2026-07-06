@@ -3,8 +3,11 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { applyTheme, readTheme, type Theme } from "@/lib/theme";
+import { cn } from "@/lib/utils";
+
+const segmentClass =
+  "flex size-7 items-center justify-center rounded-sm transition-colors outline-none focus-visible:ring-1 focus-visible:ring-ring/50";
 
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
@@ -15,28 +18,54 @@ export function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  function toggle() {
-    const next: Theme = theme === "dark" ? "light" : "dark";
+  function select(next: Theme) {
     applyTheme(next);
     setTheme(next);
   }
 
   const isDark = mounted && theme === "dark";
 
+  function segmentStyle(active: boolean) {
+    return active
+      ? {
+          backgroundColor: "var(--toggle-active-bg)",
+          color: "var(--toggle-active-fg)",
+        }
+      : {
+          backgroundColor: "transparent",
+          color: "var(--toggle-inactive-fg)",
+        };
+  }
+
   return (
-    <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="rounded-sm shadow-none"
-      onClick={toggle}
-      disabled={!mounted}
-      aria-label={
-        mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Theme"
-      }
+    <div
+      role="group"
+      aria-label="Theme"
+      className={cn(
+        "inline-flex items-center gap-1.5",
+        !mounted && "pointer-events-none opacity-0",
+      )}
     >
-      {isDark ? <Sun data-icon="inline-start" /> : <Moon data-icon="inline-start" />}
-      {isDark ? "Light" : "Dark"}
-    </Button>
+      <button
+        type="button"
+        aria-pressed={!isDark}
+        aria-label="Light mode"
+        onClick={() => select("light")}
+        style={segmentStyle(!isDark)}
+        className={segmentClass}
+      >
+        <Sun className="size-3.5" strokeWidth={1.75} aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        aria-pressed={isDark}
+        aria-label="Dark mode"
+        onClick={() => select("dark")}
+        style={segmentStyle(isDark)}
+        className={segmentClass}
+      >
+        <Moon className="size-3.5" strokeWidth={1.75} aria-hidden="true" />
+      </button>
+    </div>
   );
 }

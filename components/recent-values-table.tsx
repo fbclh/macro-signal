@@ -2,7 +2,7 @@ import {
   formatCreditRatingDisplay,
   formatValue,
 } from "@/lib/format";
-import { INDICATORS } from "@/lib/catalog";
+import { INDICATORS, isCreditRating } from "@/lib/catalog";
 import type { Indicator } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,8 +28,8 @@ type RecentValuesTableProps = {
   rows: RecentValuesRow[];
 };
 
-function formatActual(snapshot: SnapshotRow, unit: string) {
-  if (unit === "TE index") {
+function formatActual(snapshot: SnapshotRow, indicator: Indicator) {
+  if (isCreditRating(indicator.code)) {
     const credit = formatCreditRatingDisplay(snapshot.last);
     return (
       <span>
@@ -40,7 +40,7 @@ function formatActual(snapshot: SnapshotRow, unit: string) {
       </span>
     );
   }
-  return formatValue(snapshot.last, unit);
+  return formatValue(snapshot.last, indicator.unit, indicator.code);
 }
 
 export function RecentValuesTable({ rows }: RecentValuesTableProps) {
@@ -55,8 +55,6 @@ export function RecentValuesTable({ rows }: RecentValuesTableProps) {
               <TableHead className="px-4">Indicator</TableHead>
               <TableHead className="px-4 text-right">Actual</TableHead>
               <TableHead className="px-4 text-right">Previous</TableHead>
-              <TableHead className="px-4 text-right">Consensus</TableHead>
-              <TableHead className="px-4 text-right">Forecast</TableHead>
               <TableHead className="px-4" aria-label="Trend" />
             </TableRow>
           </TableHeader>
@@ -72,7 +70,7 @@ export function RecentValuesTable({ rows }: RecentValuesTableProps) {
                     </TableCell>
                     <TableCell
                       className="px-4 text-muted-foreground"
-                      colSpan={5}
+                      colSpan={3}
                     >
                       No data
                     </TableCell>
@@ -88,16 +86,10 @@ export function RecentValuesTable({ rows }: RecentValuesTableProps) {
                     {indicator.name}
                   </TableCell>
                   <TableCell className="px-4 text-right tabular-nums">
-                    {formatActual(snapshot, indicator.unit)}
+                    {formatActual(snapshot, indicator)}
                   </TableCell>
                   <TableCell className="px-4 text-right tabular-nums text-muted-foreground">
-                    {formatValue(snapshot.previous, indicator.unit)}
-                  </TableCell>
-                  <TableCell className="px-4 text-right tabular-nums text-muted-foreground">
-                    —
-                  </TableCell>
-                  <TableCell className="px-4 text-right tabular-nums text-muted-foreground">
-                    —
+                    {formatValue(snapshot.previous, indicator.unit, indicator.code)}
                   </TableCell>
                   <TableCell className="px-4">
                     <DeltaSparkline

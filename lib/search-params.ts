@@ -18,7 +18,7 @@ export function resolveSearchParams(params: PageSearchParams) {
 
   const chartB = COUNTRIES.some((c) => c.iso3 === params.chartB)
     ? params.chartB!
-    : "deu";
+    : "jpn";
 
   const chartIndicator = INDICATORS.some((i) => i.code === params.chartIndicator)
     ? params.chartIndicator!

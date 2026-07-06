@@ -37,7 +37,7 @@ function consecutiveDirectionInsight(
   if (streak < 2) return null;
 
   const verb = direction === "up" ? "risen" : "declined";
-  return `${country} ${indicatorName.toLowerCase()} has ${verb} for ${streak} consecutive readings`;
+  return `${country} ${indicatorName} has ${verb} for ${streak} consecutive readings`;
 }
 
 function crossoverInsight(
@@ -89,7 +89,7 @@ function crossoverInsight(
       ? seriesA.country
       : seriesB.country;
 
-  return `${leader}'s ${indicatorName.toLowerCase()} overtook the other in ${crossoverYear}`;
+  return `${leader}'s ${indicatorName} overtook the other in ${crossoverYear}`;
 }
 
 function latestComparisonInsight(
@@ -101,7 +101,7 @@ function latestComparisonInsight(
   const b = sortedPoints(seriesB.points).at(-1);
 
   if (!a || !b) {
-    return `No data available for this ${indicatorName.toLowerCase()} comparison`;
+    return `No data available for this ${indicatorName} comparison`;
   }
 
   const year = new Date(a.date).getFullYear();
@@ -109,7 +109,7 @@ function latestComparisonInsight(
   const leader = a.value >= b.value ? seriesA.country : seriesB.country;
   const trailer = leader === seriesA.country ? seriesB.country : seriesA.country;
 
-  return `${leader} leads ${trailer} on ${indicatorName.toLowerCase()} by ${diff} (${year})`;
+  return `${leader} leads ${trailer} on ${indicatorName} by ${diff} (${year})`;
 }
 
 export function computeInsight(

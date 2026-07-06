@@ -27,7 +27,9 @@
   --spark-flat-stroke: #a8a29e;
   --spark-flat-dot: #78716c;
 
-  /* shadcn/ui tokens */
+  --toggle-active-bg: #e7e5e4;
+  --toggle-active-fg: #1c1917;
+  --toggle-inactive-fg: #737373;
   --card: #ffffff;
   --card-foreground: #1c1917;
   --popover: #ffffff;
@@ -83,6 +85,10 @@
   --spark-flat-stroke: #666666;
   --spark-flat-dot: #888888;
 
+  --toggle-active-bg: #333333;
+  --toggle-active-fg: #ffffff;
+  --toggle-inactive-fg: #757575;
+
   /* shadcn/ui tokens — aligned to TE dark */
   --card: #222222;
   --card-foreground: #ffffff;
@@ -129,6 +135,9 @@
   --color-value: var(--value);
   --color-delta-up: var(--delta-up);
   --color-delta-down: var(--delta-down);
+  --color-toggle-active-bg: var(--toggle-active-bg);
+  --color-toggle-active-fg: var(--toggle-active-fg);
+  --color-toggle-inactive-fg: var(--toggle-inactive-fg);
   --font-sans: var(--font-sans);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);

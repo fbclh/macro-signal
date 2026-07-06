@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import {
   CartesianGrid,
   Legend,
@@ -16,10 +17,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const flatCard = "rounded-sm border shadow-none ring-0";
 
-const LINE_A_COLOR_LIGHT = "#2563eb";
-const LINE_A_COLOR_DARK = "#5dade2";
-const LINE_B_COLOR_LIGHT = "#fb923c";
-const LINE_B_COLOR_DARK = "#fb923c";
+const LINE_A_COLOR = "var(--foreground)";
+const LINE_B_COLOR = "var(--subtle)";
+const LINE_B_DASH = "6 4";
 
 type ComparisonChartProps = {
   data: { year: number; a: number | null; b: number | null }[];
@@ -37,13 +37,9 @@ type LegendEntry = {
 function ChartLegend({
   payload,
   mutedColor,
-  lineAColor,
-  lineBColor,
 }: {
   payload?: LegendEntry[];
   mutedColor: string;
-  lineAColor: string;
-  lineBColor: string;
 }) {
   if (!payload?.length) return null;
 
@@ -53,9 +49,8 @@ function ChartLegend({
       style={{ color: mutedColor }}
     >
       {payload.map((entry) => {
-        const stroke =
-          entry.color ??
-          (entry.dataKey === "b" ? lineBColor : lineAColor);
+        const isB = entry.dataKey === "b";
+        const stroke = isB ? LINE_B_COLOR : LINE_A_COLOR;
 
         return (
           <li key={String(entry.value)} className="flex items-center gap-2">
@@ -67,6 +62,7 @@ function ChartLegend({
                 y2="5"
                 stroke={stroke}
                 strokeWidth="2"
+                strokeDasharray={isB ? LINE_B_DASH : undefined}
               />
             </svg>
             <span>{entry.value}</span>
@@ -77,6 +73,23 @@ function ChartLegend({
   );
 }
 
+const YEAR_TICK_STEP = 5;
+
+function fixedYearTicks(years: number[], step = YEAR_TICK_STEP): number[] {
+  if (years.length === 0) return [];
+
+  const min = Math.min(...years);
+  const max = Math.max(...years);
+  const start = Math.floor(min / step) * step;
+  const ticks: number[] = [];
+
+  for (let year = start; year <= max; year += step) {
+    ticks.push(year);
+  }
+
+  return ticks;
+}
+
 export function ComparisonChart({
   data,
   labelA,
@@ -84,8 +97,6 @@ export function ComparisonChart({
   unit,
 }: ComparisonChartProps) {
   const isDark = useIsDark();
-  const lineAColor = isDark ? LINE_A_COLOR_DARK : LINE_A_COLOR_LIGHT;
-  const lineBColor = isDark ? LINE_B_COLOR_DARK : LINE_B_COLOR_LIGHT;
 
   const grid = isDark ? "#2a2a2a" : "#e5e5e5";
   const tick = isDark ? "#b0b0b0" : "#737373";
@@ -93,6 +104,11 @@ export function ComparisonChart({
   const tooltipBg = isDark ? "#222222" : "#ffffff";
   const tooltipBorder = isDark ? "#3a3a3a" : "#d4d4d4";
   const tooltipText = isDark ? "#ffffff" : "#1c1917";
+
+  const yearTicks = useMemo(
+    () => fixedYearTicks(data.map((row) => row.year)),
+    [data],
+  );
 
   if (data.length === 0 || data.every((row) => row.a == null && row.b == null)) {
     return (
@@ -111,7 +127,11 @@ export function ComparisonChart({
         <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
           <CartesianGrid stroke={grid} strokeDasharray="3 3" vertical={false} />
           <XAxis
+            type="number"
             dataKey="year"
+            domain={["dataMin", "dataMax"]}
+            ticks={yearTicks}
+            allowDecimals={false}
             tick={{ fill: tick, fontSize: 12 }}
             axisLine={{ stroke: axis }}
             tickLine={{ stroke: axis }}
@@ -137,19 +157,13 @@ export function ComparisonChart({
             labelFormatter={(label) => `Year ${label}`}
           />
           <Legend
-            content={
-              <ChartLegend
-                mutedColor={tick}
-                lineAColor={lineAColor}
-                lineBColor={lineBColor}
-              />
-            }
+            content={<ChartLegend mutedColor={tick} />}
           />
           <Line
             type="linear"
             dataKey="a"
             name={labelA}
-            stroke={lineAColor}
+            stroke={LINE_A_COLOR}
             strokeWidth={2}
             dot={false}
             connectNulls
@@ -158,8 +172,9 @@ export function ComparisonChart({
             type="linear"
             dataKey="b"
             name={labelB}
-            stroke={lineBColor}
+            stroke={LINE_B_COLOR}
             strokeWidth={2}
+            strokeDasharray={LINE_B_DASH}
             dot={false}
             connectNulls
           />
