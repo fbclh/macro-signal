@@ -1,283 +1,143 @@
 {
   "snapshots": [
     {
-      "symbol": "usa.ny.gdp.mktp.kd.zg",
-      "last": 4.44,
+      "symbol": "can.ny.gdp.mktp.kd.zg",
+      "last": 4.64,
       "date": "2024-12-31T00:00:00",
-      "previous": 4.44,
+      "previous": 5.09,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "USA",
+      "country": "Canada",
       "category": "GDP",
       "description": "GDP Growth",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "USA GDP Growth",
+      "title": "Canada GDP Growth",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "usa.fp.cpi.totl.zg",
-      "last": 5.54,
+      "symbol": "can.fp.cpi.totl.zg",
+      "last": 4.62,
       "date": "2024-12-31T00:00:00",
-      "previous": 5.24,
+      "previous": 4.32,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "USA",
+      "country": "Canada",
       "category": "Prices",
       "description": "Inflation (CPI)",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "USA Inflation (CPI)",
+      "title": "Canada Inflation (CPI)",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "usa.sl.uem.totl.zs",
-      "last": 8.14,
+      "symbol": "can.sl.uem.totl.zs",
+      "last": 7.22,
       "date": "2024-12-31T00:00:00",
-      "previous": 7.84,
+      "previous": 6.92,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "USA",
+      "country": "Canada",
       "category": "Labour",
       "description": "Unemployment",
       "frequency": "Yearly",
       "unit": "% of labor force",
-      "title": "USA Unemployment",
+      "title": "Canada Unemployment",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "usa.fr.inr.rinr",
-      "last": 4.27,
-      "date": "2024-12-31T00:00:00",
-      "previous": 4.57,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "USA",
-      "category": "Financial",
-      "description": "Real Interest Rate",
-      "frequency": "Yearly",
-      "unit": "%",
-      "title": "USA Real Interest Rate",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "usa.ny.gdp.pcap.cd",
-      "last": 45002.66,
-      "date": "2024-12-31T00:00:00",
-      "previous": 45002.51,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "USA",
-      "category": "GDP",
-      "description": "GDP per Capita",
-      "frequency": "Yearly",
-      "unit": "current US$",
-      "title": "USA GDP per Capita",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "bra.ny.gdp.mktp.kd.zg",
-      "last": 3.57,
-      "date": "2024-12-31T00:00:00",
-      "previous": 4.02,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Brazil",
-      "category": "GDP",
-      "description": "GDP Growth",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "Brazil GDP Growth",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "bra.fp.cpi.totl.zg",
-      "last": 4.07,
-      "date": "2024-12-31T00:00:00",
-      "previous": 3.62,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Brazil",
-      "category": "Prices",
-      "description": "Inflation (CPI)",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "Brazil Inflation (CPI)",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "bra.sl.uem.totl.zs",
-      "last": 6.67,
-      "date": "2024-12-31T00:00:00",
-      "previous": 6.22,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Brazil",
-      "category": "Labour",
-      "description": "Unemployment",
-      "frequency": "Yearly",
-      "unit": "% of labor force",
-      "title": "Brazil Unemployment",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "bra.fr.inr.rinr",
-      "last": 2.37,
+      "symbol": "can.fr.inr.rinr",
+      "last": 3.12,
       "date": "2024-12-31T00:00:00",
       "previous": 2.82,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Brazil",
+      "country": "Canada",
       "category": "Financial",
       "description": "Real Interest Rate",
       "frequency": "Yearly",
       "unit": "%",
-      "title": "Brazil Real Interest Rate",
+      "title": "Canada Real Interest Rate",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "bra.ny.gdp.pcap.cd",
-      "last": 45000.53,
+      "symbol": "can.ny.gdp.pcap.cd",
+      "last": 45001.86,
       "date": "2024-12-31T00:00:00",
-      "previous": 45000.53,
+      "previous": 45001.71,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Brazil",
+      "country": "Canada",
       "category": "GDP",
       "description": "GDP per Capita",
       "frequency": "Yearly",
       "unit": "current US$",
-      "title": "Brazil GDP per Capita",
+      "title": "Canada GDP per Capita",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "mex.ny.gdp.mktp.kd.zg",
-      "last": 3.58,
+      "symbol": "fra.ny.gdp.mktp.kd.zg",
+      "last": 4.27,
       "date": "2024-12-31T00:00:00",
-      "previous": 4.03,
+      "previous": 4.27,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Mexico",
+      "country": "France",
       "category": "GDP",
       "description": "GDP Growth",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "Mexico GDP Growth",
+      "title": "France GDP Growth",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "mex.fp.cpi.totl.zg",
-      "last": 4.2,
+      "symbol": "fra.fp.cpi.totl.zg",
+      "last": 4.75,
       "date": "2024-12-31T00:00:00",
-      "previous": 3.9,
+      "previous": 4.6,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Mexico",
+      "country": "France",
       "category": "Prices",
       "description": "Inflation (CPI)",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "Mexico Inflation (CPI)",
+      "title": "France Inflation (CPI)",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "mex.sl.uem.totl.zs",
-      "last": 6.4,
+      "symbol": "fra.sl.uem.totl.zs",
+      "last": 7.35,
       "date": "2024-12-31T00:00:00",
-      "previous": 6.1,
+      "previous": 7.2,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Mexico",
+      "country": "France",
       "category": "Labour",
       "description": "Unemployment",
       "frequency": "Yearly",
       "unit": "% of labor force",
-      "title": "Mexico Unemployment",
+      "title": "France Unemployment",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "mex.fr.inr.rinr",
-      "last": 2.35,
+      "symbol": "fra.fr.inr.rinr",
+      "last": 4,
       "date": "2024-12-31T00:00:00",
-      "previous": 2.65,
+      "previous": 4.45,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Mexico",
+      "country": "France",
       "category": "Financial",
       "description": "Real Interest Rate",
       "frequency": "Yearly",
       "unit": "%",
-      "title": "Mexico Real Interest Rate",
+      "title": "France Real Interest Rate",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "mex.ny.gdp.pcap.cd",
-      "last": 45000.21,
+      "symbol": "fra.ny.gdp.pcap.cd",
+      "last": 45001.61,
       "date": "2024-12-31T00:00:00",
-      "previous": 44999.76,
+      "previous": 45001.31,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "Mexico",
+      "country": "France",
       "category": "GDP",
       "description": "GDP per Capita",
       "frequency": "Yearly",
       "unit": "current US$",
-      "title": "Mexico GDP per Capita",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "jpn.ny.gdp.mktp.kd.zg",
-      "last": 3.39,
-      "date": "2024-12-31T00:00:00",
-      "previous": 3.69,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Japan",
-      "category": "GDP",
-      "description": "GDP Growth",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "Japan GDP Growth",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "jpn.fp.cpi.totl.zg",
-      "last": 4.41,
-      "date": "2024-12-31T00:00:00",
-      "previous": 4.11,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Japan",
-      "category": "Prices",
-      "description": "Inflation (CPI)",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "Japan Inflation (CPI)",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "jpn.sl.uem.totl.zs",
-      "last": 7.01,
-      "date": "2024-12-31T00:00:00",
-      "previous": 6.71,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Japan",
-      "category": "Labour",
-      "description": "Unemployment",
-      "frequency": "Yearly",
-      "unit": "% of labor force",
-      "title": "Japan Unemployment",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "jpn.fr.inr.rinr",
-      "last": 3.91,
-      "date": "2024-12-31T00:00:00",
-      "previous": 3.61,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Japan",
-      "category": "Financial",
-      "description": "Real Interest Rate",
-      "frequency": "Yearly",
-      "unit": "%",
-      "title": "Japan Real Interest Rate",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "jpn.ny.gdp.pcap.cd",
-      "last": 45001.75,
-      "date": "2024-12-31T00:00:00",
-      "previous": 45001.6,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "Japan",
-      "category": "GDP",
-      "description": "GDP per Capita",
-      "frequency": "Yearly",
-      "unit": "current US$",
-      "title": "Japan GDP per Capita",
+      "title": "France GDP per Capita",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
@@ -351,6 +211,146 @@
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
+      "symbol": "ita.ny.gdp.mktp.kd.zg",
+      "last": 4.61,
+      "date": "2024-12-31T00:00:00",
+      "previous": 4.61,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Italy",
+      "category": "GDP",
+      "description": "GDP Growth",
+      "frequency": "Yearly",
+      "unit": "% annual",
+      "title": "Italy GDP Growth",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "ita.fp.cpi.totl.zg",
+      "last": 6.09,
+      "date": "2024-12-31T00:00:00",
+      "previous": 5.64,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Italy",
+      "category": "Prices",
+      "description": "Inflation (CPI)",
+      "frequency": "Yearly",
+      "unit": "% annual",
+      "title": "Italy Inflation (CPI)",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "ita.sl.uem.totl.zs",
+      "last": 8.69,
+      "date": "2024-12-31T00:00:00",
+      "previous": 8.24,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Italy",
+      "category": "Labour",
+      "description": "Unemployment",
+      "frequency": "Yearly",
+      "unit": "% of labor force",
+      "title": "Italy Unemployment",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "ita.fr.inr.rinr",
+      "last": 3.89,
+      "date": "2024-12-31T00:00:00",
+      "previous": 3.89,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Italy",
+      "category": "Financial",
+      "description": "Real Interest Rate",
+      "frequency": "Yearly",
+      "unit": "%",
+      "title": "Italy Real Interest Rate",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "ita.ny.gdp.pcap.cd",
+      "last": 45002.07,
+      "date": "2024-12-31T00:00:00",
+      "previous": 45002.07,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Italy",
+      "category": "GDP",
+      "description": "GDP per Capita",
+      "frequency": "Yearly",
+      "unit": "current US$",
+      "title": "Italy GDP per Capita",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "jpn.ny.gdp.mktp.kd.zg",
+      "last": 3.39,
+      "date": "2024-12-31T00:00:00",
+      "previous": 3.69,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Japan",
+      "category": "GDP",
+      "description": "GDP Growth",
+      "frequency": "Yearly",
+      "unit": "% annual",
+      "title": "Japan GDP Growth",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "jpn.fp.cpi.totl.zg",
+      "last": 4.41,
+      "date": "2024-12-31T00:00:00",
+      "previous": 4.11,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Japan",
+      "category": "Prices",
+      "description": "Inflation (CPI)",
+      "frequency": "Yearly",
+      "unit": "% annual",
+      "title": "Japan Inflation (CPI)",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "jpn.sl.uem.totl.zs",
+      "last": 7.01,
+      "date": "2024-12-31T00:00:00",
+      "previous": 6.71,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Japan",
+      "category": "Labour",
+      "description": "Unemployment",
+      "frequency": "Yearly",
+      "unit": "% of labor force",
+      "title": "Japan Unemployment",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "jpn.fr.inr.rinr",
+      "last": 3.91,
+      "date": "2024-12-31T00:00:00",
+      "previous": 3.61,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Japan",
+      "category": "Financial",
+      "description": "Real Interest Rate",
+      "frequency": "Yearly",
+      "unit": "%",
+      "title": "Japan Real Interest Rate",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
+      "symbol": "jpn.ny.gdp.pcap.cd",
+      "last": 45001.75,
+      "date": "2024-12-31T00:00:00",
+      "previous": 45001.6,
+      "previousDate": "2023-12-31T00:00:00",
+      "country": "Japan",
+      "category": "GDP",
+      "description": "GDP per Capita",
+      "frequency": "Yearly",
+      "unit": "current US$",
+      "title": "Japan GDP per Capita",
+      "lastUpdate": "2025-01-15T00:00:00"
+    },
+    {
       "symbol": "gbr.ny.gdp.mktp.kd.zg",
       "last": 3.94,
       "date": "2024-12-31T00:00:00",
@@ -421,2685 +421,1345 @@
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "chn.ny.gdp.mktp.kd.zg",
-      "last": 4.92,
+      "symbol": "usa.ny.gdp.mktp.kd.zg",
+      "last": 4.44,
       "date": "2024-12-31T00:00:00",
-      "previous": 4.62,
+      "previous": 4.44,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "China",
+      "country": "United States",
       "category": "GDP",
       "description": "GDP Growth",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "China GDP Growth",
+      "title": "United States GDP Growth",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "chn.fp.cpi.totl.zg",
-      "last": 4.8,
+      "symbol": "usa.fp.cpi.totl.zg",
+      "last": 5.54,
       "date": "2024-12-31T00:00:00",
-      "previous": 4.35,
+      "previous": 5.24,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "China",
+      "country": "United States",
       "category": "Prices",
       "description": "Inflation (CPI)",
       "frequency": "Yearly",
       "unit": "% annual",
-      "title": "China Inflation (CPI)",
+      "title": "United States Inflation (CPI)",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "chn.sl.uem.totl.zs",
-      "last": 7.4,
+      "symbol": "usa.sl.uem.totl.zs",
+      "last": 8.14,
       "date": "2024-12-31T00:00:00",
-      "previous": 6.95,
+      "previous": 7.84,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "China",
+      "country": "United States",
       "category": "Labour",
       "description": "Unemployment",
       "frequency": "Yearly",
       "unit": "% of labor force",
-      "title": "China Unemployment",
+      "title": "United States Unemployment",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "chn.fr.inr.rinr",
-      "last": 3.72,
+      "symbol": "usa.fr.inr.rinr",
+      "last": 4.27,
       "date": "2024-12-31T00:00:00",
-      "previous": 4.02,
+      "previous": 4.57,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "China",
+      "country": "United States",
       "category": "Financial",
       "description": "Real Interest Rate",
       "frequency": "Yearly",
       "unit": "%",
-      "title": "China Real Interest Rate",
+      "title": "United States Real Interest Rate",
       "lastUpdate": "2025-01-15T00:00:00"
     },
     {
-      "symbol": "chn.ny.gdp.pcap.cd",
-      "last": 45002.36,
+      "symbol": "usa.ny.gdp.pcap.cd",
+      "last": 45002.66,
       "date": "2024-12-31T00:00:00",
-      "previous": 45002.36,
+      "previous": 45002.51,
       "previousDate": "2023-12-31T00:00:00",
-      "country": "China",
+      "country": "United States",
       "category": "GDP",
       "description": "GDP per Capita",
       "frequency": "Yearly",
       "unit": "current US$",
-      "title": "China GDP per Capita",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "ind.ny.gdp.mktp.kd.zg",
-      "last": 3.41,
-      "date": "2024-12-31T00:00:00",
-      "previous": 3.56,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "India",
-      "category": "GDP",
-      "description": "GDP Growth",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "India GDP Growth",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "ind.fp.cpi.totl.zg",
-      "last": 3.89,
-      "date": "2024-12-31T00:00:00",
-      "previous": 4.19,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "India",
-      "category": "Prices",
-      "description": "Inflation (CPI)",
-      "frequency": "Yearly",
-      "unit": "% annual",
-      "title": "India Inflation (CPI)",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "ind.sl.uem.totl.zs",
-      "last": 6.09,
-      "date": "2024-12-31T00:00:00",
-      "previous": 6.39,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "India",
-      "category": "Labour",
-      "description": "Unemployment",
-      "frequency": "Yearly",
-      "unit": "% of labor force",
-      "title": "India Unemployment",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "ind.fr.inr.rinr",
-      "last": 2.34,
-      "date": "2024-12-31T00:00:00",
-      "previous": 1.89,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "India",
-      "category": "Financial",
-      "description": "Real Interest Rate",
-      "frequency": "Yearly",
-      "unit": "%",
-      "title": "India Real Interest Rate",
-      "lastUpdate": "2025-01-15T00:00:00"
-    },
-    {
-      "symbol": "ind.ny.gdp.pcap.cd",
-      "last": 45001.13,
-      "date": "2024-12-31T00:00:00",
-      "previous": 45001.13,
-      "previousDate": "2023-12-31T00:00:00",
-      "country": "India",
-      "category": "GDP",
-      "description": "GDP per Capita",
-      "frequency": "Yearly",
-      "unit": "current US$",
-      "title": "India GDP per Capita",
+      "title": "United States GDP per Capita",
       "lastUpdate": "2025-01-15T00:00:00"
     }
   ],
   "historical": {
-    "usa.ny.gdp.mktp.kd.zg": [
+    "can.ny.gdp.mktp.kd.zg": [
       {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2000-12-31T00:00:00",
-        "value": 5.05
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 4.89
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 4.71
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 4.5
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 4.28
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 4.07
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 3.88
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 3.71
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 3.59
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 3.52
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 3.5
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.54
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.63
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.76
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 3.94
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 4.14
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 4.35
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 4.57
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 4.78
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 4.96
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 5.11
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 5.21
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 5.26
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 5.25
-      },
-      {
-        "symbol": "usa.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 5.2
-      }
-    ],
-    "usa.fp.cpi.totl.zg": [
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 5.42
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 5.74
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 6.03
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 6.25
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 6.4
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 6.47
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 6.45
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 6.35
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 6.17
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 5.92
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 5.61
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 5.28
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 4.93
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 4.59
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 4.28
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 4.02
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 3.83
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 3.72
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 3.69
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 3.74
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 3.88
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 4.1
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2022-12-31T00:00:00",
         "value": 4.38
       },
       {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 4.7
-      },
-      {
-        "symbol": "usa.fp.cpi.totl.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 5.04
-      }
-    ],
-    "usa.sl.uem.totl.zs": [
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2000-12-31T00:00:00",
-        "value": 9.46
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2001-12-31T00:00:00",
-        "value": 9.57
+        "value": 4.37
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2002-12-31T00:00:00",
-        "value": 9.54
+        "value": 4.31
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2003-12-31T00:00:00",
-        "value": 9.38
+        "value": 4.19
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2004-12-31T00:00:00",
-        "value": 9.11
+        "value": 4.04
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2005-12-31T00:00:00",
-        "value": 8.73
+        "value": 3.85
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2006-12-31T00:00:00",
-        "value": 8.28
+        "value": 3.64
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2007-12-31T00:00:00",
-        "value": 7.77
+        "value": 3.42
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2008-12-31T00:00:00",
-        "value": 7.25
+        "value": 3.21
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2009-12-31T00:00:00",
-        "value": 6.74
+        "value": 3.02
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2010-12-31T00:00:00",
-        "value": 6.28
+        "value": 2.86
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2011-12-31T00:00:00",
-        "value": 5.89
+        "value": 2.74
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2012-12-31T00:00:00",
-        "value": 5.6
+        "value": 2.66
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2013-12-31T00:00:00",
-        "value": 5.43
+        "value": 2.65
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2014-12-31T00:00:00",
-        "value": 5.38
+        "value": 2.68
       },
       {
-        "symbol": "usa.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
         "date": "2015-12-31T00:00:00",
-        "value": 5.47
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2016-12-31T00:00:00",
-        "value": 5.68
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2017-12-31T00:00:00",
-        "value": 6
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
-        "value": 6.42
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2019-12-31T00:00:00",
-        "value": 6.9
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2020-12-31T00:00:00",
-        "value": 7.42
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2021-12-31T00:00:00",
-        "value": 7.94
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2022-12-31T00:00:00",
-        "value": 8.43
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2023-12-31T00:00:00",
-        "value": 8.87
-      },
-      {
-        "symbol": "usa.sl.uem.totl.zs",
-        "date": "2024-12-31T00:00:00",
-        "value": 9.22
-      }
-    ],
-    "usa.fr.inr.rinr": [
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2000-12-31T00:00:00",
-        "value": 4.17
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.92
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.66
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2003-12-31T00:00:00",
-        "value": 3.4
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2004-12-31T00:00:00",
-        "value": 3.17
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2005-12-31T00:00:00",
-        "value": 2.98
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2006-12-31T00:00:00",
-        "value": 2.84
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2007-12-31T00:00:00",
-        "value": 2.75
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2008-12-31T00:00:00",
-        "value": 2.73
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2009-12-31T00:00:00",
         "value": 2.77
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.91
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 3.08
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 3.28
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 3.5
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 3.71
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 3.92
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 4.1
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 4.25
+      },
+      {
+        "symbol": "can.ny.gdp.mktp.kd.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 4.35
+      }
+    ],
+    "can.fp.cpi.totl.zg": [
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 5.39
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 5.54
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 5.61
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 5.59
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 5.49
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 5.3
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 5.05
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 4.75
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 4.41
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 4.07
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2010-12-31T00:00:00",
+        "value": 3.73
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.42
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 3.16
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 2.97
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.85
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.82
+      },
+      {
+        "symbol": "can.fp.cpi.totl.zg",
+        "date": "2016-12-31T00:00:00",
         "value": 2.88
       },
       {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.04
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.25
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.49
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2014-12-31T00:00:00",
-        "value": 3.75
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2015-12-31T00:00:00",
-        "value": 4.01
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
-        "date": "2016-12-31T00:00:00",
-        "value": 4.26
-      },
-      {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2017-12-31T00:00:00",
-        "value": 4.47
+        "value": 3.02
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2018-12-31T00:00:00",
-        "value": 4.65
+        "value": 3.24
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2019-12-31T00:00:00",
-        "value": 4.77
+        "value": 3.51
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2020-12-31T00:00:00",
-        "value": 4.83
+        "value": 3.84
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2021-12-31T00:00:00",
-        "value": 4.83
+        "value": 4.18
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2022-12-31T00:00:00",
-        "value": 4.76
+        "value": 4.53
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2023-12-31T00:00:00",
-        "value": 4.63
+        "value": 4.86
       },
       {
-        "symbol": "usa.fr.inr.rinr",
+        "symbol": "can.fp.cpi.totl.zg",
         "date": "2024-12-31T00:00:00",
-        "value": 4.45
+        "value": 5.15
       }
     ],
-    "usa.ny.gdp.pcap.cd": [
+    "can.sl.uem.totl.zs": [
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2000-12-31T00:00:00",
-        "value": 51949.26
+        "value": 8.52
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2001-12-31T00:00:00",
-        "value": 49325.33
+        "value": 8.25
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2002-12-31T00:00:00",
-        "value": 46410.7
+        "value": 7.87
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2003-12-31T00:00:00",
-        "value": 43388.59
+        "value": 7.41
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2004-12-31T00:00:00",
-        "value": 40448.89
+        "value": 6.91
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2005-12-31T00:00:00",
-        "value": 37776.35
+        "value": 6.39
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2006-12-31T00:00:00",
-        "value": 35539.15
+        "value": 5.88
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2007-12-31T00:00:00",
-        "value": 33878.36
+        "value": 5.42
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2008-12-31T00:00:00",
-        "value": 32899.24
+        "value": 5.03
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2009-12-31T00:00:00",
-        "value": 32664.64
+        "value": 4.74
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2010-12-31T00:00:00",
-        "value": 33191.16
+        "value": 4.57
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2011-12-31T00:00:00",
-        "value": 34448.03
+        "value": 4.52
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2012-12-31T00:00:00",
-        "value": 36359.11
+        "value": 4.61
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2013-12-31T00:00:00",
-        "value": 38807.56
+        "value": 4.82
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2014-12-31T00:00:00",
-        "value": 41643.14
+        "value": 5.14
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2015-12-31T00:00:00",
-        "value": 44691.53
+        "value": 5.56
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2016-12-31T00:00:00",
-        "value": 47765.2
+        "value": 6.04
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2017-12-31T00:00:00",
-        "value": 50675.02
+        "value": 6.55
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2018-12-31T00:00:00",
-        "value": 53242.07
+        "value": 7.08
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2019-12-31T00:00:00",
-        "value": 55308.72
+        "value": 7.57
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2020-12-31T00:00:00",
-        "value": 56748.48
+        "value": 8.01
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2021-12-31T00:00:00",
-        "value": 57473.82
+        "value": 8.36
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2022-12-31T00:00:00",
-        "value": 57441.62
+        "value": 8.6
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2023-12-31T00:00:00",
-        "value": 56655.88
+        "value": 8.72
       },
       {
-        "symbol": "usa.ny.gdp.pcap.cd",
+        "symbol": "can.sl.uem.totl.zs",
         "date": "2024-12-31T00:00:00",
-        "value": 55167.45
+        "value": 8.71
       }
     ],
-    "bra.ny.gdp.mktp.kd.zg": [
+    "can.fr.inr.rinr": [
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2000-12-31T00:00:00",
-        "value": 2.9
+        "value": 2.91
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2001-12-31T00:00:00",
-        "value": 2.69
+        "value": 3.17
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2002-12-31T00:00:00",
-        "value": 2.48
+        "value": 3.42
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2003-12-31T00:00:00",
-        "value": 2.27
+        "value": 3.63
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2004-12-31T00:00:00",
-        "value": 2.07
+        "value": 3.8
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2005-12-31T00:00:00",
-        "value": 1.91
+        "value": 3.91
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2006-12-31T00:00:00",
-        "value": 1.79
+        "value": 3.96
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2007-12-31T00:00:00",
-        "value": 1.72
+        "value": 3.95
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2008-12-31T00:00:00",
-        "value": 1.7
+        "value": 3.87
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2009-12-31T00:00:00",
-        "value": 1.74
+        "value": 3.73
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2010-12-31T00:00:00",
-        "value": 1.83
+        "value": 3.55
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2011-12-31T00:00:00",
-        "value": 1.96
+        "value": 3.32
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2012-12-31T00:00:00",
-        "value": 2.14
+        "value": 3.07
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2013-12-31T00:00:00",
-        "value": 2.34
+        "value": 2.81
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2014-12-31T00:00:00",
         "value": 2.55
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2015-12-31T00:00:00",
-        "value": 2.77
+        "value": 2.32
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2016-12-31T00:00:00",
-        "value": 2.98
+        "value": 2.13
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2017-12-31T00:00:00",
-        "value": 3.16
+        "value": 1.98
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2018-12-31T00:00:00",
-        "value": 3.3
+        "value": 1.9
       },
       {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2019-12-31T00:00:00",
-        "value": 3.41
-      },
-      {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 3.46
-      },
-      {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 3.45
-      },
-      {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 3.4
-      },
-      {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 3.29
-      },
-      {
-        "symbol": "bra.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 3.14
-      }
-    ],
-    "bra.fp.cpi.totl.zg": [
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 3.8
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.47
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.12
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 2.78
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 2.47
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 2.21
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 2.02
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 1.91
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
         "value": 1.88
       },
       {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 1.94
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.08
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.29
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 2.57
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 2.89
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 3.24
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 3.58
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 3.91
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 4.2
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 4.44
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 4.6
-      },
-      {
-        "symbol": "bra.fp.cpi.totl.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2020-12-31T00:00:00",
-        "value": 4.68
+        "value": 1.92
       },
       {
-        "symbol": "bra.fp.cpi.totl.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2021-12-31T00:00:00",
-        "value": 4.67
+        "value": 2.03
       },
       {
-        "symbol": "bra.fp.cpi.totl.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2022-12-31T00:00:00",
-        "value": 4.58
+        "value": 2.19
       },
       {
-        "symbol": "bra.fp.cpi.totl.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2023-12-31T00:00:00",
-        "value": 4.41
+        "value": 2.4
       },
       {
-        "symbol": "bra.fp.cpi.totl.zg",
+        "symbol": "can.fr.inr.rinr",
         "date": "2024-12-31T00:00:00",
-        "value": 4.16
+        "value": 2.64
       }
     ],
-    "bra.sl.uem.totl.zs": [
+    "can.ny.gdp.pcap.cd": [
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2000-12-31T00:00:00",
-        "value": 7.1
+        "value": 56670.95
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2001-12-31T00:00:00",
-        "value": 7.44
+        "value": 55788.01
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2002-12-31T00:00:00",
-        "value": 7.66
+        "value": 54212.52
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2003-12-31T00:00:00",
-        "value": 7.77
+        "value": 52044.4
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2004-12-31T00:00:00",
-        "value": 7.74
+        "value": 49420.47
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2005-12-31T00:00:00",
-        "value": 7.58
+        "value": 46505.84
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2006-12-31T00:00:00",
-        "value": 7.31
+        "value": 43483.73
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2007-12-31T00:00:00",
-        "value": 6.93
+        "value": 40544.03
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2008-12-31T00:00:00",
-        "value": 6.48
+        "value": 37871.49
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2009-12-31T00:00:00",
-        "value": 5.97
+        "value": 35634.29
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2010-12-31T00:00:00",
-        "value": 5.45
+        "value": 33973.5
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2011-12-31T00:00:00",
-        "value": 4.94
+        "value": 32994.38
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2012-12-31T00:00:00",
-        "value": 4.48
+        "value": 32759.78
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2013-12-31T00:00:00",
-        "value": 4.09
+        "value": 33286.3
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2014-12-31T00:00:00",
-        "value": 3.8
+        "value": 34543.17
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2015-12-31T00:00:00",
-        "value": 3.63
+        "value": 36454.25
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2016-12-31T00:00:00",
-        "value": 3.58
+        "value": 38902.7
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
+        "symbol": "can.ny.gdp.pcap.cd",
         "date": "2017-12-31T00:00:00",
+        "value": 41738.28
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2018-12-31T00:00:00",
+        "value": 44786.67
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2019-12-31T00:00:00",
+        "value": 47860.34
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2020-12-31T00:00:00",
+        "value": 50770.16
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2021-12-31T00:00:00",
+        "value": 53337.21
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2022-12-31T00:00:00",
+        "value": 55403.86
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2023-12-31T00:00:00",
+        "value": 56843.62
+      },
+      {
+        "symbol": "can.ny.gdp.pcap.cd",
+        "date": "2024-12-31T00:00:00",
+        "value": 57568.96
+      }
+    ],
+    "fra.ny.gdp.mktp.kd.zg": [
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2000-12-31T00:00:00",
         "value": 3.67
       },
       {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
-        "value": 3.88
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2019-12-31T00:00:00",
-        "value": 4.2
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2020-12-31T00:00:00",
-        "value": 4.62
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2021-12-31T00:00:00",
-        "value": 5.1
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2022-12-31T00:00:00",
-        "value": 5.62
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2023-12-31T00:00:00",
-        "value": 6.14
-      },
-      {
-        "symbol": "bra.sl.uem.totl.zs",
-        "date": "2024-12-31T00:00:00",
-        "value": 6.63
-      }
-    ],
-    "bra.fr.inr.rinr": [
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2000-12-31T00:00:00",
-        "value": 3
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2001-12-31T00:00:00",
-        "value": 2.93
+        "value": 3.87
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2002-12-31T00:00:00",
-        "value": 2.79
+        "value": 4.05
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2003-12-31T00:00:00",
-        "value": 2.6
+        "value": 4.19
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2004-12-31T00:00:00",
-        "value": 2.37
+        "value": 4.28
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2005-12-31T00:00:00",
-        "value": 2.12
+        "value": 4.33
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2006-12-31T00:00:00",
-        "value": 1.86
+        "value": 4.32
       },
       {
-        "symbol": "bra.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2007-12-31T00:00:00",
-        "value": 1.61
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2008-12-31T00:00:00",
-        "value": 1.38
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2009-12-31T00:00:00",
-        "value": 1.18
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2010-12-31T00:00:00",
-        "value": 1.04
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2011-12-31T00:00:00",
-        "value": 0.95
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2012-12-31T00:00:00",
-        "value": 0.93
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2013-12-31T00:00:00",
-        "value": 0.97
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2014-12-31T00:00:00",
-        "value": 1.08
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2015-12-31T00:00:00",
-        "value": 1.24
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2016-12-31T00:00:00",
-        "value": 1.45
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2017-12-31T00:00:00",
-        "value": 1.69
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2018-12-31T00:00:00",
-        "value": 1.95
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2019-12-31T00:00:00",
-        "value": 2.21
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2020-12-31T00:00:00",
-        "value": 2.46
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2021-12-31T00:00:00",
-        "value": 2.68
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2022-12-31T00:00:00",
-        "value": 2.85
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2023-12-31T00:00:00",
-        "value": 2.97
-      },
-      {
-        "symbol": "bra.fr.inr.rinr",
-        "date": "2024-12-31T00:00:00",
-        "value": 3.03
-      }
-    ],
-    "bra.ny.gdp.pcap.cd": [
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2000-12-31T00:00:00",
-        "value": 44616.18
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2001-12-31T00:00:00",
-        "value": 47678.88
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2002-12-31T00:00:00",
-        "value": 50553.14
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2003-12-31T00:00:00",
-        "value": 53062.25
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2004-12-31T00:00:00",
-        "value": 55052.2
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2005-12-31T00:00:00",
-        "value": 56401.24
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2006-12-31T00:00:00",
-        "value": 57027.49
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2007-12-31T00:00:00",
-        "value": 56894.01
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2008-12-31T00:00:00",
-        "value": 56011.07
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2009-12-31T00:00:00",
-        "value": 54435.58
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2010-12-31T00:00:00",
-        "value": 52267.46
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2011-12-31T00:00:00",
-        "value": 49643.53
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2012-12-31T00:00:00",
-        "value": 46728.9
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2013-12-31T00:00:00",
-        "value": 43706.79
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2014-12-31T00:00:00",
-        "value": 40767.09
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2015-12-31T00:00:00",
-        "value": 38094.55
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2016-12-31T00:00:00",
-        "value": 35857.35
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2017-12-31T00:00:00",
-        "value": 34196.56
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2018-12-31T00:00:00",
-        "value": 33217.44
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2019-12-31T00:00:00",
-        "value": 32982.84
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2020-12-31T00:00:00",
-        "value": 33509.36
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2021-12-31T00:00:00",
-        "value": 34766.23
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2022-12-31T00:00:00",
-        "value": 36677.31
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2023-12-31T00:00:00",
-        "value": 39125.76
-      },
-      {
-        "symbol": "bra.ny.gdp.pcap.cd",
-        "date": "2024-12-31T00:00:00",
-        "value": 41961.34
-      }
-    ],
-    "mex.ny.gdp.mktp.kd.zg": [
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 2.81
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 2.99
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.13
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 3.22
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 3.27
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 3.26
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 3.19
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 3.08
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 2.92
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 2.73
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.52
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.3
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 2.09
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 1.9
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 1.74
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 1.62
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 1.55
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 1.53
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 1.57
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 1.65
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 1.79
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 1.96
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 2.16
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 2.38
-      },
-      {
-        "symbol": "mex.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 2.6
-      }
-    ],
-    "mex.fp.cpi.totl.zg": [
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 4.36
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 4.18
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.93
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 3.63
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 3.29
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 2.94
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 2.6
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 2.3
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 2.04
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 1.84
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 1.73
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 1.7
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 1.76
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 1.9
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.11
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 2.39
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 2.71
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 3.06
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 3.41
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 3.74
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 4.03
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 4.26
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 4.42
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 4.5
-      },
-      {
-        "symbol": "mex.fp.cpi.totl.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 4.49
-      }
-    ],
-    "mex.sl.uem.totl.zs": [
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2000-12-31T00:00:00",
-        "value": 7.26
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2001-12-31T00:00:00",
-        "value": 7.48
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2002-12-31T00:00:00",
-        "value": 7.59
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2003-12-31T00:00:00",
-        "value": 7.56
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2004-12-31T00:00:00",
-        "value": 7.4
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2005-12-31T00:00:00",
-        "value": 7.13
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2006-12-31T00:00:00",
-        "value": 6.75
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2007-12-31T00:00:00",
-        "value": 6.3
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2008-12-31T00:00:00",
-        "value": 5.79
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2009-12-31T00:00:00",
-        "value": 5.27
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2010-12-31T00:00:00",
-        "value": 4.76
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2011-12-31T00:00:00",
-        "value": 4.3
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.91
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.62
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2014-12-31T00:00:00",
-        "value": 3.45
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2015-12-31T00:00:00",
-        "value": 3.4
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2016-12-31T00:00:00",
-        "value": 3.49
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2017-12-31T00:00:00",
-        "value": 3.7
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
-        "value": 4.02
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2019-12-31T00:00:00",
-        "value": 4.44
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2020-12-31T00:00:00",
-        "value": 4.92
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2021-12-31T00:00:00",
-        "value": 5.44
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2022-12-31T00:00:00",
-        "value": 5.96
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2023-12-31T00:00:00",
-        "value": 6.45
-      },
-      {
-        "symbol": "mex.sl.uem.totl.zs",
-        "date": "2024-12-31T00:00:00",
-        "value": 6.89
-      }
-    ],
-    "mex.fr.inr.rinr": [
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2000-12-31T00:00:00",
-        "value": 1.79
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2001-12-31T00:00:00",
-        "value": 2.05
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2002-12-31T00:00:00",
-        "value": 2.3
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2003-12-31T00:00:00",
-        "value": 2.51
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2004-12-31T00:00:00",
-        "value": 2.68
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2005-12-31T00:00:00",
-        "value": 2.79
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2006-12-31T00:00:00",
-        "value": 2.84
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2007-12-31T00:00:00",
-        "value": 2.83
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2008-12-31T00:00:00",
-        "value": 2.75
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2009-12-31T00:00:00",
-        "value": 2.61
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.43
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.2
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2012-12-31T00:00:00",
-        "value": 1.95
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2013-12-31T00:00:00",
-        "value": 1.69
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2014-12-31T00:00:00",
-        "value": 1.43
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2015-12-31T00:00:00",
-        "value": 1.2
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2016-12-31T00:00:00",
-        "value": 1.01
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2017-12-31T00:00:00",
-        "value": 0.86
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2018-12-31T00:00:00",
-        "value": 0.78
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2019-12-31T00:00:00",
-        "value": 0.76
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2020-12-31T00:00:00",
-        "value": 0.8
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2021-12-31T00:00:00",
-        "value": 0.91
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2022-12-31T00:00:00",
-        "value": 1.07
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2023-12-31T00:00:00",
-        "value": 1.28
-      },
-      {
-        "symbol": "mex.fr.inr.rinr",
-        "date": "2024-12-31T00:00:00",
-        "value": 1.52
-      }
-    ],
-    "mex.ny.gdp.pcap.cd": [
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2000-12-31T00:00:00",
-        "value": 54147.4
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2001-12-31T00:00:00",
-        "value": 51979.28
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2002-12-31T00:00:00",
-        "value": 49355.35
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2003-12-31T00:00:00",
-        "value": 46440.72
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2004-12-31T00:00:00",
-        "value": 43418.61
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2005-12-31T00:00:00",
-        "value": 40478.91
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2006-12-31T00:00:00",
-        "value": 37806.37
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2007-12-31T00:00:00",
-        "value": 35569.17
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2008-12-31T00:00:00",
-        "value": 33908.38
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2009-12-31T00:00:00",
-        "value": 32929.26
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2010-12-31T00:00:00",
-        "value": 32694.66
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2011-12-31T00:00:00",
-        "value": 33221.18
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2012-12-31T00:00:00",
-        "value": 34478.05
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2013-12-31T00:00:00",
-        "value": 36389.13
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2014-12-31T00:00:00",
-        "value": 38837.58
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2015-12-31T00:00:00",
-        "value": 41673.16
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2016-12-31T00:00:00",
-        "value": 44721.55
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2017-12-31T00:00:00",
-        "value": 47795.22
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2018-12-31T00:00:00",
-        "value": 50705.04
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2019-12-31T00:00:00",
-        "value": 53272.09
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2020-12-31T00:00:00",
-        "value": 55338.74
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2021-12-31T00:00:00",
-        "value": 56778.5
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2022-12-31T00:00:00",
-        "value": 57503.84
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2023-12-31T00:00:00",
-        "value": 57471.64
-      },
-      {
-        "symbol": "mex.ny.gdp.pcap.cd",
-        "date": "2024-12-31T00:00:00",
-        "value": 56685.9
-      }
-    ],
-    "jpn.ny.gdp.mktp.kd.zg": [
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 3.77
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.95
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 4.09
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 4.18
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 4.23
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 4.22
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 4.15
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 4.04
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 3.88
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 3.69
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 3.48
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.26
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.05
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 2.86
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.7
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 2.58
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 2.51
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 2.49
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 2.53
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 2.61
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 2.75
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 2.92
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 3.12
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 3.34
-      },
-      {
-        "symbol": "jpn.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 3.56
-      }
-    ],
-    "jpn.fp.cpi.totl.zg": [
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 5.23
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 5.38
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 5.45
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 5.43
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 5.33
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 5.14
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 4.89
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 4.59
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
         "value": 4.25
       },
       {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 3.91
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 3.57
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.26
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 3
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 2.81
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.69
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 2.66
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 2.72
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 2.86
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 3.08
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 3.35
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 3.68
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 4.02
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 4.37
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 4.7
-      },
-      {
-        "symbol": "jpn.fp.cpi.totl.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 4.99
-      }
-    ],
-    "jpn.sl.uem.totl.zs": [
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2000-12-31T00:00:00",
-        "value": 8.36
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2001-12-31T00:00:00",
-        "value": 8.09
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2002-12-31T00:00:00",
-        "value": 7.71
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2003-12-31T00:00:00",
-        "value": 7.25
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2004-12-31T00:00:00",
-        "value": 6.75
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2005-12-31T00:00:00",
-        "value": 6.23
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2006-12-31T00:00:00",
-        "value": 5.72
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2007-12-31T00:00:00",
-        "value": 5.26
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2008-12-31T00:00:00",
-        "value": 4.87
+        "value": 4.14
       },
       {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2009-12-31T00:00:00",
-        "value": 4.58
+        "value": 3.98
       },
       {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2010-12-31T00:00:00",
-        "value": 4.41
+        "value": 3.79
       },
       {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2011-12-31T00:00:00",
-        "value": 4.36
+        "value": 3.58
       },
       {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2012-12-31T00:00:00",
-        "value": 4.45
+        "value": 3.37
       },
       {
-        "symbol": "jpn.sl.uem.totl.zs",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
         "date": "2013-12-31T00:00:00",
-        "value": 4.66
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2014-12-31T00:00:00",
-        "value": 4.98
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2015-12-31T00:00:00",
-        "value": 5.4
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2016-12-31T00:00:00",
-        "value": 5.88
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2017-12-31T00:00:00",
-        "value": 6.39
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
-        "value": 6.92
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2019-12-31T00:00:00",
-        "value": 7.41
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2020-12-31T00:00:00",
-        "value": 7.85
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2021-12-31T00:00:00",
-        "value": 8.2
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2022-12-31T00:00:00",
-        "value": 8.44
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2023-12-31T00:00:00",
-        "value": 8.56
-      },
-      {
-        "symbol": "jpn.sl.uem.totl.zs",
-        "date": "2024-12-31T00:00:00",
-        "value": 8.55
-      }
-    ],
-    "jpn.fr.inr.rinr": [
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2000-12-31T00:00:00",
-        "value": 3.71
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.57
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.38
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2003-12-31T00:00:00",
         "value": 3.15
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.96
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.8
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.68
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.61
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 2.59
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 2.63
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 2.71
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 2.85
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 3.02
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 3.22
+      },
+      {
+        "symbol": "fra.ny.gdp.mktp.kd.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 3.44
+      }
+    ],
+    "fra.fp.cpi.totl.zg": [
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 5.1
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 5.33
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 5.48
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 5.55
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2004-12-31T00:00:00",
-        "value": 2.9
+        "value": 5.53
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2005-12-31T00:00:00",
-        "value": 2.64
+        "value": 5.43
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2006-12-31T00:00:00",
-        "value": 2.39
+        "value": 5.24
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2007-12-31T00:00:00",
-        "value": 2.16
+        "value": 4.99
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2008-12-31T00:00:00",
-        "value": 1.96
+        "value": 4.69
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2009-12-31T00:00:00",
-        "value": 1.82
+        "value": 4.36
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2010-12-31T00:00:00",
-        "value": 1.73
+        "value": 4.01
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2011-12-31T00:00:00",
-        "value": 1.71
+        "value": 3.67
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2012-12-31T00:00:00",
-        "value": 1.75
+        "value": 3.36
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fp.cpi.totl.zg",
         "date": "2013-12-31T00:00:00",
+        "value": 3.1
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.91
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.79
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.76
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.82
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 2.96
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 3.18
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 3.45
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 3.78
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 4.12
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 4.47
+      },
+      {
+        "symbol": "fra.fp.cpi.totl.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 4.8
+      }
+    ],
+    "fra.sl.uem.totl.zs": [
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2000-12-31T00:00:00",
+        "value": 8.62
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2001-12-31T00:00:00",
+        "value": 8.46
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2002-12-31T00:00:00",
+        "value": 8.19
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2003-12-31T00:00:00",
+        "value": 7.81
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2004-12-31T00:00:00",
+        "value": 7.36
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2005-12-31T00:00:00",
+        "value": 6.85
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2006-12-31T00:00:00",
+        "value": 6.33
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2007-12-31T00:00:00",
+        "value": 5.82
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2008-12-31T00:00:00",
+        "value": 5.36
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2009-12-31T00:00:00",
+        "value": 4.97
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2010-12-31T00:00:00",
+        "value": 4.68
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2011-12-31T00:00:00",
+        "value": 4.51
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2012-12-31T00:00:00",
+        "value": 4.46
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2013-12-31T00:00:00",
+        "value": 4.55
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2014-12-31T00:00:00",
+        "value": 4.76
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2015-12-31T00:00:00",
+        "value": 5.08
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2016-12-31T00:00:00",
+        "value": 5.5
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2017-12-31T00:00:00",
+        "value": 5.98
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2018-12-31T00:00:00",
+        "value": 6.5
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2019-12-31T00:00:00",
+        "value": 7.02
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2020-12-31T00:00:00",
+        "value": 7.51
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2021-12-31T00:00:00",
+        "value": 7.95
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2022-12-31T00:00:00",
+        "value": 8.3
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2023-12-31T00:00:00",
+        "value": 8.54
+      },
+      {
+        "symbol": "fra.sl.uem.totl.zs",
+        "date": "2024-12-31T00:00:00",
+        "value": 8.66
+      }
+    ],
+    "fra.fr.inr.rinr": [
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2000-12-31T00:00:00",
+        "value": 3.57
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2001-12-31T00:00:00",
+        "value": 3.73
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2002-12-31T00:00:00",
+        "value": 3.85
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2003-12-31T00:00:00",
+        "value": 3.9
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2004-12-31T00:00:00",
+        "value": 3.89
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2005-12-31T00:00:00",
+        "value": 3.81
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2006-12-31T00:00:00",
+        "value": 3.67
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2007-12-31T00:00:00",
+        "value": 3.48
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2008-12-31T00:00:00",
+        "value": 3.26
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2009-12-31T00:00:00",
+        "value": 3.01
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2010-12-31T00:00:00",
+        "value": 2.74
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2011-12-31T00:00:00",
+        "value": 2.49
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2012-12-31T00:00:00",
+        "value": 2.26
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2013-12-31T00:00:00",
+        "value": 2.07
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2014-12-31T00:00:00",
+        "value": 1.92
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2015-12-31T00:00:00",
+        "value": 1.84
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2016-12-31T00:00:00",
+        "value": 1.81
+      },
+      {
+        "symbol": "fra.fr.inr.rinr",
+        "date": "2017-12-31T00:00:00",
         "value": 1.86
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.02
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2015-12-31T00:00:00",
-        "value": 2.23
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2016-12-31T00:00:00",
-        "value": 2.47
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
-        "date": "2017-12-31T00:00:00",
-        "value": 2.73
-      },
-      {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2018-12-31T00:00:00",
-        "value": 2.99
+        "value": 1.96
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2019-12-31T00:00:00",
-        "value": 3.24
+        "value": 2.12
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2020-12-31T00:00:00",
-        "value": 3.46
+        "value": 2.33
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2021-12-31T00:00:00",
-        "value": 3.63
+        "value": 2.57
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2022-12-31T00:00:00",
-        "value": 3.75
+        "value": 2.83
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2023-12-31T00:00:00",
-        "value": 3.81
+        "value": 3.09
       },
       {
-        "symbol": "jpn.fr.inr.rinr",
+        "symbol": "fra.fr.inr.rinr",
         "date": "2024-12-31T00:00:00",
-        "value": 3.81
+        "value": 3.34
       }
     ],
-    "jpn.ny.gdp.pcap.cd": [
+    "fra.ny.gdp.pcap.cd": [
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2000-12-31T00:00:00",
-        "value": 56670.79
+        "value": 55755.95
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2001-12-31T00:00:00",
-        "value": 55787.85
+        "value": 54180.46
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2002-12-31T00:00:00",
-        "value": 54212.36
+        "value": 52012.34
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2003-12-31T00:00:00",
-        "value": 52044.24
+        "value": 49388.41
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2004-12-31T00:00:00",
-        "value": 49420.31
+        "value": 46473.78
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2005-12-31T00:00:00",
-        "value": 46505.68
+        "value": 43451.67
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2006-12-31T00:00:00",
-        "value": 43483.57
+        "value": 40511.97
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2007-12-31T00:00:00",
-        "value": 40543.87
+        "value": 37839.43
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2008-12-31T00:00:00",
-        "value": 37871.33
+        "value": 35602.23
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2009-12-31T00:00:00",
-        "value": 35634.13
+        "value": 33941.44
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2010-12-31T00:00:00",
-        "value": 33973.34
+        "value": 32962.32
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2011-12-31T00:00:00",
-        "value": 32994.22
+        "value": 32727.72
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2012-12-31T00:00:00",
-        "value": 32759.62
+        "value": 33254.24
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2013-12-31T00:00:00",
-        "value": 33286.14
+        "value": 34511.11
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2014-12-31T00:00:00",
-        "value": 34543.01
+        "value": 36422.19
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2015-12-31T00:00:00",
-        "value": 36454.09
+        "value": 38870.64
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2016-12-31T00:00:00",
-        "value": 38902.54
+        "value": 41706.22
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2017-12-31T00:00:00",
-        "value": 41738.12
+        "value": 44754.61
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2018-12-31T00:00:00",
-        "value": 44786.51
+        "value": 47828.28
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2019-12-31T00:00:00",
-        "value": 47860.18
+        "value": 50738.1
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2020-12-31T00:00:00",
-        "value": 50770
+        "value": 53305.15
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2021-12-31T00:00:00",
-        "value": 53337.05
+        "value": 55371.8
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2022-12-31T00:00:00",
-        "value": 55403.7
+        "value": 56811.56
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2023-12-31T00:00:00",
-        "value": 56843.46
+        "value": 57536.9
       },
       {
-        "symbol": "jpn.ny.gdp.pcap.cd",
+        "symbol": "fra.ny.gdp.pcap.cd",
         "date": "2024-12-31T00:00:00",
-        "value": 57568.8
+        "value": 57504.7
       }
     ],
     "deu.ny.gdp.mktp.kd.zg": [
@@ -3737,6 +2397,1276 @@
         "value": 50898
       }
     ],
+    "ita.ny.gdp.mktp.kd.zg": [
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 5.15
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 5.03
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 4.88
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 4.69
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 4.48
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 4.26
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 4.05
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 3.86
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 3.69
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 3.57
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2010-12-31T00:00:00",
+        "value": 3.5
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.48
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 3.52
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 3.61
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 3.74
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 3.92
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 4.12
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 4.33
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 4.55
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 4.76
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 4.94
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 5.09
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 5.19
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 5.24
+      },
+      {
+        "symbol": "ita.ny.gdp.mktp.kd.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 5.24
+      }
+    ],
+    "ita.fp.cpi.totl.zg": [
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 5.72
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 6.01
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 6.23
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 6.38
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 6.45
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 6.43
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 6.33
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 6.15
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 5.89
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 5.59
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2010-12-31T00:00:00",
+        "value": 5.26
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 4.91
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 4.57
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 4.26
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 4
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 3.81
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 3.69
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 3.66
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 3.72
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 3.86
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 4.08
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 4.36
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 4.68
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 5.02
+      },
+      {
+        "symbol": "ita.fp.cpi.totl.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 5.37
+      }
+    ],
+    "ita.sl.uem.totl.zs": [
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2000-12-31T00:00:00",
+        "value": 9.55
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2001-12-31T00:00:00",
+        "value": 9.52
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2002-12-31T00:00:00",
+        "value": 9.36
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2003-12-31T00:00:00",
+        "value": 9.09
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2004-12-31T00:00:00",
+        "value": 8.71
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2005-12-31T00:00:00",
+        "value": 8.26
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2006-12-31T00:00:00",
+        "value": 7.75
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2007-12-31T00:00:00",
+        "value": 7.23
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2008-12-31T00:00:00",
+        "value": 6.72
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2009-12-31T00:00:00",
+        "value": 6.26
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2010-12-31T00:00:00",
+        "value": 5.87
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2011-12-31T00:00:00",
+        "value": 5.58
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2012-12-31T00:00:00",
+        "value": 5.41
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2013-12-31T00:00:00",
+        "value": 5.36
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2014-12-31T00:00:00",
+        "value": 5.45
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2015-12-31T00:00:00",
+        "value": 5.66
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2016-12-31T00:00:00",
+        "value": 5.98
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2017-12-31T00:00:00",
+        "value": 6.4
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2018-12-31T00:00:00",
+        "value": 6.88
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2019-12-31T00:00:00",
+        "value": 7.4
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2020-12-31T00:00:00",
+        "value": 7.92
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2021-12-31T00:00:00",
+        "value": 8.41
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2022-12-31T00:00:00",
+        "value": 8.85
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2023-12-31T00:00:00",
+        "value": 9.2
+      },
+      {
+        "symbol": "ita.sl.uem.totl.zs",
+        "date": "2024-12-31T00:00:00",
+        "value": 9.44
+      }
+    ],
+    "ita.fr.inr.rinr": [
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2000-12-31T00:00:00",
+        "value": 4.25
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2001-12-31T00:00:00",
+        "value": 4.47
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2002-12-31T00:00:00",
+        "value": 4.64
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2003-12-31T00:00:00",
+        "value": 4.75
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2004-12-31T00:00:00",
+        "value": 4.8
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2005-12-31T00:00:00",
+        "value": 4.79
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2006-12-31T00:00:00",
+        "value": 4.71
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2007-12-31T00:00:00",
+        "value": 4.57
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2008-12-31T00:00:00",
+        "value": 4.39
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2009-12-31T00:00:00",
+        "value": 4.16
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2010-12-31T00:00:00",
+        "value": 3.91
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.65
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2012-12-31T00:00:00",
+        "value": 3.39
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2013-12-31T00:00:00",
+        "value": 3.16
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.97
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.82
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.74
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.71
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2018-12-31T00:00:00",
+        "value": 2.76
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2019-12-31T00:00:00",
+        "value": 2.86
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2020-12-31T00:00:00",
+        "value": 3.03
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2021-12-31T00:00:00",
+        "value": 3.23
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2022-12-31T00:00:00",
+        "value": 3.47
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2023-12-31T00:00:00",
+        "value": 3.73
+      },
+      {
+        "symbol": "ita.fr.inr.rinr",
+        "date": "2024-12-31T00:00:00",
+        "value": 4
+      }
+    ],
+    "ita.ny.gdp.pcap.cd": [
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2000-12-31T00:00:00",
+        "value": 54149.36
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2001-12-31T00:00:00",
+        "value": 51981.24
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2002-12-31T00:00:00",
+        "value": 49357.31
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2003-12-31T00:00:00",
+        "value": 46442.68
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2004-12-31T00:00:00",
+        "value": 43420.57
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2005-12-31T00:00:00",
+        "value": 40480.87
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2006-12-31T00:00:00",
+        "value": 37808.33
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2007-12-31T00:00:00",
+        "value": 35571.13
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2008-12-31T00:00:00",
+        "value": 33910.34
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2009-12-31T00:00:00",
+        "value": 32931.22
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2010-12-31T00:00:00",
+        "value": 32696.62
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2011-12-31T00:00:00",
+        "value": 33223.14
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2012-12-31T00:00:00",
+        "value": 34480.01
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2013-12-31T00:00:00",
+        "value": 36391.09
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2014-12-31T00:00:00",
+        "value": 38839.54
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2015-12-31T00:00:00",
+        "value": 41675.12
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2016-12-31T00:00:00",
+        "value": 44723.51
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2017-12-31T00:00:00",
+        "value": 47797.18
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2018-12-31T00:00:00",
+        "value": 50707
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2019-12-31T00:00:00",
+        "value": 53274.05
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2020-12-31T00:00:00",
+        "value": 55340.7
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2021-12-31T00:00:00",
+        "value": 56780.46
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2022-12-31T00:00:00",
+        "value": 57505.8
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2023-12-31T00:00:00",
+        "value": 57473.6
+      },
+      {
+        "symbol": "ita.ny.gdp.pcap.cd",
+        "date": "2024-12-31T00:00:00",
+        "value": 56687.86
+      }
+    ],
+    "jpn.ny.gdp.mktp.kd.zg": [
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 3.77
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 3.95
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 4.09
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 4.18
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 4.23
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 4.22
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 4.15
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 4.04
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 3.88
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 3.69
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2010-12-31T00:00:00",
+        "value": 3.48
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.26
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 3.05
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 2.86
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.7
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.58
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.51
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.49
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 2.53
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 2.61
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 2.75
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 2.92
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 3.12
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 3.34
+      },
+      {
+        "symbol": "jpn.ny.gdp.mktp.kd.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 3.56
+      }
+    ],
+    "jpn.fp.cpi.totl.zg": [
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2000-12-31T00:00:00",
+        "value": 5.23
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2001-12-31T00:00:00",
+        "value": 5.38
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 5.45
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 5.43
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 5.33
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 5.14
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 4.89
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 4.59
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 4.25
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 3.91
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2010-12-31T00:00:00",
+        "value": 3.57
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.26
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 3
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 2.81
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.69
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.66
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.72
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.86
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 3.08
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2019-12-31T00:00:00",
+        "value": 3.35
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2020-12-31T00:00:00",
+        "value": 3.68
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2021-12-31T00:00:00",
+        "value": 4.02
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2022-12-31T00:00:00",
+        "value": 4.37
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2023-12-31T00:00:00",
+        "value": 4.7
+      },
+      {
+        "symbol": "jpn.fp.cpi.totl.zg",
+        "date": "2024-12-31T00:00:00",
+        "value": 4.99
+      }
+    ],
+    "jpn.sl.uem.totl.zs": [
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2000-12-31T00:00:00",
+        "value": 8.36
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2001-12-31T00:00:00",
+        "value": 8.09
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2002-12-31T00:00:00",
+        "value": 7.71
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2003-12-31T00:00:00",
+        "value": 7.25
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2004-12-31T00:00:00",
+        "value": 6.75
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2005-12-31T00:00:00",
+        "value": 6.23
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2006-12-31T00:00:00",
+        "value": 5.72
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2007-12-31T00:00:00",
+        "value": 5.26
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2008-12-31T00:00:00",
+        "value": 4.87
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2009-12-31T00:00:00",
+        "value": 4.58
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2010-12-31T00:00:00",
+        "value": 4.41
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2011-12-31T00:00:00",
+        "value": 4.36
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2012-12-31T00:00:00",
+        "value": 4.45
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2013-12-31T00:00:00",
+        "value": 4.66
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2014-12-31T00:00:00",
+        "value": 4.98
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2015-12-31T00:00:00",
+        "value": 5.4
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2016-12-31T00:00:00",
+        "value": 5.88
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2017-12-31T00:00:00",
+        "value": 6.39
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2018-12-31T00:00:00",
+        "value": 6.92
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2019-12-31T00:00:00",
+        "value": 7.41
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2020-12-31T00:00:00",
+        "value": 7.85
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2021-12-31T00:00:00",
+        "value": 8.2
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2022-12-31T00:00:00",
+        "value": 8.44
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2023-12-31T00:00:00",
+        "value": 8.56
+      },
+      {
+        "symbol": "jpn.sl.uem.totl.zs",
+        "date": "2024-12-31T00:00:00",
+        "value": 8.55
+      }
+    ],
+    "jpn.fr.inr.rinr": [
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2000-12-31T00:00:00",
+        "value": 3.71
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2001-12-31T00:00:00",
+        "value": 3.57
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2002-12-31T00:00:00",
+        "value": 3.38
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2003-12-31T00:00:00",
+        "value": 3.15
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2004-12-31T00:00:00",
+        "value": 2.9
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2005-12-31T00:00:00",
+        "value": 2.64
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2006-12-31T00:00:00",
+        "value": 2.39
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2007-12-31T00:00:00",
+        "value": 2.16
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2008-12-31T00:00:00",
+        "value": 1.96
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2009-12-31T00:00:00",
+        "value": 1.82
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2010-12-31T00:00:00",
+        "value": 1.73
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2011-12-31T00:00:00",
+        "value": 1.71
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2012-12-31T00:00:00",
+        "value": 1.75
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2013-12-31T00:00:00",
+        "value": 1.86
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2014-12-31T00:00:00",
+        "value": 2.02
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2015-12-31T00:00:00",
+        "value": 2.23
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2016-12-31T00:00:00",
+        "value": 2.47
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2017-12-31T00:00:00",
+        "value": 2.73
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2018-12-31T00:00:00",
+        "value": 2.99
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2019-12-31T00:00:00",
+        "value": 3.24
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2020-12-31T00:00:00",
+        "value": 3.46
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2021-12-31T00:00:00",
+        "value": 3.63
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2022-12-31T00:00:00",
+        "value": 3.75
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2023-12-31T00:00:00",
+        "value": 3.81
+      },
+      {
+        "symbol": "jpn.fr.inr.rinr",
+        "date": "2024-12-31T00:00:00",
+        "value": 3.81
+      }
+    ],
+    "jpn.ny.gdp.pcap.cd": [
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2000-12-31T00:00:00",
+        "value": 56670.79
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2001-12-31T00:00:00",
+        "value": 55787.85
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2002-12-31T00:00:00",
+        "value": 54212.36
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2003-12-31T00:00:00",
+        "value": 52044.24
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2004-12-31T00:00:00",
+        "value": 49420.31
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2005-12-31T00:00:00",
+        "value": 46505.68
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2006-12-31T00:00:00",
+        "value": 43483.57
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2007-12-31T00:00:00",
+        "value": 40543.87
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2008-12-31T00:00:00",
+        "value": 37871.33
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2009-12-31T00:00:00",
+        "value": 35634.13
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2010-12-31T00:00:00",
+        "value": 33973.34
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2011-12-31T00:00:00",
+        "value": 32994.22
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2012-12-31T00:00:00",
+        "value": 32759.62
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2013-12-31T00:00:00",
+        "value": 33286.14
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2014-12-31T00:00:00",
+        "value": 34543.01
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2015-12-31T00:00:00",
+        "value": 36454.09
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2016-12-31T00:00:00",
+        "value": 38902.54
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2017-12-31T00:00:00",
+        "value": 41738.12
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2018-12-31T00:00:00",
+        "value": 44786.51
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2019-12-31T00:00:00",
+        "value": 47860.18
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2020-12-31T00:00:00",
+        "value": 50770
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2021-12-31T00:00:00",
+        "value": 53337.05
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2022-12-31T00:00:00",
+        "value": 55403.7
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2023-12-31T00:00:00",
+        "value": 56843.46
+      },
+      {
+        "symbol": "jpn.ny.gdp.pcap.cd",
+        "date": "2024-12-31T00:00:00",
+        "value": 57568.8
+      }
+    ],
     "gbr.ny.gdp.mktp.kd.zg": [
       {
         "symbol": "gbr.ny.gdp.mktp.kd.zg",
@@ -4372,1274 +4302,639 @@
         "value": 48019.92
       }
     ],
-    "chn.ny.gdp.mktp.kd.zg": [
+    "usa.ny.gdp.mktp.kd.zg": [
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2000-12-31T00:00:00",
-        "value": 4.68
+        "value": 5.05
       },
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2001-12-31T00:00:00",
-        "value": 4.72
+        "value": 4.89
       },
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2002-12-31T00:00:00",
         "value": 4.71
       },
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2003-12-31T00:00:00",
-        "value": 4.65
+        "value": 4.5
       },
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2004-12-31T00:00:00",
-        "value": 4.53
+        "value": 4.28
       },
       {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2005-12-31T00:00:00",
-        "value": 4.38
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 4.19
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 3.98
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 3.76
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 3.55
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 3.36
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.2
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.08
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.01
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.99
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 3.02
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 3.11
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 3.25
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 3.42
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 3.62
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 3.84
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 4.06
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 4.26
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 4.44
-      },
-      {
-        "symbol": "chn.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 4.59
-      }
-    ],
-    "chn.fp.cpi.totl.zg": [
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 5.5
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 5.73
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 5.88
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 5.95
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 5.93
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 5.83
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 5.64
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 5.39
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 5.09
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 4.76
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 4.41
-      },
-      {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
         "value": 4.07
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.76
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 3.88
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 3.71
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 3.59
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 3.52
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2010-12-31T00:00:00",
         "value": 3.5
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 3.54
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 3.63
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 3.76
+      },
+      {
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2014-12-31T00:00:00",
-        "value": 3.31
+        "value": 3.94
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2015-12-31T00:00:00",
-        "value": 3.19
+        "value": 4.14
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2016-12-31T00:00:00",
-        "value": 3.16
+        "value": 4.35
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2017-12-31T00:00:00",
-        "value": 3.22
+        "value": 4.57
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2018-12-31T00:00:00",
-        "value": 3.36
+        "value": 4.78
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2019-12-31T00:00:00",
-        "value": 3.58
+        "value": 4.96
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2020-12-31T00:00:00",
-        "value": 3.85
+        "value": 5.11
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2021-12-31T00:00:00",
-        "value": 4.18
+        "value": 5.21
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2022-12-31T00:00:00",
-        "value": 4.52
+        "value": 5.26
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2023-12-31T00:00:00",
-        "value": 4.87
+        "value": 5.25
       },
       {
-        "symbol": "chn.fp.cpi.totl.zg",
+        "symbol": "usa.ny.gdp.mktp.kd.zg",
         "date": "2024-12-31T00:00:00",
         "value": 5.2
       }
     ],
-    "chn.sl.uem.totl.zs": [
+    "usa.fp.cpi.totl.zg": [
       {
-        "symbol": "chn.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2000-12-31T00:00:00",
-        "value": 9.02
+        "value": 5.42
       },
       {
-        "symbol": "chn.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2001-12-31T00:00:00",
-        "value": 8.86
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2002-12-31T00:00:00",
-        "value": 8.59
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2003-12-31T00:00:00",
-        "value": 8.21
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2004-12-31T00:00:00",
-        "value": 7.76
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2005-12-31T00:00:00",
-        "value": 7.25
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2006-12-31T00:00:00",
-        "value": 6.73
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2007-12-31T00:00:00",
-        "value": 6.22
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2008-12-31T00:00:00",
-        "value": 5.76
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2009-12-31T00:00:00",
-        "value": 5.37
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2010-12-31T00:00:00",
-        "value": 5.08
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2011-12-31T00:00:00",
-        "value": 4.91
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2012-12-31T00:00:00",
-        "value": 4.86
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2013-12-31T00:00:00",
-        "value": 4.95
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2014-12-31T00:00:00",
-        "value": 5.16
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2015-12-31T00:00:00",
-        "value": 5.48
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2016-12-31T00:00:00",
-        "value": 5.9
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2017-12-31T00:00:00",
-        "value": 6.38
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
-        "value": 6.9
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2019-12-31T00:00:00",
-        "value": 7.42
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2020-12-31T00:00:00",
-        "value": 7.91
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2021-12-31T00:00:00",
-        "value": 8.35
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2022-12-31T00:00:00",
-        "value": 8.7
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2023-12-31T00:00:00",
-        "value": 8.94
-      },
-      {
-        "symbol": "chn.sl.uem.totl.zs",
-        "date": "2024-12-31T00:00:00",
-        "value": 9.06
-      }
-    ],
-    "chn.fr.inr.rinr": [
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2000-12-31T00:00:00",
-        "value": 4.25
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2001-12-31T00:00:00",
-        "value": 4.3
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2002-12-31T00:00:00",
-        "value": 4.29
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2003-12-31T00:00:00",
-        "value": 4.21
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2004-12-31T00:00:00",
-        "value": 4.07
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2005-12-31T00:00:00",
-        "value": 3.88
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2006-12-31T00:00:00",
-        "value": 3.66
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2007-12-31T00:00:00",
-        "value": 3.4
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2008-12-31T00:00:00",
-        "value": 3.14
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2009-12-31T00:00:00",
-        "value": 2.89
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.66
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.46
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2012-12-31T00:00:00",
-        "value": 2.32
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2013-12-31T00:00:00",
-        "value": 2.23
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2014-12-31T00:00:00",
-        "value": 2.21
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2015-12-31T00:00:00",
-        "value": 2.26
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2016-12-31T00:00:00",
-        "value": 2.36
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2017-12-31T00:00:00",
-        "value": 2.52
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2018-12-31T00:00:00",
-        "value": 2.73
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2019-12-31T00:00:00",
-        "value": 2.97
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2020-12-31T00:00:00",
-        "value": 3.23
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2021-12-31T00:00:00",
-        "value": 3.49
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2022-12-31T00:00:00",
-        "value": 3.74
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2023-12-31T00:00:00",
-        "value": 3.96
-      },
-      {
-        "symbol": "chn.fr.inr.rinr",
-        "date": "2024-12-31T00:00:00",
-        "value": 4.13
-      }
-    ],
-    "chn.ny.gdp.pcap.cd": [
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2000-12-31T00:00:00",
-        "value": 55756.35
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2001-12-31T00:00:00",
-        "value": 54180.86
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2002-12-31T00:00:00",
-        "value": 52012.74
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2003-12-31T00:00:00",
-        "value": 49388.81
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2004-12-31T00:00:00",
-        "value": 46474.18
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2005-12-31T00:00:00",
-        "value": 43452.07
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2006-12-31T00:00:00",
-        "value": 40512.37
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2007-12-31T00:00:00",
-        "value": 37839.83
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2008-12-31T00:00:00",
-        "value": 35602.63
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2009-12-31T00:00:00",
-        "value": 33941.84
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2010-12-31T00:00:00",
-        "value": 32962.72
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2011-12-31T00:00:00",
-        "value": 32728.12
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2012-12-31T00:00:00",
-        "value": 33254.64
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2013-12-31T00:00:00",
-        "value": 34511.51
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2014-12-31T00:00:00",
-        "value": 36422.59
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2015-12-31T00:00:00",
-        "value": 38871.04
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2016-12-31T00:00:00",
-        "value": 41706.62
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2017-12-31T00:00:00",
-        "value": 44755.01
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2018-12-31T00:00:00",
-        "value": 47828.68
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2019-12-31T00:00:00",
-        "value": 50738.5
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2020-12-31T00:00:00",
-        "value": 53305.55
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2021-12-31T00:00:00",
-        "value": 55372.2
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2022-12-31T00:00:00",
-        "value": 56811.96
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2023-12-31T00:00:00",
-        "value": 57537.3
-      },
-      {
-        "symbol": "chn.ny.gdp.pcap.cd",
-        "date": "2024-12-31T00:00:00",
-        "value": 57505.1
-      }
-    ],
-    "ind.ny.gdp.mktp.kd.zg": [
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 3.52
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.56
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.55
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 3.49
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 3.37
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 3.22
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 3.03
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 2.82
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 2.6
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 2.39
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.2
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.04
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 1.92
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 1.85
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 1.83
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 1.86
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 1.95
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 2.09
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 2.26
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 2.46
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 2.68
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 2.9
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 3.1
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 3.28
-      },
-      {
-        "symbol": "ind.ny.gdp.mktp.kd.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 3.43
-      }
-    ],
-    "ind.fp.cpi.totl.zg": [
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2000-12-31T00:00:00",
-        "value": 3.92
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2001-12-31T00:00:00",
-        "value": 3.59
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2002-12-31T00:00:00",
-        "value": 3.24
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2003-12-31T00:00:00",
-        "value": 2.9
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2004-12-31T00:00:00",
-        "value": 2.59
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2005-12-31T00:00:00",
-        "value": 2.33
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2006-12-31T00:00:00",
-        "value": 2.14
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2007-12-31T00:00:00",
-        "value": 2.03
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2008-12-31T00:00:00",
-        "value": 2
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2009-12-31T00:00:00",
-        "value": 2.06
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2010-12-31T00:00:00",
-        "value": 2.2
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2011-12-31T00:00:00",
-        "value": 2.41
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2012-12-31T00:00:00",
-        "value": 2.69
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.01
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2014-12-31T00:00:00",
-        "value": 3.36
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2015-12-31T00:00:00",
-        "value": 3.7
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2016-12-31T00:00:00",
-        "value": 4.03
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2017-12-31T00:00:00",
-        "value": 4.32
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2018-12-31T00:00:00",
-        "value": 4.56
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2019-12-31T00:00:00",
-        "value": 4.72
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2020-12-31T00:00:00",
-        "value": 4.8
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2021-12-31T00:00:00",
-        "value": 4.79
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2022-12-31T00:00:00",
-        "value": 4.7
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2023-12-31T00:00:00",
-        "value": 4.53
-      },
-      {
-        "symbol": "ind.fp.cpi.totl.zg",
-        "date": "2024-12-31T00:00:00",
-        "value": 4.28
-      }
-    ],
-    "ind.sl.uem.totl.zs": [
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2000-12-31T00:00:00",
-        "value": 7.86
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2001-12-31T00:00:00",
-        "value": 7.7
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2002-12-31T00:00:00",
-        "value": 7.43
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2003-12-31T00:00:00",
-        "value": 7.05
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2004-12-31T00:00:00",
-        "value": 6.6
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2005-12-31T00:00:00",
-        "value": 6.09
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2006-12-31T00:00:00",
-        "value": 5.57
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2007-12-31T00:00:00",
-        "value": 5.06
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2008-12-31T00:00:00",
-        "value": 4.6
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2009-12-31T00:00:00",
-        "value": 4.21
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2010-12-31T00:00:00",
-        "value": 3.92
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2011-12-31T00:00:00",
-        "value": 3.75
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2012-12-31T00:00:00",
-        "value": 3.7
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2013-12-31T00:00:00",
-        "value": 3.79
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2014-12-31T00:00:00",
-        "value": 4
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2015-12-31T00:00:00",
-        "value": 4.32
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2016-12-31T00:00:00",
-        "value": 4.74
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2017-12-31T00:00:00",
-        "value": 5.22
-      },
-      {
-        "symbol": "ind.sl.uem.totl.zs",
-        "date": "2018-12-31T00:00:00",
         "value": 5.74
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2002-12-31T00:00:00",
+        "value": 6.03
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2003-12-31T00:00:00",
+        "value": 6.25
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2004-12-31T00:00:00",
+        "value": 6.4
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2005-12-31T00:00:00",
+        "value": 6.47
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2006-12-31T00:00:00",
+        "value": 6.45
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2007-12-31T00:00:00",
+        "value": 6.35
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2008-12-31T00:00:00",
+        "value": 6.17
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2009-12-31T00:00:00",
+        "value": 5.92
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2010-12-31T00:00:00",
+        "value": 5.61
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2011-12-31T00:00:00",
+        "value": 5.28
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2012-12-31T00:00:00",
+        "value": 4.93
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2013-12-31T00:00:00",
+        "value": 4.59
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2014-12-31T00:00:00",
+        "value": 4.28
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2015-12-31T00:00:00",
+        "value": 4.02
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2016-12-31T00:00:00",
+        "value": 3.83
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2017-12-31T00:00:00",
+        "value": 3.72
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
+        "date": "2018-12-31T00:00:00",
+        "value": 3.69
+      },
+      {
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2019-12-31T00:00:00",
-        "value": 6.26
+        "value": 3.74
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2020-12-31T00:00:00",
-        "value": 6.75
+        "value": 3.88
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2021-12-31T00:00:00",
-        "value": 7.19
+        "value": 4.1
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2022-12-31T00:00:00",
-        "value": 7.54
+        "value": 4.38
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2023-12-31T00:00:00",
-        "value": 7.78
+        "value": 4.7
       },
       {
-        "symbol": "ind.sl.uem.totl.zs",
+        "symbol": "usa.fp.cpi.totl.zg",
         "date": "2024-12-31T00:00:00",
-        "value": 7.9
+        "value": 5.04
       }
     ],
-    "ind.fr.inr.rinr": [
+    "usa.sl.uem.totl.zs": [
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2000-12-31T00:00:00",
-        "value": 3.12
+        "value": 9.46
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2001-12-31T00:00:00",
-        "value": 3.05
+        "value": 9.57
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2002-12-31T00:00:00",
-        "value": 2.91
+        "value": 9.54
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2003-12-31T00:00:00",
-        "value": 2.72
+        "value": 9.38
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2004-12-31T00:00:00",
-        "value": 2.49
+        "value": 9.11
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2005-12-31T00:00:00",
-        "value": 2.24
+        "value": 8.73
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2006-12-31T00:00:00",
-        "value": 1.98
+        "value": 8.28
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2007-12-31T00:00:00",
-        "value": 1.73
+        "value": 7.77
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2008-12-31T00:00:00",
-        "value": 1.5
+        "value": 7.25
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2009-12-31T00:00:00",
-        "value": 1.3
+        "value": 6.74
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2010-12-31T00:00:00",
-        "value": 1.16
+        "value": 6.28
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2011-12-31T00:00:00",
-        "value": 1.07
+        "value": 5.89
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2012-12-31T00:00:00",
-        "value": 1.05
+        "value": 5.6
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2013-12-31T00:00:00",
-        "value": 1.09
+        "value": 5.43
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2014-12-31T00:00:00",
-        "value": 1.2
+        "value": 5.38
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2015-12-31T00:00:00",
-        "value": 1.36
+        "value": 5.47
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2016-12-31T00:00:00",
-        "value": 1.57
+        "value": 5.68
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2017-12-31T00:00:00",
-        "value": 1.81
+        "value": 6
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2018-12-31T00:00:00",
-        "value": 2.07
+        "value": 6.42
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2019-12-31T00:00:00",
-        "value": 2.33
+        "value": 6.9
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2020-12-31T00:00:00",
-        "value": 2.58
+        "value": 7.42
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2021-12-31T00:00:00",
-        "value": 2.8
+        "value": 7.94
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2022-12-31T00:00:00",
-        "value": 2.97
+        "value": 8.43
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2023-12-31T00:00:00",
-        "value": 3.09
+        "value": 8.87
       },
       {
-        "symbol": "ind.fr.inr.rinr",
+        "symbol": "usa.sl.uem.totl.zs",
         "date": "2024-12-31T00:00:00",
-        "value": 3.15
+        "value": 9.22
       }
     ],
-    "ind.ny.gdp.pcap.cd": [
+    "usa.fr.inr.rinr": [
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2000-12-31T00:00:00",
-        "value": 56835.61
+        "value": 4.17
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2001-12-31T00:00:00",
-        "value": 56702.13
+        "value": 3.92
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2002-12-31T00:00:00",
-        "value": 55819.19
+        "value": 3.66
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2003-12-31T00:00:00",
-        "value": 54243.7
+        "value": 3.4
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2004-12-31T00:00:00",
-        "value": 52075.58
+        "value": 3.17
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2005-12-31T00:00:00",
-        "value": 49451.65
+        "value": 2.98
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2006-12-31T00:00:00",
-        "value": 46537.02
+        "value": 2.84
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2007-12-31T00:00:00",
-        "value": 43514.91
+        "value": 2.75
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2008-12-31T00:00:00",
-        "value": 40575.21
+        "value": 2.73
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2009-12-31T00:00:00",
-        "value": 37902.67
+        "value": 2.77
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2010-12-31T00:00:00",
-        "value": 35665.47
+        "value": 2.88
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2011-12-31T00:00:00",
-        "value": 34004.68
+        "value": 3.04
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2012-12-31T00:00:00",
-        "value": 33025.56
+        "value": 3.25
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2013-12-31T00:00:00",
-        "value": 32790.96
+        "value": 3.49
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2014-12-31T00:00:00",
-        "value": 33317.48
+        "value": 3.75
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2015-12-31T00:00:00",
-        "value": 34574.35
+        "value": 4.01
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2016-12-31T00:00:00",
-        "value": 36485.43
+        "value": 4.26
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2017-12-31T00:00:00",
-        "value": 38933.88
+        "value": 4.47
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2018-12-31T00:00:00",
-        "value": 41769.46
+        "value": 4.65
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2019-12-31T00:00:00",
-        "value": 44817.85
+        "value": 4.77
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2020-12-31T00:00:00",
-        "value": 47891.52
+        "value": 4.83
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2021-12-31T00:00:00",
-        "value": 50801.34
+        "value": 4.83
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2022-12-31T00:00:00",
-        "value": 53368.39
+        "value": 4.76
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2023-12-31T00:00:00",
-        "value": 55435.04
+        "value": 4.63
       },
       {
-        "symbol": "ind.ny.gdp.pcap.cd",
+        "symbol": "usa.fr.inr.rinr",
         "date": "2024-12-31T00:00:00",
-        "value": 56874.8
+        "value": 4.45
+      }
+    ],
+    "usa.ny.gdp.pcap.cd": [
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2000-12-31T00:00:00",
+        "value": 51949.26
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2001-12-31T00:00:00",
+        "value": 49325.33
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2002-12-31T00:00:00",
+        "value": 46410.7
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2003-12-31T00:00:00",
+        "value": 43388.59
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2004-12-31T00:00:00",
+        "value": 40448.89
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2005-12-31T00:00:00",
+        "value": 37776.35
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2006-12-31T00:00:00",
+        "value": 35539.15
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2007-12-31T00:00:00",
+        "value": 33878.36
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2008-12-31T00:00:00",
+        "value": 32899.24
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2009-12-31T00:00:00",
+        "value": 32664.64
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2010-12-31T00:00:00",
+        "value": 33191.16
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2011-12-31T00:00:00",
+        "value": 34448.03
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2012-12-31T00:00:00",
+        "value": 36359.11
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2013-12-31T00:00:00",
+        "value": 38807.56
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2014-12-31T00:00:00",
+        "value": 41643.14
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2015-12-31T00:00:00",
+        "value": 44691.53
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2016-12-31T00:00:00",
+        "value": 47765.2
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2017-12-31T00:00:00",
+        "value": 50675.02
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2018-12-31T00:00:00",
+        "value": 53242.07
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2019-12-31T00:00:00",
+        "value": 55308.72
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2020-12-31T00:00:00",
+        "value": 56748.48
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2021-12-31T00:00:00",
+        "value": 57473.82
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2022-12-31T00:00:00",
+        "value": 57441.62
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2023-12-31T00:00:00",
+        "value": 56655.88
+      },
+      {
+        "symbol": "usa.ny.gdp.pcap.cd",
+        "date": "2024-12-31T00:00:00",
+        "value": 55167.45
       }
     ]
   }

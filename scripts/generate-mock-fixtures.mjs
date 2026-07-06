@@ -8,14 +8,13 @@ import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const COUNTRIES = [
-  { iso3: "usa", name: "USA" },
-  { iso3: "bra", name: "Brazil" },
-  { iso3: "mex", name: "Mexico" },
-  { iso3: "jpn", name: "Japan" },
+  { iso3: "can", name: "Canada" },
+  { iso3: "fra", name: "France" },
   { iso3: "deu", name: "Germany" },
+  { iso3: "ita", name: "Italy" },
+  { iso3: "jpn", name: "Japan" },
   { iso3: "gbr", name: "United Kingdom" },
-  { iso3: "chn", name: "China" },
-  { iso3: "ind", name: "India" },
+  { iso3: "usa", name: "United States" },
 ];
 
 const INDICATORS = [
