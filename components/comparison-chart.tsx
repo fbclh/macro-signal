@@ -2,9 +2,11 @@
 
 import {
   CartesianGrid,
+  ComposedChart,
   Legend,
   Line,
-  LineChart,
+  ReferenceDot,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -16,6 +18,8 @@ type ComparisonChartProps = {
   labelA: string;
   labelB: string;
   unit: string;
+  showZeroLine?: boolean;
+  crossoverYear?: number | null;
 };
 
 export function ComparisonChart({
@@ -23,37 +27,62 @@ export function ComparisonChart({
   labelA,
   labelB,
   unit,
+  showZeroLine = false,
+  crossoverYear = null,
 }: ComparisonChartProps) {
   if (data.length === 0 || data.every((row) => row.a == null && row.b == null)) {
     return (
-      <div className="flex h-72 items-center justify-center border border-dashed border-neutral-300 bg-neutral-50 text-sm text-neutral-500">
+      <div className="flex h-72 items-center justify-center rounded-sm border border-dashed border-neutral-300 bg-neutral-50 text-sm text-neutral-500 sm:h-96">
         No data available for this combination
       </div>
     );
   }
 
+  const crossoverPoint =
+    crossoverYear != null
+      ? data.find((row) => row.year === crossoverYear)
+      : undefined;
+
+  const crossoverY =
+    crossoverPoint?.a != null && crossoverPoint?.b != null
+      ? (crossoverPoint.a + crossoverPoint.b) / 2
+      : crossoverPoint?.a ?? crossoverPoint?.b ?? null;
+
   return (
-    <div className="h-72 w-full border border-neutral-200 bg-white p-4 sm:h-96">
+    <div className="h-72 w-full rounded-sm border border-neutral-200/80 bg-white p-4 shadow-sm sm:h-96">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-          <CartesianGrid stroke="#e5e5e5" strokeDasharray="3 3" vertical={false} />
+        <ComposedChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
+          <CartesianGrid stroke="#ececec" strokeDasharray="3 3" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fill: "#737373", fontSize: 12 }}
+            tick={{ fill: "#737373", fontSize: 11 }}
             axisLine={{ stroke: "#d4d4d4" }}
             tickLine={{ stroke: "#d4d4d4" }}
           />
           <YAxis
-            tick={{ fill: "#737373", fontSize: 12 }}
+            tick={{ fill: "#737373", fontSize: 11 }}
             axisLine={{ stroke: "#d4d4d4" }}
             tickLine={{ stroke: "#d4d4d4" }}
             width={48}
           />
+          {showZeroLine ? (
+            <ReferenceLine
+              y={0}
+              stroke="#a3a3a3"
+              strokeDasharray="4 4"
+              label={{
+                value: "0",
+                position: "insideTopLeft",
+                fill: "#737373",
+                fontSize: 10,
+              }}
+            />
+          ) : null}
           <Tooltip
             contentStyle={{
               border: "1px solid #d4d4d4",
-              borderRadius: 0,
-              boxShadow: "none",
+              borderRadius: 2,
+              boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
               fontSize: 12,
             }}
             formatter={(value) =>
@@ -66,7 +95,7 @@ export function ComparisonChart({
             type="monotone"
             dataKey="a"
             name={labelA}
-            stroke="#000000"
+            stroke="#171717"
             strokeWidth={2}
             dot={false}
             connectNulls
@@ -81,7 +110,23 @@ export function ComparisonChart({
             dot={false}
             connectNulls
           />
-        </LineChart>
+          {crossoverYear != null && crossoverY != null ? (
+            <ReferenceDot
+              x={crossoverYear}
+              y={crossoverY}
+              r={4}
+              fill="#171717"
+              stroke="#ffffff"
+              strokeWidth={2}
+              label={{
+                value: String(crossoverYear),
+                position: "top",
+                fill: "#525252",
+                fontSize: 10,
+              }}
+            />
+          ) : null}
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   );
