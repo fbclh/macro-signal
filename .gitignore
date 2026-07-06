@@ -20,6 +20,12 @@
 # production
 /build
 
+# editor / local tooling
+.cursor/
+.githooks/
+CLAUDE.md
+AGENTS.md
+
 # misc
 .DS_Store
 *.pem
