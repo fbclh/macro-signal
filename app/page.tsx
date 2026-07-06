@@ -28,7 +28,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <section className="mt-12">
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-lg font-medium text-neutral-950">Latest indicators</h2>
+            <h2 className="text-lg font-medium text-stone-950">Main indicators</h2>
             <p className="mt-1 text-sm text-neutral-500">
               Snapshot values for the selected economy
             </p>

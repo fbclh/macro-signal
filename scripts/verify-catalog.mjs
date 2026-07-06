@@ -18,11 +18,14 @@ const COUNTRIES = [
 ];
 
 const INDICATORS = [
-  { code: "ny.gdp.mktp.kd.zg", name: "GDP Growth" },
-  { code: "fp.cpi.totl.zg", name: "Inflation (CPI)" },
-  { code: "sl.uem.totl.zs", name: "Unemployment" },
-  { code: "fr.inr.rinr", name: "Real Interest Rate" },
-  { code: "ny.gdp.pcap.cd", name: "GDP per Capita" },
+  { code: "ny.gdp.mktp.kd.zg", name: "GDP Growth Rate", worldBank: true },
+  { code: "fr.inr.lndp", name: "Interest Rate", worldBank: true },
+  { code: "fp.cpi.totl.zg", name: "Inflation Rate", worldBank: true },
+  { code: "sl.uem.totl.zs", name: "Unemployment Rate", worldBank: true },
+  { code: "gc.dod.totl.gd.zs", name: "Government Debt to GDP", worldBank: true },
+  { code: "ne.rsb.gnfs.zs", name: "Balance of Trade", worldBank: true },
+  { code: "bn.cab.xoka.gd.zs", name: "Current Account to GDP", worldBank: true },
+  { code: "credit.rating", name: "Credit Rating", worldBank: false },
 ];
 
 function loadApiKey() {
@@ -75,6 +78,18 @@ const results = [];
 for (const country of COUNTRIES) {
   for (const indicator of INDICATORS) {
     const symbol = `${country.iso3}.${indicator.code}`;
+
+    if (indicator.worldBank === false) {
+      results.push({
+        symbol,
+        country: country.name,
+        indicator: indicator.name,
+        status: "skip",
+        detail: "uses /credit-ratings, not worldbank",
+      });
+      continue;
+    }
+
     const result = await checkSnapshot(symbol, apiKey);
     results.push({
       symbol,
@@ -113,6 +128,9 @@ for (const row of results) {
 const ok = results.filter((r) => r.status === "ok").length;
 const empty = results.filter((r) => r.status === "empty").length;
 const errors = results.filter((r) => r.status === "error").length;
+const skipped = results.filter((r) => r.status === "skip").length;
 
 console.log("");
-console.log(`Summary: ${ok} ok, ${empty} empty, ${errors} error (${results.length} total)`);
+console.log(
+  `Summary: ${ok} ok, ${empty} empty, ${errors} error, ${skipped} skipped (${results.length} total)`,
+);

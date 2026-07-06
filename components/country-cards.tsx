@@ -1,9 +1,5 @@
 import { IndicatorCards } from "@/components/indicator-cards";
-import {
-  COUNTRIES,
-  INDICATORS,
-  symbolFor,
-} from "@/lib/catalog";
+import { COUNTRIES, INDICATORS, symbolFor } from "@/lib/catalog";
 import { getSnapshot } from "@/lib/te";
 
 type CountryCardsProps = {
@@ -16,12 +12,14 @@ export async function CountryCards({ country }: CountryCardsProps) {
   );
   const snapshots = await getSnapshot(symbols);
 
-  const ordered = INDICATORS.map((indicator) => {
+  const cards = INDICATORS.map((indicator) => {
     const symbol = symbolFor(country, indicator.code);
-    return snapshots.find((row) => row.symbol === symbol);
-  }).filter((row): row is NonNullable<typeof row> => row != null);
+    const snapshot = snapshots.find((row) => row.symbol === symbol);
+    if (!snapshot) return null;
+    return { snapshot, code: indicator.code };
+  }).filter((card): card is NonNullable<typeof card> => card != null);
 
-  return <IndicatorCards snapshots={ordered} />;
+  return <IndicatorCards cards={cards} />;
 }
 
 export function countryLabel(iso3: string): string {
