@@ -17,6 +17,22 @@ export function yearEndIso(year: number | string): string {
   return `${year}-12-31T00:00:00`;
 }
 
+/** Normalises a YYYY-MM-DD (or ISO) observation date to the stored timestamp format. */
+export function observationIso(date: string): string {
+  const day = date.split("T")[0];
+  return `${day}T00:00:00`;
+}
+
+export function currentCalendarYear(): number {
+  return new Date().getFullYear();
+}
+
+/** True when a calendar year is not an IMF WEO projection beyond the current year. */
+export function isObservedCalendarYear(year: number | string): boolean {
+  const parsed = Number(year);
+  return !Number.isNaN(parsed) && parsed <= currentCalendarYear();
+}
+
 export function indicatorMeta(code: string): Indicator {
   const indicator = indicatorByCode(code);
   if (!indicator) {

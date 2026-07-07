@@ -86,8 +86,31 @@ const FRED_BOND_SERIES = {
 
 const G7_BATCH = COUNTRIES.map((country) => country.iso3).join(";");
 const G7_IMF = COUNTRIES.map((country) => country.imf).join("/");
-const DATE_RANGE = "2000:2024";
+const CURRENT_YEAR = new Date().getFullYear();
+const DATE_RANGE = `2000:${CURRENT_YEAR}`;
 const FRED_KEY = process.env.FRED_API_KEY;
+const STALE_MONTHS = 12;
+
+function formatObsMonth(dateStr) {
+  const day = dateStr.split("T")[0];
+  const date = new Date(`${day}T00:00:00`);
+  return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
+}
+
+function monthsSinceObservation(dateStr) {
+  const day = dateStr.split("T")[0];
+  const observed = new Date(`${day}T00:00:00`);
+  const now = new Date();
+  return (
+    (now.getFullYear() - observed.getFullYear()) * 12 +
+    (now.getMonth() - observed.getMonth())
+  );
+}
+
+function isObservedYear(year) {
+  const parsed = Number(year);
+  return !Number.isNaN(parsed) && parsed <= CURRENT_YEAR;
+}
 
 async function fetchWbIndicator(wbCode) {
   const params = new URLSearchParams({
@@ -133,7 +156,7 @@ async function fetchImfIndicator(imfCode) {
     const series = values[country.imf];
     if (!series) continue;
     const years = Object.keys(series)
-      .filter((year) => Number(year) <= 2024)
+      .filter(isObservedYear)
       .sort((a, b) => Number(b) - Number(a));
     if (years.length === 0) continue;
     const year = years[0];
@@ -174,9 +197,17 @@ function downsampleFredAnnual(observations) {
 
   const years = [...byYear.keys()].sort((a, b) => b - a);
   if (years.length === 0) return null;
-  const year = years[0];
-  const obs = byYear.get(year);
-  return { date: String(year), value: Number.parseFloat(obs.value) };
+  const obs = byYear.get(years[0]);
+  return {
+    date: obs.date,
+    value: Number.parseFloat(obs.value),
+  };
+}
+
+function latestFredObservation(observations) {
+  const valid = observations.filter((row) => row.value !== ".");
+  if (valid.length === 0) return null;
+  return valid[valid.length - 1];
 }
 
 async function fetchFredSeries(seriesId) {
@@ -201,13 +232,28 @@ async function fetchFredSeries(seriesId) {
     return { status: "error", detail: payload.error_message };
   }
 
-  const latest = downsampleFredAnnual(payload.observations ?? []);
-  return latest
-    ? { status: "ok", latest }
-    : { status: "empty", detail: "no observations" };
+  const observations = payload.observations ?? [];
+  const latestRaw = latestFredObservation(observations);
+  const latest = downsampleFredAnnual(observations);
+
+  if (!latest || !latestRaw) {
+    return { status: "empty", detail: "no observations" };
+  }
+
+  const monthsSince = monthsSinceObservation(latestRaw.date);
+  const stale = monthsSince > STALE_MONTHS;
+
+  return {
+    status: "ok",
+    latest,
+    observationDate: latestRaw.date,
+    monthsSince,
+    stale,
+  };
 }
 
 const results = [];
+const fredFreshness = [];
 
 for (const indicator of INDICATORS) {
   if (indicator.source === "WB") {
@@ -277,15 +323,28 @@ for (const indicator of INDICATORS) {
     for (const country of COUNTRIES) {
       const seriesId = seriesMap[country.iso3];
       const fetched = await fetchFredSeries(seriesId);
+      const symbol = `${country.iso3}.${indicator.code}`;
+
+      if (fetched.status === "ok") {
+        fredFreshness.push({
+          symbol,
+          seriesId,
+          indicator: indicator.name,
+          observationDate: fetched.observationDate,
+          monthsSince: fetched.monthsSince,
+          stale: fetched.stale,
+        });
+      }
+
       results.push({
-        symbol: `${country.iso3}.${indicator.code}`,
+        symbol,
         country: country.name,
         indicator: indicator.name,
         source: `${indicator.source}:${seriesId}`,
         status: fetched.status === "ok" ? "live" : fetched.status,
         detail:
           fetched.status === "ok"
-            ? `last=${fetched.latest.value} (${fetched.latest.date})`
+            ? `last=${fetched.latest.value} (${formatObsMonth(fetched.latest.date)}) obs=${fetched.observationDate}`
             : fetched.detail,
       });
     }
@@ -332,6 +391,29 @@ console.log(
 if (!FRED_KEY) {
   console.log("");
   console.log("Warning: FRED_API_KEY not set — FRED cells will fail verification.");
+}
+
+const staleFred = fredFreshness.filter((row) => row.stale);
+console.log("");
+console.log("FRED last-observation dates:");
+for (const row of fredFreshness) {
+  const flag = row.stale ? "STALE" : "ok";
+  console.log(
+    `  ${row.symbol} (${row.seriesId}) — ${row.observationDate} (${row.monthsSince}mo) [${flag}]`,
+  );
+}
+
+if (staleFred.length > 0) {
+  console.log("");
+  console.log(`FRED stale report (>${STALE_MONTHS} months — consider swapping sources):`);
+  for (const row of staleFred) {
+    console.log(
+      `  ${row.symbol} (${row.seriesId}) — last obs ${row.observationDate} (${row.monthsSince} months ago)`,
+    );
+  }
+} else if (fredFreshness.length > 0) {
+  console.log("");
+  console.log(`FRED freshness: all ${fredFreshness.length} series within ${STALE_MONTHS} months.`);
 }
 
 console.log("");

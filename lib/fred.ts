@@ -8,7 +8,7 @@ import {
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
 import { mockGetHistorical, mockGetSnapshot } from "@/lib/mock";
-import { parseSymbol, snapshotsFromHistorical, yearEndIso } from "@/lib/providers";
+import { parseSymbol, snapshotsFromHistorical, observationIso } from "@/lib/providers";
 
 const BASE_URL = "https://api.stlouisfed.org/fred/series/observations";
 const OBSERVATION_START = "2000-01-01";
@@ -127,9 +127,9 @@ function downsampleToAnnual(
 
   return [...byYear.entries()]
     .sort(([a], [b]) => a - b)
-    .map(([year, obs]) => ({
+    .map(([, obs]) => ({
       symbol,
-      date: yearEndIso(year),
+      date: observationIso(obs.date),
       value: obs.value,
     }));
 }
