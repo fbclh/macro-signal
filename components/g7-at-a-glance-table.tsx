@@ -42,7 +42,10 @@ type G7AtAGlanceTableProps = {
   rows: G7GlanceRow[];
   indicators: G7GlanceIndicator[];
   selectedCountry: string;
-  footnotes?: string[];
+  tableFooter?: {
+    note?: string | null;
+    sources?: string;
+  };
 };
 
 function DeltaSuffix({
@@ -133,7 +136,7 @@ export function G7AtAGlanceTable({
   rows,
   indicators,
   selectedCountry,
-  footnotes = [],
+  tableFooter,
 }: G7AtAGlanceTableProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -182,7 +185,7 @@ export function G7AtAGlanceTable({
   }, [rows, sortDir, sortKey]);
 
   return (
-    <div className="space-y-2">
+    <>
       <Card className={`${flatCard} overflow-hidden py-0`}>
         <CardContent className="px-0">
           <Table>
@@ -252,13 +255,16 @@ export function G7AtAGlanceTable({
           </Table>
         </CardContent>
       </Card>
-      {footnotes.length > 0 ? (
-        <ul className="space-y-1 px-1 text-xs text-muted-foreground">
-          {footnotes.map((note) => (
-            <li key={note}>* {note}</li>
-          ))}
-        </ul>
+      {tableFooter?.note || tableFooter?.sources ? (
+        <div className="mt-1.5 space-y-0.5 px-1 text-[11px] leading-snug text-muted-foreground">
+          {tableFooter.note ? <p>{tableFooter.note}</p> : null}
+          {tableFooter.sources ? (
+            <p className={tableFooter.note ? "opacity-75" : undefined}>
+              {tableFooter.sources}
+            </p>
+          ) : null}
+        </div>
       ) : null}
-    </div>
+    </>
   );
 }

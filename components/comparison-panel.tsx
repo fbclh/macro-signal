@@ -6,7 +6,7 @@ import {
   INDICATORS,
   symbolFor,
 } from "@/lib/catalog";
-import { policyRateFootnotes } from "@/lib/fred";
+import { policyRateFootnoteLine } from "@/lib/source-notes";
 import { computeInsight, mergeChartSeries } from "@/lib/insights";
 import { getHistorical } from "@/lib/te";
 
@@ -44,10 +44,10 @@ export async function ComparisonPanel({
     indicator?.name ?? "indicator",
   );
 
-  const footnotes =
+  const footnoteLine =
     chartIndicator === FRED_POLICY_RATE_CODE
-      ? policyRateFootnotes([chartA, chartB])
-      : [];
+      ? policyRateFootnoteLine([chartA, chartB])
+      : null;
 
   return (
     <div className="space-y-4">
@@ -60,12 +60,10 @@ export async function ComparisonPanel({
         labelB={labelB}
         unit={unit}
       />
-      {footnotes.length > 0 ? (
-        <ul className="space-y-1 text-xs text-muted-foreground">
-          {footnotes.map((note) => (
-            <li key={note}>* {note}</li>
-          ))}
-        </ul>
+      {footnoteLine ? (
+        <p className="text-[11px] leading-snug text-muted-foreground">
+          {footnoteLine}
+        </p>
       ) : null}
     </div>
   );

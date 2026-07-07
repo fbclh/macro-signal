@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Macro Signal",
   description:
-    "Compare World Bank macro indicators across major economies.",
+    "Compare growth, inflation, unemployment and more across G7 economies.",
 };
 
 export default function RootLayout({

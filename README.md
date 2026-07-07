@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Macro Signal
 
-## Getting Started
+**Live demo: https://macro-signal.vercel.app** ← (real link once deployed)
 
-First, run the development server:
+A G7 macroeconomic dashboard — snapshot cards, a 25-year two-country comparison chart with rule-based insights, and a multi-country scanner table. Built with Next.js (App Router), TypeScript, Tailwind, and Recharts.
+
+![Macro Signal screenshot](./docs/screenshot.png)
+
+Built for the Trading Economics developer task: implemented against the Trading Economics API interface, with live data served through a provider-adapter layer (see *Architecture*).
+
+## Features
+
+- **Main indicators** — snapshot cards with latest value, previous reading, delta, and 25-year sparkline per indicator
+- **Comparison** — overlay any two G7 economies on one indicator (~25 years), with a generated one-line insight (consecutive-trend and crossover detection, pure logic — no AI calls)
+- **G7 at a glance** — all countries × all indicators scanner; click a row to drive the cards
+- Dark/light theme, responsive, zero client-side API keys
+
+## Architecture & data sources
+
+Trading Economics confirmed by email (July 2026) that guest keys and free developer
+accounts have been discontinued. The app is therefore built against the TE API
+interface (`lib/te.ts` — `/worldbank/historical`, `/worldbank/indicator` shapes) but
+sources equivalent series live from open providers through a per-indicator adapter:
+
+| Indicator | Source | Series |
+|---|---|---|
+| GDP Growth | World Bank | `NY.GDP.MKTP.KD.ZG` |
+| Inflation (CPI) | World Bank | `FP.CPI.TOTL.ZG` |
+| Unemployment | World Bank | `SL.UEM.TOTL.ZS` |
+| Policy Interest Rate | FRED | `IRSTCB01{CC}M156N` ¹ |
+| Balance of Trade | World Bank | `NE.RSB.GNFS.ZS` |
+| Current Account | World Bank | `BN.CAB.XOKA.GD.ZS` |
+| Government Debt | IMF WEO | `GGXWDG_NGDP` |
+| 10Y Bond Yield | FRED | `IRLTLT01{CC}M156N` |
+
+¹ Euro area members shown at the ECB policy rate; UK at SONIA (BoE series discontinued on FRED); US at the federal funds target range, upper limit.
+
+Indicators were selected for **complete live coverage across all G7 economies** — series with partial coverage (real interest rate, central-government debt) were excluded. Run `npm run verify-catalog` to print the live 7×8 coverage matrix. Supplying a `TE_API_KEY` switches WB-sourced indicators to the Trading Economics API directly, with no UI changes.
+
+All fetches are server-side with hourly revalidation; keys never reach the client. If a provider is unreachable, the app falls back to a bundled data snapshot rather than breaking.
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # add FRED_API_KEY (free: fred.stlouisfed.org)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Variable | Required | Purpose |
+|---|---|---|
+| `FRED_API_KEY` | for live rate/yield data | Policy rates + 10Y yields |
+| `TE_API_KEY` | optional | Routes WB indicators through the TE API instead |
+| `USE_MOCK` | optional (`false`) | Fully offline fixtures |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run verify-catalog   # live coverage matrix across all providers
+npm run generate-mock    # regenerate offline fixtures
+```

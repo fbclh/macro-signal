@@ -9,10 +9,10 @@ export function Header() {
             Macro Signal
           </h1>
           <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            World Bank macro indicators
+            G7 macro indicators
           </p>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Compare growth, inflation, unemployment, and rates across G7 economies.
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+            Compare growth, inflation, unemployment and more across G7 economies.
           </p>
         </div>
         <ThemeToggle />
