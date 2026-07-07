@@ -2,6 +2,9 @@ import { policyRateFootnotes } from "@/lib/fred";
 
 export const DATA_SOURCES_LINE = "Data: World Bank · IMF · FRED";
 
+export const DATA_FREQUENCY_LINE =
+  "World Bank series are annual (latest actual year); IMF WEO annual (actuals/estimates only, projections excluded); FRED series monthly (latest observation) — as-of dates therefore vary by indicator.";
+
 const POLICY_NOTE_ORDER = [
   "Euro area members shown at the ECB policy rate",
   "SONIA overnight rate (BoE policy rate series discontinued on FRED)",
@@ -19,6 +22,6 @@ export function policyRateFootnoteLine(iso3List: string[]): string | null {
 export function g7FiscalTableFooter(iso3List: string[]) {
   return {
     note: policyRateFootnoteLine(iso3List),
-    sources: DATA_SOURCES_LINE,
+    sources: `${DATA_FREQUENCY_LINE} ${DATA_SOURCES_LINE}`,
   };
 }
