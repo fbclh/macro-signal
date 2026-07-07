@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify-catalog": "node scripts/verify-catalog.mjs",
+    "generate-mock": "node scripts/generate-mock-fixtures.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

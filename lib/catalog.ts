@@ -4,6 +4,8 @@ export type IndicatorGroupId =
   | "external-fiscal"
   | "sovereign";
 
+export type DataSource = "worldbank" | "imf" | "fred";
+
 export type Country = {
   iso3: string;
   name: string;
@@ -14,8 +16,12 @@ export type Indicator = {
   name: string;
   unit: string;
   group: IndicatorGroupId;
-  worldBank?: boolean;
+  source: DataSource;
 };
+
+export const IMF_DEBT_CODE = "ggxwdg_ngdp";
+export const FRED_POLICY_RATE_CODE = "policy.int.rate";
+export const FRED_BOND_YIELD_CODE = "bond.yield.10y";
 
 export const INDICATOR_GROUPS: { id: IndicatorGroupId; label: string }[] = [
   { id: "growth-prices", label: "Growth & prices" },
@@ -34,7 +40,7 @@ export const INDICATOR_CARD_ROWS: {
     groupIds: ["growth-prices", "labour-rates"],
   },
   {
-    label: "External & fiscal · Sovereign & credit",
+    label: "External & fiscal · Sovereign",
     groupIds: ["external-fiscal", "sovereign"],
   },
 ];
@@ -49,59 +55,67 @@ export const COUNTRIES: Country[] = [
   { iso3: "usa", name: "United States" },
 ];
 
+/** Frozen catalog — 8 indicators, single source of truth. */
 export const INDICATORS: Indicator[] = [
   {
     code: "ny.gdp.mktp.kd.zg",
-    name: "GDP Growth Rate",
+    name: "GDP Growth",
     unit: "%",
     group: "growth-prices",
+    source: "worldbank",
   },
   {
     code: "fp.cpi.totl.zg",
-    name: "Inflation Rate",
+    name: "Inflation (CPI)",
     unit: "%",
     group: "growth-prices",
+    source: "worldbank",
   },
   {
     code: "sl.uem.totl.zs",
-    name: "Unemployment Rate",
+    name: "Unemployment",
     unit: "%",
     group: "labour-rates",
+    source: "worldbank",
   },
   {
-    code: "fr.inr.lndp",
+    code: FRED_POLICY_RATE_CODE,
     name: "Interest Rate",
     unit: "%",
     group: "labour-rates",
+    source: "fred",
   },
   {
     code: "ne.rsb.gnfs.zs",
     name: "Balance of Trade",
     unit: "% of GDP",
     group: "external-fiscal",
+    source: "worldbank",
   },
   {
     code: "bn.cab.xoka.gd.zs",
-    name: "Current Account to GDP",
+    name: "Current Account",
     unit: "% of GDP",
     group: "external-fiscal",
+    source: "worldbank",
   },
   {
-    code: "gc.dod.totl.gd.zs",
-    name: "Government Debt to GDP",
+    code: IMF_DEBT_CODE,
+    name: "Government Debt",
     unit: "% of GDP",
     group: "sovereign",
+    source: "imf",
   },
   {
-    code: "credit.rating",
-    name: "Credit Rating",
-    unit: "",
+    code: FRED_BOND_YIELD_CODE,
+    name: "10Y Bond Yield",
+    unit: "%",
     group: "sovereign",
-    worldBank: false,
+    source: "fred",
   },
 ];
 
-/** Fixed headline indicators for the G7 comparison table. */
+/** Fixed headline indicators for the first G7 glance table. */
 export const G7_GLANCE_INDICATORS: {
   code: string;
   columnLabel: string;
@@ -109,7 +123,7 @@ export const G7_GLANCE_INDICATORS: {
   { code: "ny.gdp.mktp.kd.zg", columnLabel: "GDP Growth" },
   { code: "fp.cpi.totl.zg", columnLabel: "Inflation" },
   { code: "sl.uem.totl.zs", columnLabel: "Unemployment" },
-  { code: "fr.inr.lndp", columnLabel: "Interest Rate" },
+  { code: FRED_POLICY_RATE_CODE, columnLabel: "Interest Rate" },
 ];
 
 /** External & fiscal / sovereign indicators for the second G7 glance table. */
@@ -119,25 +133,30 @@ export const G7_GLANCE_SECONDARY_INDICATORS: {
 }[] = [
   { code: "ne.rsb.gnfs.zs", columnLabel: "Balance of Trade" },
   { code: "bn.cab.xoka.gd.zs", columnLabel: "Current Account" },
-  { code: "gc.dod.totl.gd.zs", columnLabel: "Govt Debt" },
-  { code: "credit.rating", columnLabel: "Credit Rating" },
+  { code: IMF_DEBT_CODE, columnLabel: "Govt Debt" },
+  { code: FRED_BOND_YIELD_CODE, columnLabel: "10Y Bond Yield" },
 ];
-
-export const CREDIT_RATING_CODE = "credit.rating";
-
-export function isCreditRating(code: string): boolean {
-  return code === CREDIT_RATING_CODE;
-}
 
 export function symbolFor(iso3: string, code: string): string {
   return `${iso3}.${code}`;
 }
 
-export function isWorldBankIndicator(code: string): boolean {
-  const indicator = INDICATORS.find((item) => item.code === code);
-  return indicator?.worldBank !== false;
+export function indicatorByCode(code: string): Indicator | undefined {
+  return INDICATORS.find((item) => item.code === code);
+}
+
+export function indicatorSource(code: string): DataSource {
+  return indicatorByCode(code)?.source ?? "worldbank";
 }
 
 export function indicatorSignedAxis(code: string): boolean {
   return code === "ne.rsb.gnfs.zs" || code === "bn.cab.xoka.gd.zs";
+}
+
+export function catalogCodeToWb(code: string): string {
+  return code.toUpperCase();
+}
+
+export function isFredIndicator(code: string): boolean {
+  return code === FRED_POLICY_RATE_CODE || code === FRED_BOND_YIELD_CODE;
 }

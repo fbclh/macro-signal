@@ -15,11 +15,9 @@ import {
 import {
   deltaDirection,
   deltaSemanticClass,
-  formatCreditRatingDisplay,
   formatDelta,
   formatValue,
 } from "@/lib/format";
-import { isCreditRating } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { cn } from "@/lib/utils";
 
@@ -44,6 +42,7 @@ type G7AtAGlanceTableProps = {
   rows: G7GlanceRow[];
   indicators: G7GlanceIndicator[];
   selectedCountry: string;
+  footnotes?: string[];
 };
 
 function DeltaSuffix({
@@ -78,17 +77,6 @@ function ValueCell({
 }) {
   if (!snapshot) {
     return <span className="text-muted-foreground">—</span>;
-  }
-
-  if (isCreditRating(indicator.code)) {
-    const credit = formatCreditRatingDisplay(snapshot.last);
-    return (
-      <span className="inline-flex flex-wrap items-baseline justify-end gap-x-1.5 gap-y-0">
-        <span className="tabular-nums font-medium">{credit.score}</span>
-        <span className="text-xs text-muted-foreground">{credit.label}</span>
-        <DeltaSuffix current={snapshot.last} previous={snapshot.previous} />
-      </span>
-    );
   }
 
   return (
@@ -145,6 +133,7 @@ export function G7AtAGlanceTable({
   rows,
   indicators,
   selectedCountry,
+  footnotes = [],
 }: G7AtAGlanceTableProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -193,74 +182,83 @@ export function G7AtAGlanceTable({
   }, [rows, sortDir, sortKey]);
 
   return (
-    <Card className={`${flatCard} overflow-hidden py-0`}>
-      <CardContent className="px-0">
-        <Table>
-          <TableHeader>
-            <TableRow className="bg-muted/50 hover:bg-muted/50">
-              <TableHead className="px-4">
-                <SortButton
-                  label="Country"
-                  active={sortKey === "country"}
-                  direction={sortDir}
-                  onClick={() => toggleSort("country")}
-                />
-              </TableHead>
-              {indicators.map((indicator) => (
-                <TableHead key={indicator.code} className="px-4 text-right">
+    <div className="space-y-2">
+      <Card className={`${flatCard} overflow-hidden py-0`}>
+        <CardContent className="px-0">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/50 hover:bg-muted/50">
+                <TableHead className="px-4">
                   <SortButton
-                    label={indicator.columnLabel}
-                    active={sortKey === indicator.code}
+                    label="Country"
+                    active={sortKey === "country"}
                     direction={sortDir}
-                    onClick={() => toggleSort(indicator.code)}
-                    align="right"
+                    onClick={() => toggleSort("country")}
                   />
                 </TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {sortedRows.map((row) => {
-              const selected = row.iso3 === selectedCountry;
+                {indicators.map((indicator) => (
+                  <TableHead key={indicator.code} className="px-4 text-right">
+                    <SortButton
+                      label={indicator.columnLabel}
+                      active={sortKey === indicator.code}
+                      direction={sortDir}
+                      onClick={() => toggleSort(indicator.code)}
+                      align="right"
+                    />
+                  </TableHead>
+                ))}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {sortedRows.map((row) => {
+                const selected = row.iso3 === selectedCountry;
 
-              return (
-                <TableRow
-                  key={row.iso3}
-                  tabIndex={0}
-                  role="button"
-                  aria-current={selected ? "true" : undefined}
-                  aria-label={`Select ${row.name}`}
-                  onClick={() => selectCountry(row.iso3)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      selectCountry(row.iso3);
-                    }
-                  }}
-                  className={cn(
-                    "cursor-pointer border-l-2 border-l-transparent hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring/50",
-                    selected &&
-                      "border-l-foreground bg-muted/60 dark:bg-muted/35",
-                  )}
-                >
-                  <TableCell className="px-4 font-medium">{row.name}</TableCell>
-                  {indicators.map((indicator) => (
-                    <TableCell
-                      key={indicator.code}
-                      className="px-4 text-right"
-                    >
-                      <ValueCell
-                        snapshot={row.cells[indicator.code]}
-                        indicator={indicator}
-                      />
-                    </TableCell>
-                  ))}
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+                return (
+                  <TableRow
+                    key={row.iso3}
+                    tabIndex={0}
+                    role="button"
+                    aria-current={selected ? "true" : undefined}
+                    aria-label={`Select ${row.name}`}
+                    onClick={() => selectCountry(row.iso3)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        selectCountry(row.iso3);
+                      }
+                    }}
+                    className={cn(
+                      "cursor-pointer border-l-2 border-l-transparent hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring/50",
+                      selected &&
+                        "border-l-foreground bg-muted/60 dark:bg-muted/35",
+                    )}
+                  >
+                    <TableCell className="px-4 font-medium">{row.name}</TableCell>
+                    {indicators.map((indicator) => (
+                      <TableCell
+                        key={indicator.code}
+                        className="px-4 text-right"
+                      >
+                        <ValueCell
+                          snapshot={row.cells[indicator.code]}
+                          indicator={indicator}
+                        />
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+      {footnotes.length > 0 ? (
+        <ul className="space-y-1 px-1 text-xs text-muted-foreground">
+          {footnotes.map((note) => (
+            <li key={note}>* {note}</li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
   );
 }

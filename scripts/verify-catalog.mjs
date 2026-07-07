@@ -1,136 +1,341 @@
 /**
- * Snapshot verification for all catalog country × indicator combinations.
- * Usage: node scripts/verify-catalog.mjs
- * Reads TE_API_KEY from .env.local (no extra dependencies).
+ * Live coverage matrix for the frozen 8-indicator G7 catalog.
+ * Usage: USE_MOCK=false FRED_API_KEY=... npm run verify-catalog
  */
 
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
-
 const COUNTRIES = [
-  { iso3: "can", name: "Canada" },
-  { iso3: "fra", name: "France" },
-  { iso3: "deu", name: "Germany" },
-  { iso3: "ita", name: "Italy" },
-  { iso3: "jpn", name: "Japan" },
-  { iso3: "gbr", name: "United Kingdom" },
-  { iso3: "usa", name: "United States" },
+  { iso3: "can", name: "Canada", imf: "CAN" },
+  { iso3: "fra", name: "France", imf: "FRA" },
+  { iso3: "deu", name: "Germany", imf: "DEU" },
+  { iso3: "ita", name: "Italy", imf: "ITA" },
+  { iso3: "jpn", name: "Japan", imf: "JPN" },
+  { iso3: "gbr", name: "United Kingdom", imf: "GBR" },
+  { iso3: "usa", name: "United States", imf: "USA" },
 ];
 
 const INDICATORS = [
-  { code: "ny.gdp.mktp.kd.zg", name: "GDP Growth Rate", worldBank: true },
-  { code: "fr.inr.lndp", name: "Interest Rate", worldBank: true },
-  { code: "fp.cpi.totl.zg", name: "Inflation Rate", worldBank: true },
-  { code: "sl.uem.totl.zs", name: "Unemployment Rate", worldBank: true },
-  { code: "gc.dod.totl.gd.zs", name: "Government Debt to GDP", worldBank: true },
-  { code: "ne.rsb.gnfs.zs", name: "Balance of Trade", worldBank: true },
-  { code: "bn.cab.xoka.gd.zs", name: "Current Account to GDP", worldBank: true },
-  { code: "credit.rating", name: "Credit Rating", worldBank: false },
+  {
+    code: "ny.gdp.mktp.kd.zg",
+    name: "GDP Growth",
+    source: "WB",
+    wb: "NY.GDP.MKTP.KD.ZG",
+  },
+  {
+    code: "fp.cpi.totl.zg",
+    name: "Inflation (CPI)",
+    source: "WB",
+    wb: "FP.CPI.TOTL.ZG",
+  },
+  {
+    code: "sl.uem.totl.zs",
+    name: "Unemployment",
+    source: "WB",
+    wb: "SL.UEM.TOTL.ZS",
+  },
+  {
+    code: "policy.int.rate",
+    name: "Interest Rate",
+    source: "FRED",
+    fredType: "policy",
+  },
+  {
+    code: "ne.rsb.gnfs.zs",
+    name: "Balance of Trade",
+    source: "WB",
+    wb: "NE.RSB.GNFS.ZS",
+  },
+  {
+    code: "bn.cab.xoka.gd.zs",
+    name: "Current Account",
+    source: "WB",
+    wb: "BN.CAB.XOKA.GD.ZS",
+  },
+  {
+    code: "ggxwdg_ngdp",
+    name: "Government Debt",
+    source: "IMF",
+    imf: "GGXWDG_NGDP",
+  },
+  {
+    code: "bond.yield.10y",
+    name: "10Y Bond Yield",
+    source: "FRED",
+    fredType: "bond",
+  },
 ];
 
-function loadApiKey() {
-  const envPath = resolve(process.cwd(), ".env.local");
-  const env = readFileSync(envPath, "utf8");
-  const match = env.match(/^TE_API_KEY=(.+)$/m);
-  if (!match) {
-    throw new Error("TE_API_KEY not found in .env.local");
+const FRED_POLICY_SERIES = {
+  usa: "DFEDTARU",
+  can: "IRSTCB01CAM156N",
+  jpn: "IRSTCB01JPM156N",
+  gbr: "IUDSOIA",
+  deu: "ECBDFR",
+  fra: "ECBDFR",
+  ita: "ECBDFR",
+};
+
+const FRED_BOND_SERIES = {
+  usa: "IRLTLT01USM156N",
+  can: "IRLTLT01CAM156N",
+  jpn: "IRLTLT01JPM156N",
+  deu: "IRLTLT01DEM156N",
+  fra: "IRLTLT01FRM156N",
+  gbr: "IRLTLT01GBM156N",
+  ita: "IRLTLT01ITM156N",
+};
+
+const G7_BATCH = COUNTRIES.map((country) => country.iso3).join(";");
+const G7_IMF = COUNTRIES.map((country) => country.imf).join("/");
+const DATE_RANGE = "2000:2024";
+const FRED_KEY = process.env.FRED_API_KEY;
+
+async function fetchWbIndicator(wbCode) {
+  const params = new URLSearchParams({
+    format: "json",
+    per_page: "200",
+    date: DATE_RANGE,
+  });
+  const url = `https://api.worldbank.org/v2/country/${G7_BATCH}/indicator/${wbCode}?${params.toString()}`;
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    return { status: "error", detail: `HTTP ${response.status}` };
   }
-  return match[1].trim();
+
+  const payload = await response.json();
+  const rows = Array.isArray(payload?.[1]) ? payload[1] : [];
+
+  const latestByCountry = new Map();
+  for (const row of rows) {
+    if (row.value == null || !row.countryiso3code || !row.date) continue;
+    const iso = row.countryiso3code.toLowerCase();
+    const current = latestByCountry.get(iso);
+    if (!current || Number(row.date) > Number(current.date)) {
+      latestByCountry.set(iso, { date: row.date, value: row.value });
+    }
+  }
+
+  return { status: "ok", latestByCountry };
 }
 
-async function checkSnapshot(symbol, apiKey) {
-  const url = `https://api.tradingeconomics.com/worldbank/indicator?s=${symbol}&c=${encodeURIComponent(apiKey)}`;
-
-  try {
-    const response = await fetch(url);
-    const text = await response.text();
-
-    if (!response.ok) {
-      return { status: "error", detail: `HTTP ${response.status}` };
-    }
-
-    if (!text.trim().startsWith("[")) {
-      return { status: "error", detail: "non-JSON response" };
-    }
-
-    const rows = JSON.parse(text);
-    if (!Array.isArray(rows) || rows.length === 0) {
-      return { status: "empty", detail: "[]" };
-    }
-
-    const row = rows[0];
-    if (row.last == null) {
-      return { status: "empty", detail: "no last value" };
-    }
-
-    return { status: "ok", detail: `last=${row.last}` };
-  } catch (error) {
-    return {
-      status: "error",
-      detail: error instanceof Error ? error.message : "unknown",
-    };
+async function fetchImfIndicator(imfCode) {
+  const url = `https://www.imf.org/external/datamapper/api/v1/${imfCode}/${G7_IMF}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    return { status: "error", detail: `HTTP ${response.status}` };
   }
+
+  const payload = await response.json();
+  const values = payload?.values?.[imfCode] ?? {};
+  const latestByCountry = new Map();
+
+  for (const country of COUNTRIES) {
+    const series = values[country.imf];
+    if (!series) continue;
+    const years = Object.keys(series)
+      .filter((year) => Number(year) <= 2024)
+      .sort((a, b) => Number(b) - Number(a));
+    if (years.length === 0) continue;
+    const year = years[0];
+    latestByCountry.set(country.iso3, { date: year, value: series[year] });
+  }
+
+  return { status: "ok", latestByCountry };
 }
 
-const apiKey = loadApiKey();
-const results = [];
+function downsampleFredAnnual(observations) {
+  const valid = observations.filter((row) => row.value !== ".");
+  const byYear = new Map();
 
-for (const country of COUNTRIES) {
-  for (const indicator of INDICATORS) {
-    const symbol = `${country.iso3}.${indicator.code}`;
+  for (const obs of valid) {
+    const date = new Date(`${obs.date}T00:00:00`);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const existing = byYear.get(year);
 
-    if (indicator.worldBank === false) {
-      results.push({
-        symbol,
-        country: country.name,
-        indicator: indicator.name,
-        status: "skip",
-        detail: "uses /credit-ratings, not worldbank",
-      });
+    if (!existing) {
+      byYear.set(year, obs);
       continue;
     }
 
-    const result = await checkSnapshot(symbol, apiKey);
-    results.push({
-      symbol,
-      country: country.name,
-      indicator: indicator.name,
-      ...result,
-    });
+    const existingMonth = new Date(`${existing.date}T00:00:00`).getMonth();
+    const existingIsDec = existingMonth === 11;
+    const obsIsDec = month === 11;
+
+    if (obsIsDec && !existingIsDec) {
+      byYear.set(year, obs);
+      continue;
+    }
+
+    if (obsIsDec === existingIsDec && obs.date > existing.date) {
+      byYear.set(year, obs);
+    }
+  }
+
+  const years = [...byYear.keys()].sort((a, b) => b - a);
+  if (years.length === 0) return null;
+  const year = years[0];
+  const obs = byYear.get(year);
+  return { date: String(year), value: Number.parseFloat(obs.value) };
+}
+
+async function fetchFredSeries(seriesId) {
+  if (!FRED_KEY) {
+    return { status: "error", detail: "FRED_API_KEY missing" };
+  }
+
+  const params = new URLSearchParams({
+    series_id: seriesId,
+    api_key: FRED_KEY,
+    file_type: "json",
+    observation_start: "2000-01-01",
+  });
+  const url = `https://api.stlouisfed.org/fred/series/observations?${params.toString()}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    return { status: "error", detail: `HTTP ${response.status}` };
+  }
+
+  const payload = await response.json();
+  if (payload.error_message) {
+    return { status: "error", detail: payload.error_message };
+  }
+
+  const latest = downsampleFredAnnual(payload.observations ?? []);
+  return latest
+    ? { status: "ok", latest }
+    : { status: "empty", detail: "no observations" };
+}
+
+const results = [];
+
+for (const indicator of INDICATORS) {
+  if (indicator.source === "WB") {
+    const fetched = await fetchWbIndicator(indicator.wb);
+    if (fetched.status !== "ok") {
+      for (const country of COUNTRIES) {
+        results.push({
+          symbol: `${country.iso3}.${indicator.code}`,
+          country: country.name,
+          indicator: indicator.name,
+          source: indicator.source,
+          status: fetched.status,
+          detail: fetched.detail,
+        });
+      }
+      continue;
+    }
+
+    for (const country of COUNTRIES) {
+      const latest = fetched.latestByCountry.get(country.iso3);
+      results.push({
+        symbol: `${country.iso3}.${indicator.code}`,
+        country: country.name,
+        indicator: indicator.name,
+        source: indicator.source,
+        status: latest ? "live" : "empty",
+        detail: latest ? `last=${latest.value} (${latest.date})` : "no value",
+      });
+    }
+    continue;
+  }
+
+  if (indicator.source === "IMF") {
+    const fetched = await fetchImfIndicator(indicator.imf);
+    if (fetched.status !== "ok") {
+      for (const country of COUNTRIES) {
+        results.push({
+          symbol: `${country.iso3}.${indicator.code}`,
+          country: country.name,
+          indicator: indicator.name,
+          source: indicator.source,
+          status: fetched.status,
+          detail: fetched.detail,
+        });
+      }
+      continue;
+    }
+
+    for (const country of COUNTRIES) {
+      const latest = fetched.latestByCountry.get(country.iso3);
+      results.push({
+        symbol: `${country.iso3}.${indicator.code}`,
+        country: country.name,
+        indicator: indicator.name,
+        source: indicator.source,
+        status: latest ? "live" : "empty",
+        detail: latest ? `last=${latest.value} (${latest.date})` : "no value",
+      });
+    }
+    continue;
+  }
+
+  if (indicator.source === "FRED") {
+    const seriesMap =
+      indicator.fredType === "bond" ? FRED_BOND_SERIES : FRED_POLICY_SERIES;
+
+    for (const country of COUNTRIES) {
+      const seriesId = seriesMap[country.iso3];
+      const fetched = await fetchFredSeries(seriesId);
+      results.push({
+        symbol: `${country.iso3}.${indicator.code}`,
+        country: country.name,
+        indicator: indicator.name,
+        source: `${indicator.source}:${seriesId}`,
+        status: fetched.status === "ok" ? "live" : fetched.status,
+        detail:
+          fetched.status === "ok"
+            ? `last=${fetched.latest.value} (${fetched.latest.date})`
+            : fetched.detail,
+      });
+    }
   }
 }
 
-const colSymbol = 28;
+const colSymbol = 30;
 const colCountry = 18;
 const colIndicator = 22;
+const colSource = 22;
 const colStatus = 8;
-const colDetail = 24;
+const colDetail = 28;
 
 console.log(
   "Symbol".padEnd(colSymbol) +
     "Country".padEnd(colCountry) +
     "Indicator".padEnd(colIndicator) +
+    "Source".padEnd(colSource) +
     "Status".padEnd(colStatus) +
     "Detail",
 );
-console.log("-".repeat(colSymbol + colCountry + colIndicator + colStatus + colDetail));
+console.log("-".repeat(colSymbol + colCountry + colIndicator + colSource + colStatus + colDetail));
 
 for (const row of results) {
   console.log(
     row.symbol.padEnd(colSymbol) +
       row.country.padEnd(colCountry) +
       row.indicator.padEnd(colIndicator) +
+      row.source.padEnd(colSource) +
       row.status.padEnd(colStatus) +
       row.detail,
   );
 }
 
-const ok = results.filter((r) => r.status === "ok").length;
+const live = results.filter((r) => r.status === "live").length;
 const empty = results.filter((r) => r.status === "empty").length;
 const errors = results.filter((r) => r.status === "error").length;
-const skipped = results.filter((r) => r.status === "skip").length;
 
 console.log("");
 console.log(
-  `Summary: ${ok} ok, ${empty} empty, ${errors} error, ${skipped} skipped (${results.length} total)`,
+  `Summary: ${live} live, ${empty} empty, ${errors} error (${results.length} total) — target 56/56 live`,
 );
+
+if (!FRED_KEY) {
+  console.log("");
+  console.log("Warning: FRED_API_KEY not set — FRED cells will fail verification.");
+}
+
+console.log("");
+console.log("FRED policy-rate fallbacks:");
+console.log("  USA: IRSTCB01USM156N missing → DFEDTARU");
+console.log("  GBR: IRSTCB01GBM156N missing → IUDSOIA (SONIA)");
+console.log("  DEU/FRA/ITA: IRSTCB01* missing → ECBDFR");

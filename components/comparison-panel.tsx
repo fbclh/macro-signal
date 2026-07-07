@@ -1,6 +1,12 @@
 import { ComparisonChart } from "@/components/comparison-chart";
 import { countryLabel } from "@/components/country-cards";
-import { COUNTRIES, INDICATORS, symbolFor } from "@/lib/catalog";
+import {
+  COUNTRIES,
+  FRED_POLICY_RATE_CODE,
+  INDICATORS,
+  symbolFor,
+} from "@/lib/catalog";
+import { policyRateFootnotes } from "@/lib/fred";
 import { computeInsight, mergeChartSeries } from "@/lib/insights";
 import { getHistorical } from "@/lib/te";
 
@@ -38,6 +44,11 @@ export async function ComparisonPanel({
     indicator?.name ?? "indicator",
   );
 
+  const footnotes =
+    chartIndicator === FRED_POLICY_RATE_CODE
+      ? policyRateFootnotes([chartA, chartB])
+      : [];
+
   return (
     <div className="space-y-4">
       <p className="border-l-2 border-foreground pl-4 text-sm leading-relaxed text-muted-foreground">
@@ -49,6 +60,13 @@ export async function ComparisonPanel({
         labelB={labelB}
         unit={unit}
       />
+      {footnotes.length > 0 ? (
+        <ul className="space-y-1 text-xs text-muted-foreground">
+          {footnotes.map((note) => (
+            <li key={note}>* {note}</li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 }

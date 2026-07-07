@@ -1,7 +1,6 @@
 import {
   deltaDirection,
   deltaSemanticClass,
-  formatCreditRatingDisplay,
   formatDate,
   formatDelta,
   formatValue,
@@ -10,7 +9,6 @@ import {
   INDICATOR_CARD_ROWS,
   INDICATOR_GROUPS,
   INDICATORS,
-  isCreditRating,
 } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { Card, CardContent } from "@/components/ui/card";
@@ -53,29 +51,14 @@ function IndicatorCard({
   snapshot: SnapshotRow;
   code: string;
 }) {
-  const indicator = INDICATORS.find((item) => item.code === code);
-  const isCredit = indicator != null && isCreditRating(indicator.code);
-  const credit = isCredit ? formatCreditRatingDisplay(snapshot.last) : null;
-
   return (
     <Card className={flatCard}>
       <CardContent className="flex flex-1 flex-col px-4 pt-0">
         <h4 className="text-sm font-medium">{snapshot.description}</h4>
-        {isCredit && credit ? (
-          <>
-            <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
-              {credit.score}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">{credit.label}</p>
-          </>
-        ) : (
-          <>
-            <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
-              {formatValue(snapshot.last, snapshot.unit, code)}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">{snapshot.unit}</p>
-          </>
-        )}
+        <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
+          {formatValue(snapshot.last, snapshot.unit, code)}
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">{snapshot.unit}</p>
         <div className="mt-3">
           <DeltaSparkline
             actual={snapshot.last}

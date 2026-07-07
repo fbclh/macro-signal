@@ -1,5 +1,5 @@
 import fixtures from "./fixtures.json";
-import type { HistoricalPoint, SnapshotRow } from "@/lib/te";
+import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 
 type Fixtures = {
   snapshots: SnapshotRow[];

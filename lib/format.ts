@@ -1,48 +1,13 @@
-import { isCreditRating } from "@/lib/catalog";
-
-const CREDIT_RATING_TIERS: { min: number; label: string }[] = [
-  { min: 100, label: "Prime" },
-  { min: 95, label: "High grade" },
-  { min: 85, label: "AA range" },
-  { min: 80, label: "Upper medium grade" },
-  { min: 70, label: "A range" },
-  { min: 65, label: "Lower medium grade" },
-  { min: 55, label: "BBB range" },
-  { min: 50, label: "Non-investment grade" },
-  { min: 35, label: "Highly speculative" },
-  { min: 20, label: "Substantial risk" },
-  { min: 0, label: "Distressed" },
-];
-
 export function formatValue(
   value: number,
   unit: string,
-  code?: string,
+  _code?: string,
 ): string {
-  if ((code && isCreditRating(code)) || unit === "TE index") {
-    return String(Math.round(value));
+  if (unit.startsWith("%")) {
+    return `${value.toFixed(2)}%`;
   }
 
-  if (unit.includes("US$")) {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    }).format(value);
-  }
-
-  return `${value.toFixed(2)}${unit.startsWith("%") ? "%" : ""}`;
-}
-
-export function formatCreditRatingDisplay(score: number): {
-  score: string;
-  label: string;
-} {
-  const rounded = Math.round(score);
-  const label =
-    CREDIT_RATING_TIERS.find((entry) => rounded >= entry.min)?.label ??
-    "Unrated";
-  return { score: String(rounded), label };
+  return value.toFixed(2);
 }
 
 export function formatDelta(current: number, previous: number): string {
@@ -61,9 +26,10 @@ export function formatDate(iso: string): string {
 export function formatOptionalValue(
   value: number | null | undefined,
   unit: string,
+  code?: string,
 ): string {
   if (value == null) return "—";
-  return formatValue(value, unit);
+  return formatValue(value, unit, code);
 }
 
 export function deltaDirection(

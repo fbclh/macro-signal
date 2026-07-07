@@ -1,5 +1,5 @@
 /**
- * Generates lib/mock/fixtures.json — TE-shaped snapshot + historical data
+ * Generates lib/mock/fixtures.json — snapshot + historical data
  * for every catalog country × indicator combination.
  * Run: node scripts/generate-mock-fixtures.mjs
  */
@@ -20,70 +20,69 @@ const COUNTRIES = [
 const INDICATORS = [
   {
     code: "ny.gdp.mktp.kd.zg",
-    name: "GDP Growth Rate",
+    name: "GDP Growth",
     unit: "%",
-    category: "GDP",
+    category: "growth-prices",
     base: 2.4,
     spread: 2.5,
   },
   {
     code: "fp.cpi.totl.zg",
-    name: "Inflation Rate",
+    name: "Inflation (CPI)",
     unit: "%",
-    category: "Prices",
+    category: "growth-prices",
     base: 3.1,
     spread: 4,
   },
   {
     code: "sl.uem.totl.zs",
-    name: "Unemployment Rate",
+    name: "Unemployment",
     unit: "%",
-    category: "Labour",
+    category: "labour-rates",
     base: 5.5,
     spread: 6,
   },
   {
-    code: "fr.inr.lndp",
+    code: "policy.int.rate",
     name: "Interest Rate",
     unit: "%",
-    category: "Financial",
+    category: "labour-rates",
     base: 4.5,
     spread: 3,
-  },
-  {
-    code: "gc.dod.totl.gd.zs",
-    name: "Government Debt to GDP",
-    unit: "% of GDP",
-    category: "Government",
-    base: 95,
-    spread: 35,
   },
   {
     code: "ne.rsb.gnfs.zs",
     name: "Balance of Trade",
     unit: "% of GDP",
-    category: "Trade",
+    category: "external-fiscal",
     base: 0,
     spread: 4,
     signed: true,
   },
   {
     code: "bn.cab.xoka.gd.zs",
-    name: "Current Account to GDP",
+    name: "Current Account",
     unit: "% of GDP",
-    category: "Trade",
+    category: "external-fiscal",
     base: 0,
     spread: 3,
     signed: true,
   },
   {
-    code: "credit.rating",
-    name: "Credit Rating",
-    unit: "",
-    category: "Ratings",
-    base: 75,
-    spread: 15,
-    integer: true,
+    code: "ggxwdg_ngdp",
+    name: "Government Debt",
+    unit: "% of GDP",
+    category: "sovereign",
+    base: 95,
+    spread: 35,
+  },
+  {
+    code: "bond.yield.10y",
+    name: "10Y Bond Yield",
+    unit: "%",
+    category: "sovereign",
+    base: 3.5,
+    spread: 2,
   },
 ];
 
@@ -106,22 +105,13 @@ for (const country of COUNTRIES) {
     const symbol = `${country.iso3}.${indicator.code}`;
     const seed = hash(symbol);
     const countryOffset = hash(country.iso3) % 100 / 50;
-    const decimals = indicator.integer ? 0 : 2;
     const rawLast = indicator.base + countryOffset + (seed % 100) / 80;
     const signedFactor =
       indicator.signed && seed % 3 === 0 ? -1 : indicator.signed ? 0.6 : 1;
-    const last = round(rawLast * signedFactor, decimals);
+    const last = round(rawLast * signedFactor, 2);
     const previous = round(
-      last + ((seed % 7) - 3) * (indicator.integer ? 1 : 0.15),
-      decimals,
-    );
-    const consensus = round(
-      last + ((seed % 5) - 2) * (indicator.integer ? 0.8 : 0.08),
-      decimals,
-    );
-    const forecast = round(
-      last + ((seed % 9) - 4) * (indicator.integer ? 1.2 : 0.12),
-      decimals,
+      last + ((seed % 7) - 3) * 0.15,
+      2,
     );
 
     snapshots.push({
@@ -133,12 +123,12 @@ for (const country of COUNTRIES) {
       country: country.name,
       category: indicator.category,
       description: indicator.name,
-      frequency: indicator.code === "credit.rating" ? "Monthly" : "Yearly",
+      frequency: "Yearly",
       unit: indicator.unit,
       title: `${country.name} ${indicator.name}`,
       lastUpdate: "2025-01-15T00:00:00",
-      consensus,
-      forecast,
+      consensus: null,
+      forecast: null,
     });
 
     const points = [];
@@ -146,9 +136,9 @@ for (const country of COUNTRIES) {
       const t = year - 2000;
       const wave = Math.sin((t + (seed % 12)) / 4) * indicator.spread * 0.35;
       const trend =
-        (t - 12) * 0.04 * (indicator.code.includes("gc.dod") ? 0.8 : 0.02);
+        (t - 12) * 0.04 * (indicator.code.includes("ggxwdg") ? 0.8 : 0.02);
       const raw = indicator.base + countryOffset + wave + trend;
-      const value = round(raw * signedFactor, decimals);
+      const value = round(raw * signedFactor, 2);
       points.push({
         symbol,
         date: `${year}-12-31T00:00:00`,

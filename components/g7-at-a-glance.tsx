@@ -1,12 +1,14 @@
 import { G7AtAGlanceTable } from "@/components/g7-at-a-glance-table";
 import {
   COUNTRIES,
+  FRED_POLICY_RATE_CODE,
   G7_GLANCE_INDICATORS,
   G7_GLANCE_SECONDARY_INDICATORS,
   INDICATOR_CARD_ROWS,
   INDICATORS,
   symbolFor,
 } from "@/lib/catalog";
+import { policyRateFootnotes } from "@/lib/fred";
 import { getSnapshot } from "@/lib/te";
 
 type G7AtAGlanceProps = {
@@ -66,12 +68,19 @@ export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
     ),
   }));
 
+  const headlineFootnotes = headlineIndicators.some(
+    (item) => item.code === FRED_POLICY_RATE_CODE,
+  )
+    ? policyRateFootnotes(COUNTRIES.map((c) => c.iso3))
+    : [];
+
   return (
     <div className="space-y-8">
       <G7AtAGlanceTable
         rows={rows}
         indicators={headlineIndicators}
         selectedCountry={selectedCountry}
+        footnotes={headlineFootnotes}
       />
       <div>
         <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">

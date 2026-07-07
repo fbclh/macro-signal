@@ -1,86 +1,97 @@
 import "server-only";
 
+import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
+import { DataApiError } from "@/lib/data";
+import { indicatorSource, type DataSource } from "@/lib/catalog";
 import { useMockData } from "@/lib/env";
+import { fredGetHistorical, fredGetSnapshot } from "@/lib/fred";
+import { imfGetHistorical, imfGetSnapshot } from "@/lib/imf";
 import { mockGetHistorical, mockGetSnapshot } from "@/lib/mock";
+import { wbGetHistorical, wbGetSnapshot } from "@/lib/wb";
 
-const BASE_URL = "https://api.tradingeconomics.com/worldbank";
+export type { HistoricalPoint, SnapshotRow } from "@/lib/data";
+export { DataApiError as TeApiError } from "@/lib/data";
 
-export type HistoricalPoint = {
-  symbol: string;
-  date: string;
-  value: number;
+type ProviderFns = {
+  getHistorical: (symbols: string[]) => Promise<HistoricalPoint[]>;
+  getSnapshot: (symbols: string[]) => Promise<SnapshotRow[]>;
 };
 
-export type SnapshotRow = {
-  symbol: string;
-  last: number;
-  date: string;
-  previous: number;
-  previousDate: string;
-  country: string;
-  category: string;
-  description: string;
-  frequency: string;
-  unit: string;
-  title: string;
-  lastUpdate: string;
-  consensus?: number | null;
-  forecast?: number | null;
+const PROVIDERS: Record<DataSource, ProviderFns> = {
+  worldbank: {
+    getHistorical: wbGetHistorical,
+    getSnapshot: wbGetSnapshot,
+  },
+  imf: {
+    getHistorical: imfGetHistorical,
+    getSnapshot: imfGetSnapshot,
+  },
+  fred: {
+    getHistorical: fredGetHistorical,
+    getSnapshot: fredGetSnapshot,
+  },
 };
 
-export class TeApiError extends Error {
-  readonly status: number;
-  readonly url: string;
-
-  constructor(message: string, status: number, url: string) {
-    super(message);
-    this.name = "TeApiError";
-    this.status = status;
-    this.url = url;
-  }
+function parseSymbolCode(symbol: string): string {
+  const dot = symbol.indexOf(".");
+  return dot > 0 ? symbol.slice(dot + 1) : symbol;
 }
 
-function getApiKey(): string {
-  const key = process.env.TE_API_KEY;
-  if (!key) {
-    throw new TeApiError("TE_API_KEY is not set", 500, BASE_URL);
+function splitSymbolsBySource(symbols: string[]): Map<DataSource, string[]> {
+  const buckets = new Map<DataSource, string[]>();
+
+  for (const symbol of symbols) {
+    const source = indicatorSource(parseSymbolCode(symbol));
+    const bucket = buckets.get(source) ?? [];
+    bucket.push(symbol);
+    buckets.set(source, bucket);
   }
-  return key;
+
+  return buckets;
 }
 
-function buildUrl(path: string, symbols: string[]): string {
-  const params = new URLSearchParams({
-    s: symbols.join(","),
-    c: getApiKey(),
-  });
-  return `${BASE_URL}${path}?${params.toString()}`;
+async function fetchHistoricalFromProviders(
+  buckets: Map<DataSource, string[]>,
+): Promise<HistoricalPoint[]> {
+  const entries = [...buckets.entries()];
+  const results = await Promise.all(
+    entries.map(async ([source, sourceSymbols]) => {
+      try {
+        return await PROVIDERS[source].getHistorical(sourceSymbols);
+      } catch (error) {
+        if (error instanceof DataApiError) throw error;
+        throw new DataApiError(
+          error instanceof Error ? error.message : "Failed to fetch historical data",
+          502,
+          source,
+        );
+      }
+    }),
+  );
+
+  return results.flat();
 }
 
-async function teFetch<T>(url: string): Promise<T> {
-  const response = await fetch(url, { next: { revalidate: 3600 } });
+async function fetchSnapshotFromProviders(
+  buckets: Map<DataSource, string[]>,
+): Promise<SnapshotRow[]> {
+  const entries = [...buckets.entries()];
+  const results = await Promise.all(
+    entries.map(async ([source, sourceSymbols]) => {
+      try {
+        return await PROVIDERS[source].getSnapshot(sourceSymbols);
+      } catch (error) {
+        if (error instanceof DataApiError) throw error;
+        throw new DataApiError(
+          error instanceof Error ? error.message : "Failed to fetch snapshot data",
+          502,
+          source,
+        );
+      }
+    }),
+  );
 
-  if (!response.ok) {
-    const body = await response.text();
-    const snippet = body.replace(/\s+/g, " ").trim().slice(0, 200);
-    throw new TeApiError(
-      `Trading Economics API error (${response.status}): ${snippet}`,
-      response.status,
-      url.replace(/c=[^&]+/, "c=***"),
-    );
-  }
-
-  const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("application/json")) {
-    const body = await response.text();
-    const snippet = body.replace(/\s+/g, " ").trim().slice(0, 200);
-    throw new TeApiError(
-      `Expected JSON but received: ${snippet}`,
-      response.status,
-      url.replace(/c=[^&]+/, "c=***"),
-    );
-  }
-
-  return response.json() as Promise<T>;
+  return results.flat();
 }
 
 export async function getHistorical(
@@ -94,8 +105,8 @@ export async function getHistorical(
     return mockGetHistorical(symbols);
   }
 
-  const url = buildUrl("/historical", symbols);
-  return teFetch<HistoricalPoint[]>(url);
+  const buckets = splitSymbolsBySource(symbols);
+  return fetchHistoricalFromProviders(buckets);
 }
 
 export async function getSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
@@ -107,6 +118,6 @@ export async function getSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
     return mockGetSnapshot(symbols);
   }
 
-  const url = buildUrl("/indicator", symbols);
-  return teFetch<SnapshotRow[]>(url);
+  const buckets = splitSymbolsBySource(symbols);
+  return fetchSnapshotFromProviders(buckets);
 }
