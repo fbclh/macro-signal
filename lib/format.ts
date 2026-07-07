@@ -27,10 +27,3 @@ export function deltaDirection(
   if (Math.abs(delta) < 0.005) return "flat";
   return delta > 0 ? "up" : "down";
 }
-
-export function deltaSemanticClass(
-  _current: number,
-  _previous: number,
-): string {
-  return "text-muted-foreground";
-}

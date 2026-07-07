@@ -1,8 +1,6 @@
 # Macro Signal
 
-A G7 macroeconomic dashboard — snapshot cards, a 25-year two-country comparison chart with rule-based insights, and a multi-country scanner table. Built with Next.js (App Router), TypeScript, Tailwind, and Recharts.
-
-Built for the Trading Economics developer task: the data layer mirrors the TE snapshot/historical shapes behind `lib/te.ts`, with live series fetched from open providers through a per-indicator adapter (see *Architecture*).
+A G7 macroeconomic analytics — snapshot cards, a 25-year two-country comparison chart with rule-based insights, and a multi-country scanner table. The data layer mirrors the TE snapshot/historical shapes behind `lib/te.ts`, with live series fetched from open providers through a per-indicator adapter (see *Architecture*).
 
 ![Macro Signal screenshot](./docs/screenshot.png)
 
@@ -12,7 +10,7 @@ Built for the Trading Economics developer task: the data layer mirrors the TE sn
 
 ## Features
 
-- **Main indicators** — snapshot cards with latest value, previous reading, delta, and sparkline per indicator (country selector)
+- **Main indicators** — snapshot cards with latest value, previous reading, delta, and sparkline per indicator (country selector). Deltas and sparklines are colored by economic meaning, not raw direction — rising unemployment shows red, rising GDP green — while indicators without a fixed valence (policy rates, bond yields, external balances) stay neutral.
 - **Comparison** — overlay any two G7 economies on one indicator (~25 years), with a generated one-line insight (consecutive-trend and crossover detection, pure logic — no AI calls)
 - **G7 at a glance** — 7 countries × 8 indicators across two scanner tables; row click highlights a country in the glance view
 - Dark/light theme, responsive, zero client-side API keys
@@ -52,10 +50,7 @@ All fetches are server-side with hourly revalidation; keys never reach the clien
 
 ## Tech stack
 
-**App:** Next.js 16 (App Router) · React 19 · TypeScript  
-**UI:** Tailwind CSS v4 · shadcn/ui · Lucide · Inter  
-**Charts:** Recharts · custom SVG sparklines  
-**Tooling:** ESLint · Vercel
+Next.js · TypeScript · Recharts · shadcn/ui · Tailwind CSS
 
 ## Getting started
 

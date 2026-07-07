@@ -5,7 +5,9 @@ import {
   formatValue,
 } from "@/lib/format";
 import { INDICATOR_CARD_ROWS, INDICATORS } from "@/lib/catalog";
+import type { IndicatorValence } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
+import { valenceClass, valenceForCode } from "@/lib/valence";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { DeltaSparkline } from "./sparkline";
@@ -19,24 +21,33 @@ const groupLayoutClass =
 function DeltaArrow({
   current,
   previous,
+  valence,
 }: {
   current: number;
   previous: number;
+  valence: IndicatorValence;
 }) {
   const direction = deltaDirection(current, previous);
+  const colorClass = valenceClass(valence, current, previous);
 
   if (direction === "flat") {
-    return <span className="text-muted-foreground">—</span>;
+    return <span className={colorClass}>—</span>;
   }
 
   return (
-    <span className="text-muted-foreground" aria-hidden="true">
+    <span className={colorClass} aria-hidden="true">
       {direction === "up" ? "▲" : "▼"}
     </span>
   );
 }
 
-function IndicatorCard({ snapshot }: { snapshot: SnapshotRow }) {
+function IndicatorCard({
+  snapshot,
+  valence,
+}: {
+  snapshot: SnapshotRow;
+  valence: IndicatorValence;
+}) {
   return (
     <Card className={flatCard}>
       <CardContent className="flex flex-1 flex-col px-4 pt-0">
@@ -49,6 +60,7 @@ function IndicatorCard({ snapshot }: { snapshot: SnapshotRow }) {
           <DeltaSparkline
             actual={snapshot.last}
             previous={snapshot.previous}
+            valence={valence}
             variant="curve"
           />
         </div>
@@ -60,8 +72,14 @@ function IndicatorCard({ snapshot }: { snapshot: SnapshotRow }) {
                 {formatValue(snapshot.previous, snapshot.unit)}
               </span>
             </span>
-            <span className="flex items-center gap-1 tabular-nums text-muted-foreground">
-              <DeltaArrow current={snapshot.last} previous={snapshot.previous} />
+            <span
+              className={`flex items-center gap-1 tabular-nums ${valenceClass(valence, snapshot.last, snapshot.previous)}`}
+            >
+              <DeltaArrow
+                current={snapshot.last}
+                previous={snapshot.previous}
+                valence={valence}
+              />
               {formatDelta(snapshot.last, snapshot.previous)}
             </span>
           </div>
@@ -114,7 +132,11 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
             {row.groups.map((group) => (
               <div key={group.id} className={groupLayoutClass}>
                 {group.items.map((item) => (
-                  <IndicatorCard key={item.snapshot.symbol} snapshot={item.snapshot} />
+                  <IndicatorCard
+                    key={item.snapshot.symbol}
+                    snapshot={item.snapshot}
+                    valence={valenceForCode(item.code)}
+                  />
                 ))}
               </div>
             ))}

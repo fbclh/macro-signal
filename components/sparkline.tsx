@@ -1,10 +1,13 @@
 import { deltaDirection } from "@/lib/format";
+import type { IndicatorValence } from "@/lib/catalog";
+import { valenceSparkColors } from "@/lib/valence";
 
 type SparklineVariant = "linear" | "curve";
 
 type DeltaSparklineProps = {
   actual: number;
   previous: number;
+  valence: IndicatorValence;
   className?: string;
   compact?: boolean;
   variant?: SparklineVariant;
@@ -14,24 +17,6 @@ type Trend = "up" | "down" | "flat";
 
 /** One point of |Actual − Previous| spans the full sparkline height. */
 const DELTA_FULL_SCALE = 1;
-
-const trendStyles = {
-  up: {
-    fill: "var(--spark-up-fill)",
-    stroke: "var(--spark-up-stroke)",
-    dot: "var(--spark-up-dot)",
-  },
-  down: {
-    fill: "var(--spark-down-fill)",
-    stroke: "var(--spark-down-stroke)",
-    dot: "var(--spark-down-dot)",
-  },
-  flat: {
-    fill: "var(--spark-flat-fill)",
-    stroke: "var(--spark-flat-stroke)",
-    dot: "var(--spark-flat-dot)",
-  },
-};
 
 function trendPoints(
   actual: number,
@@ -103,6 +88,7 @@ function trendPath(
 export function DeltaSparkline({
   actual,
   previous,
+  valence,
   className = "",
   compact = false,
   variant = "curve",
@@ -117,7 +103,7 @@ export function DeltaSparkline({
     padding,
     innerHeight,
   );
-  const colors = trendStyles[trend];
+  const colors = valenceSparkColors(valence, actual, previous);
   const path = trendPath(yPrevious, yActual, width, trend, variant);
 
   return (

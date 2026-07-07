@@ -11,12 +11,15 @@ export type Country = {
   name: string;
 };
 
+export type IndicatorValence = "higher-good" | "higher-bad" | "neutral";
+
 export type Indicator = {
   code: string;
   name: string;
   unit: string;
   group: IndicatorGroupId;
   source: DataSource;
+  valence: IndicatorValence;
 };
 
 export const IMF_DEBT_CODE = "ggxwdg_ngdp";
@@ -63,6 +66,7 @@ export const INDICATORS: Indicator[] = [
     unit: "%",
     group: "growth-prices",
     source: "worldbank",
+    valence: "higher-good",
   },
   {
     code: "fp.cpi.totl.zg",
@@ -70,6 +74,7 @@ export const INDICATORS: Indicator[] = [
     unit: "%",
     group: "growth-prices",
     source: "worldbank",
+    valence: "higher-bad",
   },
   {
     code: "sl.uem.totl.zs",
@@ -77,6 +82,7 @@ export const INDICATORS: Indicator[] = [
     unit: "%",
     group: "labour-rates",
     source: "worldbank",
+    valence: "higher-bad",
   },
   {
     code: FRED_POLICY_RATE_CODE,
@@ -84,6 +90,7 @@ export const INDICATORS: Indicator[] = [
     unit: "%",
     group: "labour-rates",
     source: "fred",
+    valence: "neutral",
   },
   {
     code: "ne.rsb.gnfs.zs",
@@ -91,6 +98,7 @@ export const INDICATORS: Indicator[] = [
     unit: "% of GDP",
     group: "external-fiscal",
     source: "worldbank",
+    valence: "neutral",
   },
   {
     code: "bn.cab.xoka.gd.zs",
@@ -98,6 +106,7 @@ export const INDICATORS: Indicator[] = [
     unit: "% of GDP",
     group: "external-fiscal",
     source: "worldbank",
+    valence: "neutral",
   },
   {
     code: IMF_DEBT_CODE,
@@ -105,6 +114,7 @@ export const INDICATORS: Indicator[] = [
     unit: "% of GDP",
     group: "sovereign",
     source: "imf",
+    valence: "higher-bad",
   },
   {
     code: FRED_BOND_YIELD_CODE,
@@ -112,6 +122,7 @@ export const INDICATORS: Indicator[] = [
     unit: "%",
     group: "sovereign",
     source: "fred",
+    valence: "neutral",
   },
 ];
 

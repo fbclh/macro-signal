@@ -14,10 +14,11 @@ import {
 } from "@/components/ui/table";
 import {
   deltaDirection,
-  deltaSemanticClass,
   formatDelta,
   formatValue,
 } from "@/lib/format";
+import type { IndicatorValence } from "@/lib/catalog";
+import { valenceClass, valenceForCode } from "@/lib/valence";
 import type { SnapshotRow } from "@/lib/te";
 import { cn } from "@/lib/utils";
 
@@ -51,9 +52,11 @@ type G7AtAGlanceTableProps = {
 function DeltaSuffix({
   current,
   previous,
+  valence,
 }: {
   current: number;
   previous: number;
+  valence: IndicatorValence;
 }) {
   const direction = deltaDirection(current, previous);
   const arrow =
@@ -63,7 +66,7 @@ function DeltaSuffix({
     <span
       className={cn(
         "text-xs tabular-nums",
-        deltaSemanticClass(current, previous),
+        valenceClass(valence, current, previous),
       )}
     >
       {arrow} {formatDelta(current, previous)}
@@ -87,7 +90,11 @@ function ValueCell({
       <span className="tabular-nums font-medium">
         {formatValue(snapshot.last, indicator.unit)}
       </span>
-      <DeltaSuffix current={snapshot.last} previous={snapshot.previous} />
+      <DeltaSuffix
+        current={snapshot.last}
+        previous={snapshot.previous}
+        valence={valenceForCode(indicator.code)}
+      />
     </span>
   );
 }
