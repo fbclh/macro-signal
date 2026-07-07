@@ -1,7 +1,7 @@
 const FOOTER_LINKS = [
-  { label: "fbclh", href: "https://github.com/fbclh" },
-  { label: "GitHub", href: "https://github.com/fbclh/macro-signal" },
-  { label: "LinkedIn", href: "#" },
+  { label: "fbclh", href: "https://www.fbclh.io/" },
+  { label: "GitHub", href: "https://github.com/fbclh" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/fbclh/" },
 ] as const;
 
 export function Footer() {
