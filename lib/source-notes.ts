@@ -2,10 +2,15 @@ import { policyRateFootnotes } from "@/lib/fred";
 
 export const DATA_SOURCES_LINE = "Data: World Bank · IMF · FRED";
 
+export const DATA_FREQUENCY_LINE =
+  "World Bank series are annual (latest actual year); IMF WEO annual (actuals/estimates only, projections excluded); FRED series monthly (latest observation) — as-of dates therefore vary by indicator.";
+
 const POLICY_NOTE_ORDER = [
   "Euro area members shown at the ECB policy rate",
   "SONIA overnight rate (BoE policy rate series discontinued on FRED)",
   "Federal Funds Target Range (upper limit)",
+  "Bank of Canada immediate call-money rate (OECD IRSTCB01 discontinued Dec 2023)",
+  "BoJ uncollateralized overnight call rate (OECD IRSTCB01 discontinued Dec 2023)",
 ] as const;
 
 /** Single-line methodology note for policy interest rate series. */
@@ -19,6 +24,7 @@ export function policyRateFootnoteLine(iso3List: string[]): string | null {
 export function g7FiscalTableFooter(iso3List: string[]) {
   return {
     note: policyRateFootnoteLine(iso3List),
+    frequency: DATA_FREQUENCY_LINE,
     sources: DATA_SOURCES_LINE,
   };
 }

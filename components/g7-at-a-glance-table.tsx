@@ -42,6 +42,7 @@ type G7AtAGlanceTableProps = {
   selectedCountry: string;
   tableFooter?: {
     note?: string | null;
+    frequency?: string;
     sources?: string;
   };
 };
@@ -235,11 +236,20 @@ export function G7AtAGlanceTable({
           </Table>
         </CardContent>
       </Card>
-      {tableFooter?.note || tableFooter?.sources ? (
+      {tableFooter?.note || tableFooter?.frequency || tableFooter?.sources ? (
         <div className="mt-1.5 space-y-0.5 px-1 text-[11px] leading-snug text-muted-foreground">
           {tableFooter.note ? <p>{tableFooter.note}</p> : null}
-          {tableFooter.sources ? (
+          {tableFooter.frequency ? (
             <p className={tableFooter.note ? "opacity-75" : undefined}>
+              {tableFooter.frequency}
+            </p>
+          ) : null}
+          {tableFooter.sources ? (
+            <p
+              className={
+                tableFooter.note || tableFooter.frequency ? "opacity-75" : undefined
+              }
+            >
               {tableFooter.sources}
             </p>
           ) : null}

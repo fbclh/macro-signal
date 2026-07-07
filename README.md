@@ -38,7 +38,7 @@ Historical data is also exposed at `GET /api/series?symbols=usa.fp.cpi.totl.zg,.
 | Government Debt | IMF DataMapper | `GGXWDG_NGDP` |
 | 10Y Bond Yield | FRED | `IRLTLT01{CC}M156N` |
 
-¹ **Interest rate series (verified Jul 2026):** CAN/JPN `IRSTCB01*M156N`; USA `DFEDTARU` (specified `IRSTCB01USM156N` missing); GBR `IUDSOIA` / SONIA (`IRSTCB01GBM156N` missing); DEU/FRA/ITA `ECBDFR` (euro area ECB deposit facility rate). Methodology note shown under the fiscal G7 table.
+¹ **Interest rate series (verified Jul 2026):** CAN `IRSTCI01CAM156N` (BoC call-money; `IRSTCB01CAM156N` discontinued); JPN `IRSTCI01JPM156N` (BoJ overnight call; `IRSTCB01JPM156N` discontinued); USA `DFEDTARU` (`IRSTCB01USM156N` missing); GBR `IUDSOIA` / SONIA (`IRSTCB01GBM156N` missing); DEU/FRA/ITA `ECBDFR` (euro area ECB deposit facility rate). Methodology note shown under the fiscal G7 table.
 
 Indicators were selected for **complete live coverage across all G7 economies** (56/56 cells). Series with partial coverage (real interest rate, credit rating, central-government debt) were excluded.
 
@@ -47,6 +47,10 @@ USE_MOCK=false FRED_API_KEY=your_key npm run verify-catalog
 ```
 
 All fetches are server-side with hourly revalidation; keys never reach the client. With `USE_MOCK=true`, the app serves bundled fixtures only. In live mode, missing `FRED_API_KEY` falls back to fixtures for FRED indicators (console warning); WB and IMF errors surface as empty cells or API errors.
+
+### Data freshness
+
+Sources publish at different frequencies: World Bank series are annual (latest actual year, currently 2024); IMF WEO is annual with actuals/estimates through 2025 — projection years are deliberately excluded; FRED rate/yield series are monthly (latest available observation). Each card and cell shows the true as-of date of its underlying data point rather than a normalized date.
 
 ## Tech stack
 
