@@ -1,7 +1,17 @@
 import { deltaDirection, formatDelta } from "@/lib/format";
 import type { IndicatorValence } from "@/lib/catalog";
-import { valenceClass, valenceForCode } from "@/lib/valence";
+import {
+  valenceForCode,
+  valenceOutcome,
+  type ValenceOutcome,
+} from "@/lib/valence";
 import { cn } from "@/lib/utils";
+
+const OUTCOME_CLASS: Record<ValenceOutcome, string> = {
+  improving: "text-delta-up",
+  worsening: "text-delta-down",
+  neutral: "text-muted-foreground",
+};
 
 type DeltaIndicatorProps = {
   current: number;
@@ -39,7 +49,9 @@ export function DeltaIndicator({
     );
   }
 
-  const colorClass = valenceClass(resolvedValence, current, previous);
+  const colorClass = OUTCOME_CLASS[
+    valenceOutcome(resolvedValence, current, previous)
+  ];
   const direction = deltaDirection(current, previous);
   const glyph =
     direction === "up" ? "▲" : direction === "down" ? "▼" : "—";
