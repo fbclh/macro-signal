@@ -149,10 +149,6 @@ export function indicatorSource(code: string): DataSource {
   return indicatorByCode(code)?.source ?? "worldbank";
 }
 
-export function indicatorSignedAxis(code: string): boolean {
-  return code === "ne.rsb.gnfs.zs" || code === "bn.cab.xoka.gd.zs";
-}
-
 export function catalogCodeToWb(code: string): string {
   return code.toUpperCase();
 }

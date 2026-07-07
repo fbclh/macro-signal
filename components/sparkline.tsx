@@ -1,17 +1,19 @@
-import { deltaChartScale, deltaDirection } from "@/lib/format";
+import { deltaDirection } from "@/lib/format";
 
 type SparklineVariant = "linear" | "curve";
 
 type DeltaSparklineProps = {
   actual: number;
   previous: number;
-  unit: string;
   className?: string;
   compact?: boolean;
   variant?: SparklineVariant;
 };
 
 type Trend = "up" | "down" | "flat";
+
+/** One point of |Actual − Previous| spans the full sparkline height. */
+const DELTA_FULL_SCALE = 1;
 
 const trendStyles = {
   up: {
@@ -34,7 +36,6 @@ const trendStyles = {
 function trendPoints(
   actual: number,
   previous: number,
-  unit: string,
   padding: number,
   innerHeight: number,
 ): { yPrevious: number; yActual: number; trend: Trend } {
@@ -46,8 +47,7 @@ function trendPoints(
   }
 
   const magnitude = Math.abs(actual - previous);
-  const scale = deltaChartScale(unit);
-  const ratio = Math.min(magnitude / scale, 1);
+  const ratio = Math.min(magnitude / DELTA_FULL_SCALE, 1);
   const halfSpan = (innerHeight / 2) * ratio;
 
   if (trend === "up") {
@@ -103,7 +103,6 @@ function trendPath(
 export function DeltaSparkline({
   actual,
   previous,
-  unit,
   className = "",
   compact = false,
   variant = "curve",
@@ -115,7 +114,6 @@ export function DeltaSparkline({
   const { yPrevious, yActual, trend } = trendPoints(
     actual,
     previous,
-    unit,
     padding,
     innerHeight,
   );

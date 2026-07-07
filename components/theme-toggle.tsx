@@ -1,40 +1,34 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
 
-import { applyTheme, readTheme, type Theme } from "@/lib/theme";
+import { applyTheme, type Theme } from "@/lib/theme";
+import { useHydrated } from "@/lib/use-hydrated";
+import { useIsDark } from "@/lib/use-is-dark";
 import { cn } from "@/lib/utils";
 
 const segmentClass =
   "flex size-7 items-center justify-center rounded-sm transition-colors outline-none focus-visible:ring-1 focus-visible:ring-ring/50";
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
+function segmentStyle(active: boolean) {
+  return active
+    ? {
+        backgroundColor: "var(--toggle-active-bg)",
+        color: "var(--toggle-active-fg)",
+      }
+    : {
+        backgroundColor: "transparent",
+        color: "var(--toggle-inactive-fg)",
+      };
+}
 
-  useEffect(() => {
-    setTheme(readTheme());
-    setMounted(true);
-  }, []);
+export function ThemeToggle() {
+  const mounted = useHydrated();
+  const dark = useIsDark();
+  const isDark = mounted && dark;
 
   function select(next: Theme) {
     applyTheme(next);
-    setTheme(next);
-  }
-
-  const isDark = mounted && theme === "dark";
-
-  function segmentStyle(active: boolean) {
-    return active
-      ? {
-          backgroundColor: "var(--toggle-active-bg)",
-          color: "var(--toggle-active-fg)",
-        }
-      : {
-          backgroundColor: "transparent",
-          color: "var(--toggle-inactive-fg)",
-        };
   }
 
   return (

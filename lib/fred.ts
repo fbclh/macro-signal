@@ -1,16 +1,14 @@
 import "server-only";
 
 import {
-  COUNTRIES,
   FRED_BOND_YIELD_CODE,
   FRED_POLICY_RATE_CODE,
   isFredIndicator,
-  type Indicator,
 } from "@/lib/catalog";
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
-import { INDICATORS } from "@/lib/catalog";
 import { mockGetHistorical, mockGetSnapshot } from "@/lib/mock";
+import { parseSymbol, snapshotsFromHistorical, yearEndIso } from "@/lib/providers";
 
 const BASE_URL = "https://api.stlouisfed.org/fred/series/observations";
 const OBSERVATION_START = "2000-01-01";
@@ -86,33 +84,6 @@ export class FredApiError extends DataApiError {
     super(message, status, url);
     this.name = "FredApiError";
   }
-}
-
-function parseSymbol(symbol: string): { iso3: string; code: string } {
-  const dot = symbol.indexOf(".");
-  if (dot <= 0) {
-    throw new FredApiError(`Invalid symbol: ${symbol}`, 400, symbol);
-  }
-  return {
-    iso3: symbol.slice(0, dot),
-    code: symbol.slice(dot + 1),
-  };
-}
-
-function indicatorMeta(code: string): Indicator {
-  const indicator = INDICATORS.find((item) => item.code === code);
-  if (!indicator) {
-    throw new FredApiError(`Unknown indicator code: ${code}`, 400, code);
-  }
-  return indicator;
-}
-
-function countryName(iso3: string): string {
-  return COUNTRIES.find((country) => country.iso3 === iso3)?.name ?? iso3;
-}
-
-function yearEndIso(year: number): string {
-  return `${year}-12-31T00:00:00`;
 }
 
 function downsampleToAnnual(
@@ -201,37 +172,6 @@ async function fredFetchSeries(seriesId: string): Promise<FredObservation[]> {
   return payload.observations ?? [];
 }
 
-function buildSnapshotFromHistory(
-  symbol: string,
-  points: HistoricalPoint[],
-): SnapshotRow | null {
-  if (points.length === 0) return null;
-
-  const { iso3, code } = parseSymbol(symbol);
-  const indicator = indicatorMeta(code);
-  const sorted = [...points].sort((a, b) => b.date.localeCompare(a.date));
-  const last = sorted[0];
-  const previous = sorted[1] ?? sorted[0];
-  const name = countryName(iso3);
-
-  return {
-    symbol,
-    last: last.value,
-    date: last.date,
-    previous: previous.value,
-    previousDate: previous.date,
-    country: name,
-    category: indicator.group,
-    description: indicator.name,
-    frequency: "Yearly",
-    unit: indicator.unit,
-    title: `${name} ${indicator.name}`,
-    lastUpdate: last.date,
-    consensus: null,
-    forecast: null,
-  };
-}
-
 function filterFredSymbols(symbols: string[]): string[] {
   return symbols.filter((symbol) => {
     const { code } = parseSymbol(symbol);
@@ -239,7 +179,8 @@ function filterFredSymbols(symbols: string[]): string[] {
   });
 }
 
-function useFixtureFallback(): boolean {
+/** Without an API key, FRED indicators are served from bundled fixtures. */
+function shouldUseFredFixtures(): boolean {
   return !process.env.FRED_API_KEY;
 }
 
@@ -249,7 +190,7 @@ export async function fredGetHistorical(
   const fredSymbolsList = filterFredSymbols(symbols);
   if (fredSymbolsList.length === 0) return [];
 
-  if (useFixtureFallback()) {
+  if (shouldUseFredFixtures()) {
     console.warn(
       "[fred] FRED_API_KEY missing — falling back to fixtures for FRED indicators",
     );
@@ -280,7 +221,7 @@ export async function fredGetSnapshot(symbols: string[]): Promise<SnapshotRow[]>
   const fredSymbolsList = filterFredSymbols(symbols);
   if (fredSymbolsList.length === 0) return [];
 
-  if (useFixtureFallback()) {
+  if (shouldUseFredFixtures()) {
     console.warn(
       "[fred] FRED_API_KEY missing — falling back to fixtures for FRED indicators",
     );
@@ -288,17 +229,7 @@ export async function fredGetSnapshot(symbols: string[]): Promise<SnapshotRow[]>
   }
 
   const historical = await fredGetHistorical(fredSymbolsList);
-
-  const bySymbol = new Map<string, HistoricalPoint[]>();
-  for (const point of historical) {
-    const bucket = bySymbol.get(point.symbol) ?? [];
-    bucket.push(point);
-    bySymbol.set(point.symbol, bucket);
-  }
-
-  return fredSymbolsList
-    .map((symbol) => buildSnapshotFromHistory(symbol, bySymbol.get(symbol) ?? []))
-    .filter((row): row is SnapshotRow => row != null);
+  return snapshotsFromHistorical(fredSymbolsList, historical);
 }
 
 export function policyRateFootnotes(iso3List: string[]): string[] {

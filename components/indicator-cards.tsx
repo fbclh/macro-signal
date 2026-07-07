@@ -40,26 +40,19 @@ function DeltaArrow({
   );
 }
 
-function IndicatorCard({
-  snapshot,
-  code,
-}: {
-  snapshot: SnapshotRow;
-  code: string;
-}) {
+function IndicatorCard({ snapshot }: { snapshot: SnapshotRow }) {
   return (
     <Card className={flatCard}>
       <CardContent className="flex flex-1 flex-col px-4 pt-0">
         <h4 className="text-sm font-medium">{snapshot.description}</h4>
         <p className="mt-3 text-2xl font-semibold tabular-nums tracking-tight">
-          {formatValue(snapshot.last, snapshot.unit, code)}
+          {formatValue(snapshot.last, snapshot.unit)}
         </p>
         <p className="mt-1 text-xs text-muted-foreground">{snapshot.unit}</p>
         <div className="mt-3">
           <DeltaSparkline
             actual={snapshot.last}
             previous={snapshot.previous}
-            unit={snapshot.unit}
             variant="curve"
           />
         </div>
@@ -68,7 +61,7 @@ function IndicatorCard({
             <span>
               Prev{" "}
               <span className="tabular-nums text-foreground">
-                {formatValue(snapshot.previous, snapshot.unit, code)}
+                {formatValue(snapshot.previous, snapshot.unit)}
               </span>
             </span>
             <span
@@ -127,7 +120,7 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
             {row.groups.map((group) => (
               <div key={group.id} className={groupLayoutClass}>
                 {group.items.map((item) => (
-                  <IndicatorCard key={item.snapshot.symbol} {...item} />
+                  <IndicatorCard key={item.snapshot.symbol} snapshot={item.snapshot} />
                 ))}
               </div>
             ))}

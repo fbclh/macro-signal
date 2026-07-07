@@ -3,7 +3,7 @@ import "server-only";
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
 import { indicatorSource, type DataSource } from "@/lib/catalog";
-import { useMockData } from "@/lib/env";
+import { isMockEnabled } from "@/lib/env";
 import { fredGetHistorical, fredGetSnapshot } from "@/lib/fred";
 import { imfGetHistorical, imfGetSnapshot } from "@/lib/imf";
 import { mockGetHistorical, mockGetSnapshot } from "@/lib/mock";
@@ -101,7 +101,7 @@ export async function getHistorical(
     return [];
   }
 
-  if (useMockData()) {
+  if (isMockEnabled()) {
     return mockGetHistorical(symbols);
   }
 
@@ -114,7 +114,7 @@ export async function getSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
     return [];
   }
 
-  if (useMockData()) {
+  if (isMockEnabled()) {
     return mockGetSnapshot(symbols);
   }
 

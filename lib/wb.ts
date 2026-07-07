@@ -4,12 +4,11 @@ import {
   COUNTRIES,
   catalogCodeToWb,
   indicatorSource,
-  INDICATORS,
   symbolFor,
-  type Indicator,
 } from "@/lib/catalog";
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
+import { parseSymbol, snapshotsFromHistorical, yearEndIso } from "@/lib/providers";
 
 const BASE_URL = "https://api.worldbank.org/v2";
 const G7_ISO3 = COUNTRIES.map((country) => country.iso3).join(";");
@@ -27,33 +26,6 @@ export class WbApiError extends DataApiError {
     super(message, status, url);
     this.name = "WbApiError";
   }
-}
-
-function parseSymbol(symbol: string): { iso3: string; code: string } {
-  const dot = symbol.indexOf(".");
-  if (dot <= 0) {
-    throw new WbApiError(`Invalid symbol: ${symbol}`, 400, symbol);
-  }
-  return {
-    iso3: symbol.slice(0, dot),
-    code: symbol.slice(dot + 1),
-  };
-}
-
-function wbDateToIso(year: string): string {
-  return `${year}-12-31T00:00:00`;
-}
-
-function indicatorMeta(code: string): Indicator {
-  const indicator = INDICATORS.find((item) => item.code === code);
-  if (!indicator) {
-    throw new WbApiError(`Unknown indicator code: ${code}`, 400, code);
-  }
-  return indicator;
-}
-
-function countryName(iso3: string): string {
-  return COUNTRIES.find((country) => country.iso3 === iso3)?.name ?? iso3;
 }
 
 async function wbFetch(indicatorCode: string): Promise<WbObservation[]> {
@@ -109,41 +81,10 @@ function buildHistoricalForSymbol(
     )
     .map((row) => ({
       symbol,
-      date: wbDateToIso(row.date!),
+      date: yearEndIso(row.date!),
       value: row.value as number,
     }))
     .sort((a, b) => a.date.localeCompare(b.date));
-}
-
-function buildSnapshotFromHistory(
-  symbol: string,
-  points: HistoricalPoint[],
-): SnapshotRow | null {
-  if (points.length === 0) return null;
-
-  const { iso3, code } = parseSymbol(symbol);
-  const indicator = indicatorMeta(code);
-  const sorted = [...points].sort((a, b) => b.date.localeCompare(a.date));
-  const last = sorted[0];
-  const previous = sorted[1] ?? sorted[0];
-  const name = countryName(iso3);
-
-  return {
-    symbol,
-    last: last.value,
-    date: last.date,
-    previous: previous.value,
-    previousDate: previous.date,
-    country: name,
-    category: indicator.group,
-    description: indicator.name,
-    frequency: "Yearly",
-    unit: indicator.unit,
-    title: `${name} ${indicator.name}`,
-    lastUpdate: last.date,
-    consensus: null,
-    forecast: null,
-  };
 }
 
 export async function wbGetHistorical(
@@ -171,15 +112,5 @@ export async function wbGetHistorical(
 
 export async function wbGetSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
   const historical = await wbGetHistorical(symbols);
-
-  const bySymbol = new Map<string, HistoricalPoint[]>();
-  for (const point of historical) {
-    const bucket = bySymbol.get(point.symbol) ?? [];
-    bucket.push(point);
-    bySymbol.set(point.symbol, bucket);
-  }
-
-  return symbols
-    .map((symbol) => buildSnapshotFromHistory(symbol, bySymbol.get(symbol) ?? []))
-    .filter((row): row is SnapshotRow => row != null);
+  return snapshotsFromHistorical(symbols, historical);
 }

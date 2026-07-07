@@ -85,7 +85,7 @@ function ValueCell({
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-1.5 gap-y-0">
       <span className="tabular-nums font-medium">
-        {formatValue(snapshot.last, indicator.unit, indicator.code)}
+        {formatValue(snapshot.last, indicator.unit)}
       </span>
       <DeltaSuffix current={snapshot.last} previous={snapshot.previous} />
     </span>

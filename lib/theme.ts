@@ -8,7 +8,3 @@ export function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle("dark", theme === "dark");
   localStorage.setItem(THEME_STORAGE_KEY, theme);
 }
-
-export function readTheme(): Theme {
-  return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
