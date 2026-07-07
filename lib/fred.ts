@@ -33,8 +33,16 @@ export const FRED_POLICY_SERIES: Record<string, FredSeriesConfig> = {
     fallbackFrom: "IRSTCB01USM156N",
     note: "Federal Funds Target Range (upper limit)",
   },
-  can: { seriesId: "IRSTCB01CAM156N" },
-  jpn: { seriesId: "IRSTCB01JPM156N" },
+  can: {
+    seriesId: "IRSTCI01CAM156N",
+    fallbackFrom: "IRSTCB01CAM156N",
+    note: "Bank of Canada immediate call-money rate (OECD IRSTCB01 discontinued Dec 2023)",
+  },
+  jpn: {
+    seriesId: "IRSTCI01JPM156N",
+    fallbackFrom: "IRSTCB01JPM156N",
+    note: "BoJ uncollateralized overnight call rate (OECD IRSTCB01 discontinued Dec 2023)",
+  },
   gbr: {
     seriesId: "IUDSOIA",
     fallbackFrom: "IRSTCB01GBM156N",

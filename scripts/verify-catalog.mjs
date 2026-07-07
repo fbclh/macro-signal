@@ -66,8 +66,8 @@ const INDICATORS = [
 
 const FRED_POLICY_SERIES = {
   usa: "DFEDTARU",
-  can: "IRSTCB01CAM156N",
-  jpn: "IRSTCB01JPM156N",
+  can: "IRSTCI01CAM156N",
+  jpn: "IRSTCI01JPM156N",
   gbr: "IUDSOIA",
   deu: "ECBDFR",
   fra: "ECBDFR",
@@ -456,5 +456,7 @@ if (fredTooOld.length > 0) {
 console.log("");
 console.log("FRED policy-rate fallbacks:");
 console.log("  USA: IRSTCB01USM156N missing → DFEDTARU");
+console.log("  CAN: IRSTCB01CAM156N discontinued → IRSTCI01CAM156N (BoC call-money rate)");
+console.log("  JPN: IRSTCB01JPM156N discontinued → IRSTCI01JPM156N (BoJ overnight call rate)");
 console.log("  GBR: IRSTCB01GBM156N missing → IUDSOIA (SONIA)");
 console.log("  DEU/FRA/ITA: IRSTCB01* missing → ECBDFR");
