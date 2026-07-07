@@ -84,12 +84,14 @@ const FRED_BOND_SERIES = {
   ita: "IRLTLT01ITM156N",
 };
 
+const IMF_WEO_MAX_YEAR = 2025;
 const G7_BATCH = COUNTRIES.map((country) => country.iso3).join(";");
 const G7_IMF = COUNTRIES.map((country) => country.imf).join("/");
 const CURRENT_YEAR = new Date().getFullYear();
 const DATE_RANGE = `2000:${CURRENT_YEAR}`;
 const FRED_KEY = process.env.FRED_API_KEY;
 const STALE_MONTHS = 12;
+const FRESH_MONTHS = 6;
 
 function formatObsMonth(dateStr) {
   const day = dateStr.split("T")[0];
@@ -107,9 +109,9 @@ function monthsSinceObservation(dateStr) {
   );
 }
 
-function isObservedYear(year) {
+function isImfWeoYear(year) {
   const parsed = Number(year);
-  return !Number.isNaN(parsed) && parsed <= CURRENT_YEAR;
+  return !Number.isNaN(parsed) && parsed <= IMF_WEO_MAX_YEAR;
 }
 
 async function fetchWbIndicator(wbCode) {
@@ -156,7 +158,7 @@ async function fetchImfIndicator(imfCode) {
     const series = values[country.imf];
     if (!series) continue;
     const years = Object.keys(series)
-      .filter(isObservedYear)
+      .filter(isImfWeoYear)
       .sort((a, b) => Number(b) - Number(a));
     if (years.length === 0) continue;
     const year = years[0];
@@ -254,6 +256,7 @@ async function fetchFredSeries(seriesId) {
 
 const results = [];
 const fredFreshness = [];
+const imfLatestYears = [];
 
 for (const indicator of INDICATORS) {
   if (indicator.source === "WB") {
@@ -304,6 +307,14 @@ for (const indicator of INDICATORS) {
 
     for (const country of COUNTRIES) {
       const latest = fetched.latestByCountry.get(country.iso3);
+      if (latest) {
+        imfLatestYears.push({
+          symbol: `${country.iso3}.${indicator.code}`,
+          country: country.name,
+          year: Number(latest.date),
+          value: latest.value,
+        });
+      }
       results.push({
         symbol: `${country.iso3}.${indicator.code}`,
         country: country.name,
@@ -414,6 +425,32 @@ if (staleFred.length > 0) {
 } else if (fredFreshness.length > 0) {
   console.log("");
   console.log(`FRED freshness: all ${fredFreshness.length} series within ${STALE_MONTHS} months.`);
+}
+
+const imfOverMax = imfLatestYears.filter((row) => row.year > IMF_WEO_MAX_YEAR);
+console.log("");
+console.log(`IMF WEO latest year per country (must be ≤ ${IMF_WEO_MAX_YEAR}):`);
+for (const row of imfLatestYears) {
+  const flag = row.year > IMF_WEO_MAX_YEAR ? "OVER" : "ok";
+  console.log(`  ${row.symbol} — ${row.value} (${row.year}) [${flag}]`);
+}
+if (imfOverMax.length > 0) {
+  console.log("");
+  console.log(`IMF year clamp failed for ${imfOverMax.length} series.`);
+} else if (imfLatestYears.length > 0) {
+  console.log("");
+  console.log(`IMF year clamp: all ${imfLatestYears.length} series ≤ ${IMF_WEO_MAX_YEAR}.`);
+}
+
+const fredTooOld = fredFreshness.filter((row) => row.monthsSince > FRESH_MONTHS);
+if (fredTooOld.length > 0) {
+  console.log("");
+  console.log(`FRED freshness warning (>${FRESH_MONTHS} months):`);
+  for (const row of fredTooOld) {
+    console.log(
+      `  ${row.symbol} (${row.seriesId}) — last obs ${row.observationDate} (${row.monthsSince} months ago)`,
+    );
+  }
 }
 
 console.log("");

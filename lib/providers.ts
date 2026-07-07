@@ -27,6 +27,14 @@ export function currentCalendarYear(): number {
   return new Date().getFullYear();
 }
 
+/** WEO actuals through 2024; 2025 estimates; 2026+ are projections — never display. */
+export const IMF_WEO_MAX_YEAR = 2025;
+
+export function isImfWeoYear(year: number | string): boolean {
+  const parsed = Number(year);
+  return !Number.isNaN(parsed) && parsed <= IMF_WEO_MAX_YEAR;
+}
+
 /** True when a calendar year is not an IMF WEO projection beyond the current year. */
 export function isObservedCalendarYear(year: number | string): boolean {
   const parsed = Number(year);

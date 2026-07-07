@@ -3,7 +3,7 @@ import "server-only";
 import { COUNTRIES, IMF_DEBT_CODE, symbolFor } from "@/lib/catalog";
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
-import { parseSymbol, snapshotsFromHistorical, yearEndIso, isObservedCalendarYear } from "@/lib/providers";
+import { parseSymbol, snapshotsFromHistorical, yearEndIso, isImfWeoYear } from "@/lib/providers";
 
 const BASE_URL = "https://www.imf.org/external/datamapper/api/v1";
 const G7_IMF = COUNTRIES.map((country) => country.iso3.toUpperCase()).join("/");
@@ -49,9 +49,7 @@ function buildHistoricalForCountry(
   return Object.entries(series)
     .filter(
       ([year, value]) =>
-        isObservedCalendarYear(year) &&
-        value != null &&
-        !Number.isNaN(value),
+        isImfWeoYear(year) && value != null && !Number.isNaN(value),
     )
     .map(([year, value]) => ({
       symbol,
