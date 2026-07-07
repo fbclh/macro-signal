@@ -12,14 +12,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  deltaDirection,
-  formatDelta,
-  formatValue,
-} from "@/lib/format";
+import { formatValue } from "@/lib/format";
 import type { IndicatorValence } from "@/lib/catalog";
-import { valenceClass, valenceForCode } from "@/lib/valence";
 import type { SnapshotRow } from "@/lib/te";
+import { DeltaIndicator } from "@/components/delta-indicator";
 import { cn } from "@/lib/utils";
 
 const flatCard = "rounded-sm border shadow-none ring-0";
@@ -34,6 +30,7 @@ export type G7GlanceIndicator = {
   code: string;
   columnLabel: string;
   unit: string;
+  valence: IndicatorValence;
 };
 
 type SortKey = "country" | string;
@@ -48,31 +45,6 @@ type G7AtAGlanceTableProps = {
     sources?: string;
   };
 };
-
-function DeltaSuffix({
-  current,
-  previous,
-  valence,
-}: {
-  current: number;
-  previous: number;
-  valence: IndicatorValence;
-}) {
-  const direction = deltaDirection(current, previous);
-  const arrow =
-    direction === "up" ? "▲" : direction === "down" ? "▼" : "—";
-
-  return (
-    <span
-      className={cn(
-        "text-xs tabular-nums",
-        valenceClass(valence, current, previous),
-      )}
-    >
-      {arrow} {formatDelta(current, previous)}
-    </span>
-  );
-}
 
 function ValueCell({
   snapshot,
@@ -90,10 +62,11 @@ function ValueCell({
       <span className="tabular-nums font-medium">
         {formatValue(snapshot.last, indicator.unit)}
       </span>
-      <DeltaSuffix
+      <DeltaIndicator
         current={snapshot.last}
         previous={snapshot.previous}
-        valence={valenceForCode(indicator.code)}
+        valence={indicator.valence}
+        className="text-xs"
       />
     </span>
   );

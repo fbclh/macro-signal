@@ -26,6 +26,7 @@ function resolveGlanceIndicators(
       code: glance.code,
       columnLabel: glance.columnLabel,
       unit: indicator.unit,
+      valence: indicator.valence,
     };
   });
 }

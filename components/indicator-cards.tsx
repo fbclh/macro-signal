@@ -1,15 +1,10 @@
-import {
-  deltaDirection,
-  formatDate,
-  formatDelta,
-  formatValue,
-} from "@/lib/format";
+import { formatDate, formatValue } from "@/lib/format";
 import { INDICATOR_CARD_ROWS, INDICATORS } from "@/lib/catalog";
-import type { IndicatorValence } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
-import { valenceClass, valenceForCode } from "@/lib/valence";
+import { valenceForCode } from "@/lib/valence";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { DeltaIndicator } from "./delta-indicator";
 import { DeltaSparkline } from "./sparkline";
 
 const flatCard =
@@ -18,36 +13,14 @@ const flatCard =
 const groupLayoutClass =
   "col-span-2 grid grid-cols-2 gap-3 lg:col-span-2 lg:grid-cols-2 lg:gap-4";
 
-function DeltaArrow({
-  current,
-  previous,
-  valence,
-}: {
-  current: number;
-  previous: number;
-  valence: IndicatorValence;
-}) {
-  const direction = deltaDirection(current, previous);
-  const colorClass = valenceClass(valence, current, previous);
-
-  if (direction === "flat") {
-    return <span className={colorClass}>—</span>;
-  }
-
-  return (
-    <span className={colorClass} aria-hidden="true">
-      {direction === "up" ? "▲" : "▼"}
-    </span>
-  );
-}
-
 function IndicatorCard({
   snapshot,
-  valence,
+  code,
 }: {
   snapshot: SnapshotRow;
-  valence: IndicatorValence;
+  code: string;
 }) {
+  const valence = valenceForCode(code);
   return (
     <Card className={flatCard}>
       <CardContent className="flex flex-1 flex-col px-4 pt-0">
@@ -65,23 +38,19 @@ function IndicatorCard({
           />
         </div>
         <div className="mt-auto border-t border-border-subtle pt-3">
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span>
+          <div className="flex items-center justify-between text-xs">
+            <span className="text-muted-foreground">
               Prev{" "}
               <span className="tabular-nums text-foreground">
                 {formatValue(snapshot.previous, snapshot.unit)}
               </span>
             </span>
-            <span
-              className={`flex items-center gap-1 tabular-nums ${valenceClass(valence, snapshot.last, snapshot.previous)}`}
-            >
-              <DeltaArrow
-                current={snapshot.last}
-                previous={snapshot.previous}
-                valence={valence}
-              />
-              {formatDelta(snapshot.last, snapshot.previous)}
-            </span>
+            <DeltaIndicator
+              current={snapshot.last}
+              previous={snapshot.previous}
+              valence={valence}
+              className="text-xs"
+            />
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
             {formatDate(snapshot.date)}
@@ -135,7 +104,7 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
                   <IndicatorCard
                     key={item.snapshot.symbol}
                     snapshot={item.snapshot}
-                    valence={valenceForCode(item.code)}
+                    code={item.code}
                   />
                 ))}
               </div>
