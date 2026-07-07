@@ -2,6 +2,7 @@ import { COUNTRIES, INDICATORS } from "@/lib/catalog";
 
 export type PageSearchParams = {
   country?: string;
+  glanceCountry?: string;
   chartA?: string;
   chartB?: string;
   chartIndicator?: string;
@@ -10,6 +11,10 @@ export type PageSearchParams = {
 export function resolveSearchParams(params: PageSearchParams) {
   const country = COUNTRIES.some((c) => c.iso3 === params.country)
     ? params.country!
+    : "usa";
+
+  const glanceCountry = COUNTRIES.some((c) => c.iso3 === params.glanceCountry)
+    ? params.glanceCountry!
     : "usa";
 
   const chartA = COUNTRIES.some((c) => c.iso3 === params.chartA)
@@ -24,5 +29,5 @@ export function resolveSearchParams(params: PageSearchParams) {
     ? params.chartIndicator!
     : "fp.cpi.totl.zg";
 
-  return { country, chartA, chartB, chartIndicator };
+  return { country, glanceCountry, chartA, chartB, chartIndicator };
 }

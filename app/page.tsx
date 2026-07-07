@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { QuerySelect } from "@/components/query-select";
 import { CardsSkeleton, ChartSkeleton, G7GlanceSkeleton } from "@/components/skeletons";
-import { COUNTRIES } from "@/lib/catalog";
+import { COUNTRIES, INDICATOR_CARD_ROWS } from "@/lib/catalog";
 import { resolveSearchParams, type PageSearchParams } from "@/lib/search-params";
 
 type HomeProps = {
@@ -86,14 +86,25 @@ export default async function Home({ searchParams }: HomeProps) {
       </section>
 
       <section className="mt-16">
-        <div className="mb-6">
-          <h2 className="text-lg font-medium">G7 at a glance</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Latest readings across all economies
-          </p>
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-lg font-medium">G7 at a glance</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Latest readings across all economies
+            </p>
+          </div>
+          <QuerySelect
+            name="glanceCountry"
+            label="Country"
+            value={params.glanceCountry}
+            options={countrySelectOptions}
+          />
         </div>
+        <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          {INDICATOR_CARD_ROWS[0].label}
+        </p>
         <Suspense fallback={<G7GlanceSkeleton />}>
-          <G7AtAGlance selectedCountry={params.country} />
+          <G7AtAGlance selectedCountry={params.glanceCountry} />
         </Suspense>
       </section>
 

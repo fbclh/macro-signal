@@ -101,7 +101,7 @@ export const INDICATORS: Indicator[] = [
   },
 ];
 
-/** Headline indicators for the G7 at-a-glance comparison table. */
+/** Fixed headline indicators for the G7 comparison table. */
 export const G7_GLANCE_INDICATORS: {
   code: string;
   columnLabel: string;
@@ -110,6 +110,17 @@ export const G7_GLANCE_INDICATORS: {
   { code: "fp.cpi.totl.zg", columnLabel: "Inflation" },
   { code: "sl.uem.totl.zs", columnLabel: "Unemployment" },
   { code: "fr.inr.lndp", columnLabel: "Interest Rate" },
+];
+
+/** External & fiscal / sovereign indicators for the second G7 glance table. */
+export const G7_GLANCE_SECONDARY_INDICATORS: {
+  code: string;
+  columnLabel: string;
+}[] = [
+  { code: "ne.rsb.gnfs.zs", columnLabel: "Balance of Trade" },
+  { code: "bn.cab.xoka.gd.zs", columnLabel: "Current Account" },
+  { code: "gc.dod.totl.gd.zs", columnLabel: "Govt Debt" },
+  { code: "credit.rating", columnLabel: "Credit Rating" },
 ];
 
 export const CREDIT_RATING_CODE = "credit.rating";

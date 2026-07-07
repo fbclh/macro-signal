@@ -2,6 +2,8 @@ import { G7AtAGlanceTable } from "@/components/g7-at-a-glance-table";
 import {
   COUNTRIES,
   G7_GLANCE_INDICATORS,
+  G7_GLANCE_SECONDARY_INDICATORS,
+  INDICATOR_CARD_ROWS,
   INDICATORS,
   symbolFor,
 } from "@/lib/catalog";
@@ -11,8 +13,10 @@ type G7AtAGlanceProps = {
   selectedCountry: string;
 };
 
-export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
-  const indicators = G7_GLANCE_INDICATORS.map((glance) => {
+function resolveGlanceIndicators(
+  definitions: { code: string; columnLabel: string }[],
+) {
+  return definitions.map((glance) => {
     const indicator = INDICATORS.find((item) => item.code === glance.code);
     if (!indicator) {
       throw new Error(`Missing catalog indicator: ${glance.code}`);
@@ -23,9 +27,17 @@ export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
       unit: indicator.unit,
     };
   });
+}
+
+export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
+  const headlineIndicators = resolveGlanceIndicators(G7_GLANCE_INDICATORS);
+  const secondaryIndicators = resolveGlanceIndicators(
+    G7_GLANCE_SECONDARY_INDICATORS,
+  );
+  const allIndicators = [...headlineIndicators, ...secondaryIndicators];
 
   const symbols = COUNTRIES.flatMap((country) =>
-    indicators.map((indicator) => symbolFor(country.iso3, indicator.code)),
+    allIndicators.map((indicator) => symbolFor(country.iso3, indicator.code)),
   );
 
   let snapshots;
@@ -47,7 +59,7 @@ export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
     iso3: country.iso3,
     name: country.name,
     cells: Object.fromEntries(
-      indicators.map((indicator) => {
+      allIndicators.map((indicator) => {
         const symbol = symbolFor(country.iso3, indicator.code);
         return [indicator.code, snapshotBySymbol.get(symbol)];
       }),
@@ -55,10 +67,22 @@ export async function G7AtAGlance({ selectedCountry }: G7AtAGlanceProps) {
   }));
 
   return (
-    <G7AtAGlanceTable
-      rows={rows}
-      indicators={indicators}
-      selectedCountry={selectedCountry}
-    />
+    <div className="space-y-8">
+      <G7AtAGlanceTable
+        rows={rows}
+        indicators={headlineIndicators}
+        selectedCountry={selectedCountry}
+      />
+      <div>
+        <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          {INDICATOR_CARD_ROWS[1].label}
+        </p>
+        <G7AtAGlanceTable
+          rows={rows}
+          indicators={secondaryIndicators}
+          selectedCountry={selectedCountry}
+        />
+      </div>
+    </div>
   );
 }

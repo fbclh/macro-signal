@@ -15,9 +15,11 @@ import {
 import {
   deltaDirection,
   deltaSemanticClass,
+  formatCreditRatingDisplay,
   formatDelta,
   formatValue,
 } from "@/lib/format";
+import { isCreditRating } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { cn } from "@/lib/utils";
 
@@ -78,6 +80,17 @@ function ValueCell({
     return <span className="text-muted-foreground">—</span>;
   }
 
+  if (isCreditRating(indicator.code)) {
+    const credit = formatCreditRatingDisplay(snapshot.last);
+    return (
+      <span className="inline-flex flex-wrap items-baseline justify-end gap-x-1.5 gap-y-0">
+        <span className="tabular-nums font-medium">{credit.score}</span>
+        <span className="text-xs text-muted-foreground">{credit.label}</span>
+        <DeltaSuffix current={snapshot.last} previous={snapshot.previous} />
+      </span>
+    );
+  }
+
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-1.5 gap-y-0">
       <span className="tabular-nums font-medium">
@@ -106,17 +119,24 @@ function SortButton({
       type="button"
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1 font-medium transition-colors hover:text-foreground",
+        "group inline-flex items-center gap-1 font-medium transition-colors",
         align === "right" && "ml-auto",
-        active ? "text-foreground" : "text-muted-foreground",
+        active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
       )}
     >
       <span>{label}</span>
-      {active ? (
-        <span className="text-[10px] text-muted-foreground" aria-hidden="true">
-          {direction === "asc" ? "▲" : "▼"}
-        </span>
-      ) : null}
+      <span
+        className="inline-flex w-2.5 justify-center text-[10px]"
+        aria-hidden="true"
+      >
+        {active ? (
+          direction === "asc" ? "▲" : "▼"
+        ) : (
+          <span className="text-transparent transition-colors group-hover:text-muted-foreground/70">
+            ↕
+          </span>
+        )}
+      </span>
     </button>
   );
 }
@@ -134,7 +154,7 @@ export function G7AtAGlanceTable({
 
   function selectCountry(iso3: string) {
     const params = new URLSearchParams(searchParams.toString());
-    params.set("country", iso3);
+    params.set("glanceCountry", iso3);
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
@@ -223,20 +243,7 @@ export function G7AtAGlanceTable({
                       "border-l-foreground bg-muted/60 dark:bg-muted/35",
                   )}
                 >
-                  <TableCell className="px-4 font-medium">
-                    <span className="inline-flex items-center gap-2">
-                      <span
-                        className={cn(
-                          "text-[8px] leading-none",
-                          selected ? "text-foreground" : "text-transparent",
-                        )}
-                        aria-hidden="true"
-                      >
-                        ●
-                      </span>
-                      {row.name}
-                    </span>
-                  </TableCell>
+                  <TableCell className="px-4 font-medium">{row.name}</TableCell>
                   {indicators.map((indicator) => (
                     <TableCell
                       key={indicator.code}

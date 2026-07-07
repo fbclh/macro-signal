@@ -23,9 +23,21 @@ export function ChartSkeleton() {
 
 export function G7GlanceSkeleton() {
   return (
+    <div className="space-y-8">
+      <G7GlanceTableSkeleton />
+      <div>
+        <Skeleton className="mb-3 h-3 w-56" />
+        <G7GlanceTableSkeleton columns={5} />
+      </div>
+    </div>
+  );
+}
+
+function G7GlanceTableSkeleton({ columns = 5 }: { columns?: number }) {
+  return (
     <div className="overflow-hidden rounded-sm border">
       <div className="flex gap-4 border-b bg-muted/50 px-4 py-3">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: columns }).map((_, index) => (
           <Skeleton
             key={index}
             className={`h-4 ${index === 0 ? "w-20" : "ml-auto w-24"}`}
@@ -38,7 +50,7 @@ export function G7GlanceSkeleton() {
           className="flex gap-4 border-b px-4 py-3 last:border-b-0"
         >
           <Skeleton className="h-4 w-28" />
-          {Array.from({ length: 4 }).map((__, cellIndex) => (
+          {Array.from({ length: columns - 1 }).map((__, cellIndex) => (
             <Skeleton key={cellIndex} className="ml-auto h-4 w-24" />
           ))}
         </div>
