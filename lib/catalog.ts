@@ -27,7 +27,7 @@ export const INDICATOR_GROUPS: { id: IndicatorGroupId; label: string }[] = [
   { id: "growth-prices", label: "Growth & prices" },
   { id: "labour-rates", label: "Labour & rates" },
   { id: "external-fiscal", label: "External & fiscal" },
-  { id: "sovereign", label: "Sovereign & credit" },
+  { id: "sovereign", label: "Sovereign" },
 ];
 
 /** Two display rows of four cards, preserving group order left-to-right. */

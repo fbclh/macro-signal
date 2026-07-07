@@ -5,11 +5,7 @@ import {
   formatDelta,
   formatValue,
 } from "@/lib/format";
-import {
-  INDICATOR_CARD_ROWS,
-  INDICATOR_GROUPS,
-  INDICATORS,
-} from "@/lib/catalog";
+import { INDICATOR_CARD_ROWS, INDICATORS } from "@/lib/catalog";
 import type { SnapshotRow } from "@/lib/te";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -109,33 +105,33 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
 
   const rows = INDICATOR_CARD_ROWS.map((row) => ({
     ...row,
-    groups: row.groupIds.map((groupId) => ({
-      id: groupId,
-      label: INDICATOR_GROUPS.find((group) => group.id === groupId)?.label ?? groupId,
-      items: cards.filter((card) => {
-        const indicator = INDICATORS.find((item) => item.code === card.code);
-        return indicator?.group === groupId;
-      }),
-    })).filter((group) => group.items.length > 0),
+    groups: row.groupIds
+      .map((groupId) => ({
+        id: groupId,
+        items: cards.filter((card) => {
+          const indicator = INDICATORS.find((item) => item.code === card.code);
+          return indicator?.group === groupId;
+        }),
+      }))
+      .filter((group) => group.items.length > 0),
   })).filter((row) => row.groups.length > 0);
 
   return (
     <div className="space-y-8">
       {rows.map((row) => (
-        <div
-          key={row.groupIds.join("-")}
-          className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4"
-        >
-          {row.groups.map((group) => (
-            <div key={group.id} className={groupLayoutClass}>
-              <h3 className="col-span-full mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                {group.label}
-              </h3>
-              {group.items.map((item) => (
-                <IndicatorCard key={item.snapshot.symbol} {...item} />
-              ))}
-            </div>
-          ))}
+        <div key={row.groupIds.join("-")}>
+          <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            {row.label}
+          </h3>
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
+            {row.groups.map((group) => (
+              <div key={group.id} className={groupLayoutClass}>
+                {group.items.map((item) => (
+                  <IndicatorCard key={item.snapshot.symbol} {...item} />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
