@@ -1,6 +1,5 @@
 import {
   deltaDirection,
-  deltaSemanticClass,
   formatDate,
   formatDelta,
   formatValue,
@@ -27,14 +26,11 @@ function DeltaArrow({
   const direction = deltaDirection(current, previous);
 
   if (direction === "flat") {
-    return <span className="text-subtle">—</span>;
+    return <span className="text-muted-foreground">—</span>;
   }
 
   return (
-    <span
-      className={deltaSemanticClass(current, previous)}
-      aria-hidden="true"
-    >
+    <span className="text-muted-foreground" aria-hidden="true">
       {direction === "up" ? "▲" : "▼"}
     </span>
   );
@@ -64,9 +60,7 @@ function IndicatorCard({ snapshot }: { snapshot: SnapshotRow }) {
                 {formatValue(snapshot.previous, snapshot.unit)}
               </span>
             </span>
-            <span
-              className={`flex items-center gap-1 tabular-nums ${deltaSemanticClass(snapshot.last, snapshot.previous)}`}
-            >
+            <span className="flex items-center gap-1 tabular-nums text-muted-foreground">
               <DeltaArrow current={snapshot.last} previous={snapshot.previous} />
               {formatDelta(snapshot.last, snapshot.previous)}
             </span>

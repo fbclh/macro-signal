@@ -28,9 +28,9 @@ export function deltaDirection(
   return delta > 0 ? "up" : "down";
 }
 
-export function deltaSemanticClass(current: number, previous: number): string {
-  const direction = deltaDirection(current, previous);
-  if (direction === "up") return "text-delta-up";
-  if (direction === "down") return "text-delta-down";
-  return "text-subtle";
+export function deltaSemanticClass(
+  _current: number,
+  _previous: number,
+): string {
+  return "text-muted-foreground";
 }
