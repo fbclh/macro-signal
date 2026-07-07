@@ -166,7 +166,7 @@ export function G7AtAGlanceTable({
   }, [rows, sortDir, sortKey]);
 
   return (
-    <>
+    <div className="space-y-2">
       <Card className={`${flatCard} overflow-hidden py-0`}>
         <CardContent className="px-0">
           <Table>
@@ -255,6 +255,6 @@ export function G7AtAGlanceTable({
           ) : null}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }

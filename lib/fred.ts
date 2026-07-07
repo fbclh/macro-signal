@@ -36,12 +36,10 @@ export const FRED_POLICY_SERIES: Record<string, FredSeriesConfig> = {
   can: {
     seriesId: "IRSTCI01CAM156N",
     fallbackFrom: "IRSTCB01CAM156N",
-    note: "Bank of Canada immediate call-money rate (OECD IRSTCB01 discontinued Dec 2023)",
   },
   jpn: {
     seriesId: "IRSTCI01JPM156N",
     fallbackFrom: "IRSTCB01JPM156N",
-    note: "BoJ uncollateralized overnight call rate (OECD IRSTCB01 discontinued Dec 2023)",
   },
   gbr: {
     seriesId: "IUDSOIA",

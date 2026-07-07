@@ -9,8 +9,6 @@ const POLICY_NOTE_ORDER = [
   "Euro area members shown at the ECB policy rate",
   "SONIA overnight rate (BoE policy rate series discontinued on FRED)",
   "Federal Funds Target Range (upper limit)",
-  "Bank of Canada immediate call-money rate (OECD IRSTCB01 discontinued Dec 2023)",
-  "BoJ uncollateralized overnight call rate (OECD IRSTCB01 discontinued Dec 2023)",
 ] as const;
 
 /** Single-line methodology note for policy interest rate series. */
