@@ -69,10 +69,6 @@ npm run dev
 | `FRED_API_KEY` | for live rate/yield data | Interest rate + 10Y bond yield ([free key](https://fred.stlouisfed.org/docs/api/api_key.html)) |
 | `USE_MOCK` | optional (`true` in `.env.example`) | Fully offline fixtures via `lib/mock/fixtures.json` |
 
-### Deploy (Vercel)
-
-Set `FRED_API_KEY` in project environment variables and leave `USE_MOCK` unset or `false` for live data.
-
 ## Scripts
 
 ```bash
