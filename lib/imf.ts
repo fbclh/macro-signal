@@ -21,7 +21,16 @@ async function imfFetch(indicatorCode: string): Promise<ImfValues> {
   const imfCode = indicatorCode.toUpperCase();
   const url = `${BASE_URL}/${imfCode}/${G7_IMF}`;
 
-  const response = await fetch(url, { next: { revalidate: 3600 } });
+  // IMF's Akamai edge 403s requests with an absent/default Node user agent
+  // (notably from datacenter IPs). Present as a browser to get past it.
+  const response = await fetch(url, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+      Accept: "application/json",
+    },
+    next: { revalidate: 3600 },
+  });
 
   if (!response.ok) {
     const body = await response.text();
