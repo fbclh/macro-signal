@@ -13,6 +13,7 @@ import {
 } from "recharts";
 
 import { useIsDark } from "@/lib/use-is-dark";
+import { useMediaQuery } from "@/lib/use-media-query";
 import { Card, CardContent } from "@/components/ui/card";
 
 const flatCard = "rounded-sm border shadow-none ring-0";
@@ -97,6 +98,9 @@ export function ComparisonChart({
   unit,
 }: ComparisonChartProps) {
   const isDark = useIsDark();
+  // Below the `sm` breakpoint the plot is too narrow for a 5-year tick step;
+  // widen to 10 years so labels don't collide (desktop is unchanged at sm+).
+  const isNarrow = useMediaQuery("(max-width: 639px)");
 
   const grid = isDark ? "#2a2a2a" : "#e5e5e5";
   const tick = isDark ? "#b0b0b0" : "#737373";
@@ -106,8 +110,12 @@ export function ComparisonChart({
   const tooltipText = isDark ? "#ffffff" : "#1c1917";
 
   const yearTicks = useMemo(
-    () => fixedYearTicks(data.map((row) => row.year)),
-    [data],
+    () =>
+      fixedYearTicks(
+        data.map((row) => row.year),
+        isNarrow ? YEAR_TICK_STEP * 2 : YEAR_TICK_STEP,
+      ),
+    [data, isNarrow],
   );
 
   if (data.length === 0 || data.every((row) => row.a == null && row.b == null)) {

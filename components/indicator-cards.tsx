@@ -11,7 +11,7 @@ const flatCard =
   "flex h-full flex-col gap-0 rounded-sm border shadow-none ring-0 py-4";
 
 const groupLayoutClass =
-  "col-span-2 grid grid-cols-2 gap-3 lg:col-span-2 lg:grid-cols-2 lg:gap-4";
+  "col-span-1 grid grid-cols-1 gap-3 sm:col-span-2 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-2 lg:gap-4";
 
 function IndicatorCard({
   snapshot,
@@ -97,7 +97,7 @@ export function IndicatorCards({ cards }: IndicatorCardsProps) {
           <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
             {row.label}
           </h3>
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
             {row.groups.map((group) => (
               <div key={group.id} className={groupLayoutClass}>
                 {group.items.map((item) => (

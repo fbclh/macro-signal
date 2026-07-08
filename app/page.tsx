@@ -26,7 +26,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const params = resolveSearchParams(await searchParams);
 
   return (
-    <div className="mx-auto max-w-6xl flex-1 px-4 pt-10 pb-0 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-6xl flex-1 px-4 pt-10 pb-0 max-lg:w-full sm:px-6 lg:px-8">
       <Header />
 
       <section className="mt-12">

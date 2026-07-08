@@ -8,7 +8,7 @@ import { useIsDark } from "@/lib/use-is-dark";
 import { cn } from "@/lib/utils";
 
 const segmentClass =
-  "flex size-7 items-center justify-center rounded-sm transition-colors outline-none focus-visible:ring-1 focus-visible:ring-ring/50";
+  "flex size-7 min-h-10 min-w-10 items-center justify-center rounded-sm transition-colors outline-none focus-visible:ring-1 focus-visible:ring-ring/50 lg:min-h-0 lg:min-w-0";
 
 function segmentStyle(active: boolean) {
   return active

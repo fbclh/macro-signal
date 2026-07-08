@@ -43,7 +43,7 @@ export function QuerySelect({ name, label, value, options }: QuerySelectProps) {
         {label}
       </Label>
       <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className="w-full min-w-40 normal-case">
+        <SelectTrigger className="min-h-10 min-w-40 w-full normal-case lg:min-h-0">
           <SelectValue>{selectedLabel}</SelectValue>
         </SelectTrigger>
         <SelectContent>
