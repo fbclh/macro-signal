@@ -79,21 +79,24 @@ export async function imfGetHistorical(
   if (symbols.length === 0) return [];
 
   const byIndicator = groupSymbols(symbols);
+  const symbolSet = new Set(symbols);
   const pointsBySymbol = new Map<string, HistoricalPoint[]>();
 
-  for (const [code] of byIndicator) {
-    const values = await imfFetch(code);
+  await Promise.all(
+    [...byIndicator.keys()].map(async (code) => {
+      const values = await imfFetch(code);
 
-    for (const country of COUNTRIES) {
-      const symbol = symbolFor(country.iso3, code);
-      if (!symbols.includes(symbol)) continue;
-      const imfIso = country.iso3.toUpperCase();
-      pointsBySymbol.set(
-        symbol,
-        buildHistoricalForCountry(symbol, values[imfIso]),
-      );
-    }
-  }
+      for (const country of COUNTRIES) {
+        const symbol = symbolFor(country.iso3, code);
+        if (!symbolSet.has(symbol)) continue;
+        const imfIso = country.iso3.toUpperCase();
+        pointsBySymbol.set(
+          symbol,
+          buildHistoricalForCountry(symbol, values[imfIso]),
+        );
+      }
+    }),
+  );
 
   return symbols.flatMap((symbol) => pointsBySymbol.get(symbol) ?? []);
 }

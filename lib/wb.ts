@@ -95,17 +95,19 @@ export async function wbGetHistorical(
   const byIndicator = groupSymbols(symbols);
   const pointsBySymbol = new Map<string, HistoricalPoint[]>();
 
-  for (const [code, countries] of byIndicator) {
-    const observations = await wbFetch(code);
+  await Promise.all(
+    [...byIndicator.entries()].map(async ([code, countries]) => {
+      const observations = await wbFetch(code);
 
-    for (const iso3 of countries) {
-      const symbol = symbolFor(iso3, code);
-      pointsBySymbol.set(
-        symbol,
-        buildHistoricalForSymbol(symbol, observations),
-      );
-    }
-  }
+      for (const iso3 of countries) {
+        const symbol = symbolFor(iso3, code);
+        pointsBySymbol.set(
+          symbol,
+          buildHistoricalForSymbol(symbol, observations),
+        );
+      }
+    }),
+  );
 
   return symbols.flatMap((symbol) => pointsBySymbol.get(symbol) ?? []);
 }

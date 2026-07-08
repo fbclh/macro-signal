@@ -10,6 +10,9 @@ import { CardsSkeleton, ChartSkeleton, G7GlanceSkeleton } from "@/components/ske
 import { COUNTRIES, INDICATOR_CARD_ROWS } from "@/lib/catalog";
 import { resolveSearchParams, type PageSearchParams } from "@/lib/search-params";
 
+export const maxDuration = 60;
+export const revalidate = 3600;
+
 type HomeProps = {
   searchParams: Promise<PageSearchParams>;
 };
