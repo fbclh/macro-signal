@@ -2,7 +2,7 @@ import "server-only";
 
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 import { DataApiError } from "@/lib/data";
-import { indicatorSource, type DataSource } from "@/lib/catalog";
+import { indicatorByCode, indicatorSource, type DataSource } from "@/lib/catalog";
 import { isMockEnabled } from "@/lib/env";
 import { fredGetHistorical, fredGetSnapshot } from "@/lib/fred";
 import { imfGetHistorical, imfGetSnapshot } from "@/lib/imf";
@@ -37,34 +37,44 @@ function parseSymbolCode(symbol: string): string {
   return dot > 0 ? symbol.slice(dot + 1) : symbol;
 }
 
-function splitSymbolsBySource(symbols: string[]): Map<DataSource, string[]> {
-  const buckets = new Map<DataSource, string[]>();
+/**
+ * Groups symbols by indicator code so each indicator's provider call can fail
+ * independently — one provider outage degrades a single indicator to the
+ * bundled snapshot while everything else keeps rendering live.
+ */
+function splitSymbolsByIndicator(symbols: string[]): Map<string, string[]> {
+  const buckets = new Map<string, string[]>();
 
   for (const symbol of symbols) {
-    const source = indicatorSource(parseSymbolCode(symbol));
-    const bucket = buckets.get(source) ?? [];
+    const code = parseSymbolCode(symbol);
+    const bucket = buckets.get(code) ?? [];
     bucket.push(symbol);
-    buckets.set(source, bucket);
+    buckets.set(code, bucket);
   }
 
   return buckets;
 }
 
+/** Logs why an indicator degraded to bundled fixtures. */
+function logFallback(code: string, error: unknown): void {
+  const name = indicatorByCode(code)?.name ?? code;
+  const status = error instanceof DataApiError ? error.status : "unknown";
+  console.warn(
+    `[fallback] ${name} unavailable (${status}) — serving bundled snapshot for ${name}`,
+  );
+}
+
 async function fetchHistoricalFromProviders(
-  buckets: Map<DataSource, string[]>,
+  buckets: Map<string, string[]>,
 ): Promise<HistoricalPoint[]> {
-  const entries = [...buckets.entries()];
   const results = await Promise.all(
-    entries.map(async ([source, sourceSymbols]) => {
+    [...buckets.entries()].map(async ([code, codeSymbols]) => {
+      const source = indicatorSource(code);
       try {
-        return await PROVIDERS[source].getHistorical(sourceSymbols);
+        return await PROVIDERS[source].getHistorical(codeSymbols);
       } catch (error) {
-        if (error instanceof DataApiError) throw error;
-        throw new DataApiError(
-          error instanceof Error ? error.message : "Failed to fetch historical data",
-          502,
-          source,
-        );
+        logFallback(code, error);
+        return mockGetHistorical(codeSymbols);
       }
     }),
   );
@@ -73,20 +83,16 @@ async function fetchHistoricalFromProviders(
 }
 
 async function fetchSnapshotFromProviders(
-  buckets: Map<DataSource, string[]>,
+  buckets: Map<string, string[]>,
 ): Promise<SnapshotRow[]> {
-  const entries = [...buckets.entries()];
   const results = await Promise.all(
-    entries.map(async ([source, sourceSymbols]) => {
+    [...buckets.entries()].map(async ([code, codeSymbols]) => {
+      const source = indicatorSource(code);
       try {
-        return await PROVIDERS[source].getSnapshot(sourceSymbols);
+        return await PROVIDERS[source].getSnapshot(codeSymbols);
       } catch (error) {
-        if (error instanceof DataApiError) throw error;
-        throw new DataApiError(
-          error instanceof Error ? error.message : "Failed to fetch snapshot data",
-          502,
-          source,
-        );
+        logFallback(code, error);
+        return mockGetSnapshot(codeSymbols);
       }
     }),
   );
@@ -105,7 +111,7 @@ export async function getHistorical(
     return mockGetHistorical(symbols);
   }
 
-  const buckets = splitSymbolsBySource(symbols);
+  const buckets = splitSymbolsByIndicator(symbols);
   return fetchHistoricalFromProviders(buckets);
 }
 
@@ -118,6 +124,6 @@ export async function getSnapshot(symbols: string[]): Promise<SnapshotRow[]> {
     return mockGetSnapshot(symbols);
   }
 
-  const buckets = splitSymbolsBySource(symbols);
+  const buckets = splitSymbolsByIndicator(symbols);
   return fetchSnapshotFromProviders(buckets);
 }
