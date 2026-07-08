@@ -1,4 +1,4 @@
-import fixtures from "./fixtures.json";
+import fixtures from "@/lib/mock/fixtures.json";
 import type { HistoricalPoint, SnapshotRow } from "@/lib/data";
 
 type Fixtures = {
