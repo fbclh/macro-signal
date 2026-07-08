@@ -6,7 +6,7 @@ A G7 macroeconomic analytics — snapshot cards, a 25-year two-country compariso
 
 ## Live demo
 
-**[View live demo →](https://macro-signal.vercel.app)**
+**[View live demo →](https://macro-signal-fbclh.vercel.app/)**
 
 ## Features
 
